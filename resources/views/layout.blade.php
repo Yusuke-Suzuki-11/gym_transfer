@@ -12,7 +12,6 @@
 	</header>
 
 	<body class="antialiased">
-		<p class="test">テスト</p>
 		@yield('content')
 	</body>
 </html>
