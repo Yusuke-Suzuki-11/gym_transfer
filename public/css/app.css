@@ -21,7 +21,8 @@ time, mark, audio, video {
 
 body {
   line-height: 1;
-  background-color: #efefef;
+  background-color: #E9FBFC;
+  font-family: "M PLUS 1p";
 }
 
 article, aside, details, figcaption, figure,
@@ -93,4 +94,42 @@ hr {
 
 input, select {
   vertical-align: middle;
+}
+
+header {
+  height: 70px;
+  background-color: #23ACE4;
+  width: 100%;
+  position: absolute;
+}
+header .header {
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+}
+header .header .header-container {
+  font-family: "Fredoka One", cursive;
+  position: relative;
+  top: 20px;
+  float: left;
+}
+header .header .header-container .header-logo {
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px #3d3d3d;
+}
+header .header .header-menu {
+  position: relative;
+  top: 35px;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 1px #5a5a5a;
+  letter-spacing: 2px;
+}
+header .header .header-menu .header-menu-item {
+  float: right;
+  display: inline-block;
+}
+header .header .header-menu .header-menu-item a {
+  margin: 0 10px;
+  color: white;
+  font-weight: bold;
 }
