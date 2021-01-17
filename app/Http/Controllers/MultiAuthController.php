@@ -18,10 +18,6 @@ class MultiAuthController extends Controller
 	{
 		$authCredentials = $request->only('email', 'password');
 		$guardType = $request->guard_type;
-		dd(Auth::attempt(['email' => $request->email, 'password' => $request->password]));
-
-		dd(Auth::guard('students'));
-
 
 		if(Auth::guard($guardType)->attempt($authCredentials)){
 			dd('test');
