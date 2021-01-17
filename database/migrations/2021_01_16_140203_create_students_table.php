@@ -20,8 +20,8 @@ class CreateStudentsTable extends Migration
 			$table->timestamp('email_verified_at')->nullable();
 			$table->string('password');
 			$table->rememberToken();
-			$table->string('mumber_num');
-			$table->string('birthday');
+			$table->string('member_num');
+			$table->date('birthday');
 			$table->string('gender');
 			$table->timestamps();
 		});
