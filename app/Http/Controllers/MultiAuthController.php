@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class MultiAuthController extends Controller
@@ -16,8 +18,12 @@ class MultiAuthController extends Controller
 	{
 		$authCredentials = $request->only('email', 'password');
 		$guardType = $request->guard_type;
+		dd(Auth::attempt(['email' => $request->email, 'password' => $request->password]));
 
-		if(Auth::attempt($authCredentials)){
+		dd(Auth::guard('students'));
+
+
+		if(Auth::guard($guardType)->attempt($authCredentials)){
 			dd('test');
 			return redirect($guardType.'/dashboard');
 		}

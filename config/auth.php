@@ -47,15 +47,15 @@ return [
 			'hash' => false,
 		],
 
-		// 'students' => [
-		// 	'driver' => 'session',
-		// 	'provider' => 'students',
-		// ],
+		'students' => [
+			'driver' => 'session',
+			'provider' => 'students',
+		],
 
-		// 'teachers' => [
-		// 	'driver' => 'session',
-		// 	'provider' => 'teachers',
-		// ],
+		'teachers' => [
+			'driver' => 'session',
+			'provider' => 'teachers',
+		],
 	],
 
 	/*
