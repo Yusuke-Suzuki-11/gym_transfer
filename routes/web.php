@@ -3,4 +3,15 @@
 use App\Http\Controllers\MultiAuthController;
 use Illuminate\Support\Facades\Route;
 
+// 認証
 Route::get('/login', [MultiAuthController::class, 'showLoginForm'])->name('show_login_form');
+Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
+Route::get('/logout', [MultiAuthController::class, 'logout'])->name('logout');
+
+// 生徒ページ
+Route::prefix('students')->middleware('auth:students')->group(function(){
+});
+
+// 先生ページ
+Route::prefix('teachers')->middleware('auth:teachers')->group(function(){
+});

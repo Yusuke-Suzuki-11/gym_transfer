@@ -12,12 +12,13 @@
 		</div>
 
 		<div class="auth-form">
-			<form action="{{}}" method="POST">
+			<form action="{{route('login')}}" method="POST">
 				@csrf
+				<input class="auth-login-input" type="text" placeholder="メールアドレス" name="email">
 
-				<input class="auth-login-input" type="text" placeholder="会員番号を入力してください">
+				<input class="auth-login-input" type="text" placeholder="パスワード" name="password">
 
-				<input class="auth-login-input" type="text" placeholder="パスワードを入力してください">
+				<input type="hidden" name="guard_type" value="students">
 
 				<button class="auth-submit-btn" type="submit">ログイン</button>
 			</form>

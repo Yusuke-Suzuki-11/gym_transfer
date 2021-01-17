@@ -29,15 +29,15 @@ class MultiAuthTableSeeder extends Seeder
 		];
 
 		foreach($students as $student){
-			$studentRow = new Student();
+			$StudentRow = new Student();
 
-			$studentRow->name = $student['name'];
-			$studentRow->email = $student['email'];
-			$studentRow->password = Hash::make($student['password']);
-			$studentRow->member_num = $student['member_num'];
-			$studentRow->birthday = $student['birthday'];
-			$studentRow->gender = $student['gender'];
-			$studentRow->save();
+			$StudentRow->name = $student['name'];
+			$StudentRow->email = $student['email'];
+			$StudentRow->password = Hash::make($student['password']);
+			$StudentRow->member_num = $student['member_num'];
+			$StudentRow->birthday = $student['birthday'];
+			$StudentRow->gender = $student['gender'];
+			$StudentRow->save();
 		}
 
 		$teachers = [
@@ -52,15 +52,15 @@ class MultiAuthTableSeeder extends Seeder
 		];
 
 		foreach($teachers as $teacher){
-			$teacherRow = new Teacher();
+			$TeacherRow = new Teacher();
 
-			$teacherRow->name = $teacher['name'];
-			$teacherRow->email = $teacher['email'];
-			$teacherRow->password = Hash::make($teacher['password']);
-			$teacherRow->member_num = $teacher['member_num'];
-			$teacherRow->birthday = $teacher['birthday'];
-			$teacherRow->gender = $teacher['gender'];
-			$teacherRow->save();
+			$TeacherRow->name = $teacher['name'];
+			$TeacherRow->email = $teacher['email'];
+			$TeacherRow->password = Hash::make($teacher['password']);
+			$TeacherRow->member_num = $teacher['member_num'];
+			$TeacherRow->birthday = $teacher['birthday'];
+			$TeacherRow->gender = $teacher['gender'];
+			$TeacherRow->save();
 		}
 	}
 }
