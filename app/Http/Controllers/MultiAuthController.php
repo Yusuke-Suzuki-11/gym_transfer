@@ -20,8 +20,7 @@ class MultiAuthController extends Controller
 		$guardType = $request->guard_type;
 
 		if(Auth::guard($guardType)->attempt($authCredentials)){
-			dd('test');
-			return redirect($guardType.'/dashboard');
+			return redirect($guardType);
 		}
 
 		return back()->withErrors(['auth' => ['ログインに失敗しました']]);

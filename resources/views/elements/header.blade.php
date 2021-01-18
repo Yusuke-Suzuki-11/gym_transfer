@@ -8,6 +8,17 @@
 			<li class="header-menu-item">
 				<a href="#">ホームページ</a>
 			</li>
+
+			@auth('students')
+				<li class="header-menu-item">
+					<a href="#">振替申請</a>
+				</li>
+			@endauth
+
+			@auth('teachers')
+
+
+			@endauth
 		</ul>
 	</div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MultiAuthController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 // 認証
@@ -9,6 +10,7 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 
 // 生徒ページ
 Route::prefix('students')->middleware('auth:students')->group(function(){
+    Route::get('', [StudentController::class, 'index'])->name('students');
 });
 
 // 先生ページ
