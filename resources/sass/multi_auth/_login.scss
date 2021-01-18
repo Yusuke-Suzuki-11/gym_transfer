@@ -1,0 +1,80 @@
+.auth-logo{
+	margin: 40px 0 15px;
+	text-align: center;
+
+	img{
+		display: block;
+		margin: 0 auto;
+		width: 120px;
+	}
+
+	span{
+		display: block;
+		margin-top: 3px;
+		font-family: 'Fredoka One', cursive;
+		color: #23ACE4;
+		text-shadow: 1px 1px 3px rgba(124, 124, 124, 0.186);
+		font-size: 1.2rem;
+		letter-spacing: 0.5px;
+	}
+}
+
+.auth-container{
+	text-align: center;
+	color: white;
+	width: 35%;
+	background-color: #23ACE4;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px rgba(51, 51, 51, 0.549);
+
+	.auth-top{
+		padding-top: 30px;
+		margin-bottom: 20px;
+
+		.auth-top-title{
+			font-weight: bold;
+			font-size: 1.7rem;
+			text-shadow: 1px 1px 3px rgba(124, 124, 124, 0.802);
+		}
+
+		span{
+			display: block;
+			margin-top: 10px;
+			font-size: 0.8rem;
+			letter-spacing: 1px;
+		}
+	}
+
+	.auth-form{
+
+		.auth-login-input{
+			display: block;
+			margin: 20px auto 0;
+			padding: 10px;
+			width: 300px;
+			border-radius: 5px;
+			border: none;
+			color: rgb(58, 45, 45);
+			outline: none;
+			box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.549);
+
+			&:focus{
+				box-shadow: 0 0 8px rgba(255, 255, 255, 0.755) ;
+			}
+		}
+
+		.auth-submit-btn{
+			padding: 7px;
+			width: 120px;
+			border-radius: 20px;
+			color: rgba(75, 75, 75, 0.604);
+			font-weight: bold;
+			cursor: pointer;
+			border: none;
+			font-size: 1rem;
+			margin: 20px 0 30px;
+			border: 1px solid rgba(31, 31, 31, 0.433);
+		}
+	}
+}
