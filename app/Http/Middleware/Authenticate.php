@@ -17,8 +17,6 @@ class Authenticate extends Middleware
 	{
 		if (! $request->expectsJson()) {
 			$uri = $request->path();
-
-
 			if(Str::startsWith($uri, ['students/', 'teachers/'])) {
 				return route('show_login_form');
 			}

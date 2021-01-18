@@ -22,8 +22,17 @@ class MultiAuthController extends Controller
 		if(Auth::guard($guardType)->attempt($authCredentials)){
 			return redirect($guardType);
 		}
-
 		return back()->withErrors(['auth' => ['ログインに失敗しました']]);
+	}
 
+	public function logout(Request $request)
+	{
+		Auth::logout();
+
+		$request->session()->invalidate();
+		$request->session()->regenerateToken();
+
+		session()->flash('flash_message', 'ログアウトしました');
+		return redirect(route('login'));
 	}
 }
