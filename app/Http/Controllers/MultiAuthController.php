@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class MultiAuthController extends Controller
 {
+
+
 	public function showLoginForm()
 	{
 		return view('multi_auth.login');
@@ -19,9 +21,15 @@ class MultiAuthController extends Controller
 		$authCredentials = $request->only('email', 'password');
 		$guardType = $request->guard_type;
 
+		if(preg_match('/example/', $request->email)){
+			$guardType = 'teachers';
+		}
+
+
 		if(Auth::guard($guardType)->attempt($authCredentials)){
 			return redirect($guardType);
 		}
+
 		return back()->withErrors(['auth' => ['ログインに失敗しました']]);
 	}
 
