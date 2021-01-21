@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class MultiAuthController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('guest:students');
+		$this->middleware('guest:teachers');
+	}
 
 
 	public function showLoginForm()
@@ -31,16 +36,5 @@ class MultiAuthController extends Controller
 		}
 
 		return back()->withErrors(['auth' => ['ログインに失敗しました']]);
-	}
-
-	public function logout(Request $request)
-	{
-		Auth::logout();
-
-		$request->session()->invalidate();
-		$request->session()->regenerateToken();
-
-		session()->flash('flash_message', 'ログアウトしました');
-		return redirect(route('login'));
 	}
 }

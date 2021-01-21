@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('content')
+	@if(Session::has("flash_message"))
+		<p class="alert">{{ Session::get("flash_message") }}</p>
+	@endif
 	<div class="auth-logo">
 		<img src="image/logo.png" alt="ロゴ">
 		<span>With Gymnastics</span>
@@ -16,7 +19,7 @@
 				@csrf
 				<input class="auth-login-input" type="text" placeholder="メールアドレス" name="email">
 
-				<input class="auth-login-input" type="text" placeholder="パスワード" name="password">
+				<input class="auth-login-input" type="password" placeholder="パスワード" name="password">
 
 				<input type="hidden" name="guard_type" value="students">
 
