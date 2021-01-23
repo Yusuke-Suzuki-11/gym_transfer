@@ -144,6 +144,16 @@ header .header .header-menu .header-menu-item a {
   font-weight: bold;
 }
 
+.session-error-message {
+  font-size: 1rem;
+  background-color: rgba(220, 20, 60, 0.864);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 12px 15px;
+  color: white;
+  position: fixed;
+}
+
 .auth-logo {
   margin: 40px 0 15px;
   text-align: center;
@@ -199,7 +209,7 @@ header .header .header-menu .header-menu-item a {
   box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.549);
 }
 .auth-container .auth-form .auth-login-input:focus {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.755);
+  box-shadow: 0 0 5px white;
 }
 .auth-container .auth-form .auth-submit-btn {
   padding: 7px;
@@ -212,4 +222,9 @@ header .header .header-menu .header-menu-item a {
   font-size: 1rem;
   margin: 20px 0 30px;
   border: 1px solid rgba(31, 31, 31, 0.433);
+}
+.auth-container .auth-form .auth-submit-btn:active {
+  outline: none;
+  border: none;
+  background-color: crimson;
 }
