@@ -18,7 +18,7 @@
 
 	<body>
 			@yield('content')
-			
+			@include('js.session_message_js')
 
 	</body>
 </html>

@@ -3,7 +3,7 @@
 @section('content')
 	@if(Session::has("flash_message"))
 		<div id="session-error">
-			<p class="session-error-message" >ログアウトしました</p>
+			<p class="session-error-message" > {{ session('flash_message') }}</p>
 		</div>
 	@endif
 	<div class="content">
@@ -31,10 +31,4 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		$('#session-error').hide().fadeIn(1000);
-		setTimeout(() => {
-			$('#session-error').fadeOut(1000);
-		}, 3000);
-	</script>
 @endsection

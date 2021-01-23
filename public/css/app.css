@@ -154,6 +154,16 @@ header .header .header-menu .header-menu-item a {
   position: fixed;
 }
 
+.session-success-message {
+  font-size: 1rem;
+  background-color: #09bd69;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 12px 15px;
+  color: white;
+  position: fixed;
+}
+
 .auth-logo {
   margin: 40px 0 15px;
   text-align: center;
