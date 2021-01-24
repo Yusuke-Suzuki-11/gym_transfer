@@ -103,7 +103,7 @@ input, select {
   vertical-align: middle;
 }
 
-header {
+.header-top {
   height: 70px;
   background-color: #23ACE4;
   width: 100%;
@@ -111,34 +111,44 @@ header {
   display: block;
   border-bottom: 1px solid rgba(118, 118, 118, 0.439);
 }
-header .header {
+
+.admin-header-top {
+  height: 70px;
+  background-color: #002c3d;
+  width: 100%;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid rgba(118, 118, 118, 0.439);
+}
+
+.header {
   width: 95%;
   margin: 0 auto;
   color: white;
 }
-header .header .header-container {
+.header .header-container {
   font-family: "Fredoka One", cursive;
   position: absolute;
   top: 20px;
   float: left;
 }
-header .header .header-container .header-logo {
+.header .header-container .header-logo {
   font-size: 2rem;
   text-shadow: 1px 1px 3px #3d3d3d;
   letter-spacing: 0.5px;
 }
-header .header .header-menu {
+.header .header-menu {
   position: relative;
   top: 35px;
   font-size: 0.9rem;
   text-shadow: 1px 1px 1px #5a5a5a;
   letter-spacing: 2px;
 }
-header .header .header-menu .header-menu-item {
+.header .header-menu .header-menu-item {
   float: right;
   display: inline-block;
 }
-header .header .header-menu .header-menu-item a {
+.header .header-menu .header-menu-item a {
   margin: 0 10px;
   color: white;
   font-weight: bold;
