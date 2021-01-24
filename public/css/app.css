@@ -164,6 +164,46 @@ header .header .header-menu .header-menu-item a {
   position: fixed;
 }
 
+.st-sidebar {
+  width: 20%;
+}
+.st-sidebar .st-events {
+  padding: 42px 0;
+  display: inline-flex;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+}
+.st-sidebar .st-events .st-event-item {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.st-sidebar .st-events .st-event-item-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.st-sidebar .st-events .st-event-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.st-sidebar .st-side-menu-box .st-side-menu {
+  margin: 0 auto;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li {
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+  line-height: 50px;
+  cursor: pointer;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li:hover {
+  background-color: aquamarine;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li .st-side-menu-item {
+  width: 88%;
+  float: right;
+  margin: 0 auto;
+  font-size: 0.85rem;
+}
+
 .auth-logo {
   margin: 40px 0 15px;
   text-align: center;
@@ -241,46 +281,6 @@ header .header .header-menu .header-menu-item a {
 
 .st-index {
   display: flex;
-}
-
-.st-sidebar {
-  width: 20%;
-}
-.st-sidebar .st-events {
-  padding: 42px 0;
-  display: inline-flex;
-  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
-}
-.st-sidebar .st-events .st-event-item {
-  width: 30%;
-  margin: auto;
-  text-align: center;
-}
-.st-sidebar .st-events .st-event-item-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-}
-.st-sidebar .st-events .st-event-name {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-.st-sidebar .st-side-menu-box .st-side-menu {
-  margin: 0 auto;
-}
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li {
-  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
-  line-height: 50px;
-  cursor: pointer;
-}
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li:hover {
-  background-color: aquamarine;
-}
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li .st-side-menu-item {
-  width: 88%;
-  float: right;
-  margin: 0 auto;
-  font-size: 0.85rem;
 }
 
 .st-calendar {
