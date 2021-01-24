@@ -17,7 +17,7 @@ class CreateTransfersTable extends Migration
 			$table->id();
 			$table->integer('transfer_enabled')->default(1);
 			$table->integer('student_id');
-			$table->integer('corse_id');
+			$table->integer('course_id');
 		});
 	}
 

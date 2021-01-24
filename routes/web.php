@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MultiAuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -14,6 +15,8 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 // 生徒ページ
 Route::prefix('students')->middleware('auth:students')->group(function(){
 	Route::get('', [StudentController::class, 'index'])->name('students');
+	Route::get('/course', [CourseController::class, 'index'])->name('students.course');
+
 });
 
 // 先生ページ
