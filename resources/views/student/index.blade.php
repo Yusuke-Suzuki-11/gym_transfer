@@ -10,7 +10,8 @@
 		@include('elements.st_sidebar')
 
 		<div class="st-calendar">
-			
+			ここにカレンダー
+
 		</div>
 	</div>
 
