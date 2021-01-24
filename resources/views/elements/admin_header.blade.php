@@ -6,7 +6,7 @@
 
 		<div class="header-menu">
 			<ul>
-				@auth('teacher')
+				@auth('teachers')
 					<li class="header-menu-item">
 						<a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="#">
 							ログアウト
@@ -15,7 +15,11 @@
 							@csrf
 						</form>
                     </li>
-                    
+					<li class="header-menu-item">
+						<a href="#">
+                            本日の練習
+						</a>
+                    </li>
 				@endauth
 			</ul>
 		</div>
