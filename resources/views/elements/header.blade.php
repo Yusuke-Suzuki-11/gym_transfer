@@ -15,7 +15,7 @@
 					<a href="#">振替申請</a>
 				</li>
 				<li class="header-menu-item">
-					<a href="#">ホームページ</a>
+					<a href="https://with-gym.com/" target=”_blank”>ホームページ</a>
 				</li>
 				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 					@csrf

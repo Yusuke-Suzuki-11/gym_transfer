@@ -6,5 +6,12 @@
 			<p class="session-success-message" > {{ session('flash_message') }}</p>
 		</div>
 	@endif
+	<div class="st-index">
+		@include('elements.st_sidebar')
+
+		<div class="st-calendar">
+
+		</div>
+	</div>
 
 @endsection
