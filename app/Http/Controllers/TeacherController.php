@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\LessonTime;
 use Illuminate\Http\Request;
 use App\Models\Student;

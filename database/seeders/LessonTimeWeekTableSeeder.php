@@ -69,7 +69,6 @@ class LessonTimeWeekTableSeeder extends Seeder
 
 		$count = 1;
 		foreach($lessonTimes as $lessonTime){
-
 			foreach($lessonTime as $time){
 				$week = new Week();
 				$week = $week->find($count);
@@ -80,7 +79,6 @@ class LessonTimeWeekTableSeeder extends Seeder
 				$week->lesson_times()->attach($lessonTimeId);
 			}
 			$count++;
-
 		}
 	}
 }
