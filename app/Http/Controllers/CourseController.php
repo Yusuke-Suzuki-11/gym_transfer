@@ -18,6 +18,7 @@ class CourseController extends Controller
 
 	public function admin_index()
 	{
+
 		return view('course.admin_index');
 	}
 
@@ -28,8 +29,6 @@ class CourseController extends Controller
 
 	public function admin_create(Request $request)
 	{
-		
-
 		return redirect('teachers.course.add');
 	}
 }

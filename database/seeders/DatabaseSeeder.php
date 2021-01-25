@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(MultiAuthTableSeeder::class);
 		$this->call(WeeksTableSeeder::class);
 		$this->call(LessonTimesTableSeeder::class);
+		$this->call(LessonTimeWeekTableSeeder::class);
 	}
 }

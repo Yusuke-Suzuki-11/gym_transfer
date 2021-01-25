@@ -779,6 +779,7 @@ class ComposerStaticInit703d3d16d1f19a41daf4ca582af78704
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\LessonTimesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/LessonTimesTableSeeder.php',
         'Database\\Seeders\\MultiAuthTableSeeder' => __DIR__ . '/../..' . '/database/seeders/MultiAuthTableSeeder.php',
         'Database\\Seeders\\WeeksTableSeeder' => __DIR__ . '/../..' . '/database/seeders/WeeksTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',

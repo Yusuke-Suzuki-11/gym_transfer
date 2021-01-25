@@ -9,5 +9,9 @@ class LessonTime extends Model
 {
     use HasFactory;
 
-    
+    public function weeks()
+    {
+        return $this->belongsToMany('App\LessonTime');
+    }
+
 }

@@ -216,6 +216,7 @@ return array(
     'DASPRiD\\Enum\\NullValue' => $vendorDir . '/dasprid/enum/src/NullValue.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
+    'Database\\Seeders\\LessonTimesTableSeeder' => $baseDir . '/database/seeders/LessonTimesTableSeeder.php',
     'Database\\Seeders\\MultiAuthTableSeeder' => $baseDir . '/database/seeders/MultiAuthTableSeeder.php',
     'Database\\Seeders\\WeeksTableSeeder' => $baseDir . '/database/seeders/WeeksTableSeeder.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
