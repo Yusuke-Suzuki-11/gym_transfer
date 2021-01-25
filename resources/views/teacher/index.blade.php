@@ -1,6 +1,10 @@
 @extends('layout')
 
 @section('content')
-{{Auth::user()->name}}
+@foreach ($CourseRowset as $CourseRow)
+{{$CourseRow->id}}
+<br>
+
+@endforeach
 
 @endsection

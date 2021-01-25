@@ -13,6 +13,9 @@ class TeacherController extends Controller
 {
 	public function index()
 	{
-		return view('teacher.index');
+		$className = [];
+		foreach(Course::all() as $CourseRow){
+		}
+		return view('teacher.index')->with('CourseRowset' ,Course::all());
 	}
 }
