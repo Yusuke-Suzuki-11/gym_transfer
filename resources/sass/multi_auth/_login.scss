@@ -43,6 +43,8 @@
 			margin-top: 10px;
 			font-size: 0.8rem;
 			letter-spacing: 1px;
+
+
 		}
 	}
 
@@ -60,7 +62,7 @@
 			box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.549);
 
 			&:focus{
-				box-shadow: 0 0 8px rgba(255, 255, 255, 0.755) ;
+				box-shadow: 0 0 5px rgb(255, 255, 255) ;
 			}
 		}
 
@@ -75,6 +77,14 @@
 			font-size: 1rem;
 			margin: 20px 0 30px;
 			border: 1px solid rgba(31, 31, 31, 0.433);
+
+			&:active{
+				outline: none;
+				border: none;
+				background-color: crimson;
+			}
 		}
+
+
 	}
 }

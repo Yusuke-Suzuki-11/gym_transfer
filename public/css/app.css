@@ -103,7 +103,7 @@ input, select {
   vertical-align: middle;
 }
 
-header {
+.header-top {
   height: 70px;
   background-color: #23ACE4;
   width: 100%;
@@ -111,37 +111,107 @@ header {
   display: block;
   border-bottom: 1px solid rgba(118, 118, 118, 0.439);
 }
-header .header {
+
+.admin-header-top {
+  height: 70px;
+  background-color: #004361;
+  width: 100%;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid rgba(118, 118, 118, 0.439);
+}
+
+.header {
   width: 95%;
   margin: 0 auto;
   color: white;
 }
-header .header .header-container {
+.header .header-container {
   font-family: "Fredoka One", cursive;
   position: absolute;
   top: 20px;
   float: left;
 }
-header .header .header-container .header-logo {
+.header .header-container .header-logo {
   font-size: 2rem;
   text-shadow: 1px 1px 3px #3d3d3d;
   letter-spacing: 0.5px;
 }
-header .header .header-menu {
+.header .header-menu {
   position: relative;
   top: 35px;
   font-size: 0.9rem;
   text-shadow: 1px 1px 1px #5a5a5a;
   letter-spacing: 2px;
 }
-header .header .header-menu .header-menu-item {
+.header .header-menu .header-menu-item {
   float: right;
   display: inline-block;
 }
-header .header .header-menu .header-menu-item a {
+.header .header-menu .header-menu-item a {
   margin: 0 10px;
   color: white;
   font-weight: bold;
+}
+
+.session-error-message {
+  font-size: 1rem;
+  background-color: rgba(220, 20, 60, 0.864);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 12px 15px;
+  color: white;
+  position: fixed;
+}
+
+.session-success-message {
+  font-size: 1rem;
+  background-color: #09bd69;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 12px 15px;
+  color: white;
+  position: fixed;
+}
+
+.st-sidebar {
+  width: 20%;
+}
+.st-sidebar .st-events {
+  padding: 42px 0;
+  display: inline-flex;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+}
+.st-sidebar .st-events .st-event-item {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.st-sidebar .st-events .st-event-item-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.st-sidebar .st-events .st-event-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.st-sidebar .st-side-menu-box .st-side-menu {
+  margin: 0 auto;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li {
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+  line-height: 50px;
+  cursor: pointer;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li:hover {
+  background-color: aquamarine;
+}
+.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li .st-side-menu-item {
+  width: 88%;
+  float: right;
+  margin: 0 auto;
+  font-size: 0.85rem;
 }
 
 .auth-logo {
@@ -199,7 +269,7 @@ header .header .header-menu .header-menu-item a {
   box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.549);
 }
 .auth-container .auth-form .auth-login-input:focus {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.755);
+  box-shadow: 0 0 5px white;
 }
 .auth-container .auth-form .auth-submit-btn {
   padding: 7px;
@@ -212,4 +282,19 @@ header .header .header-menu .header-menu-item a {
   font-size: 1rem;
   margin: 20px 0 30px;
   border: 1px solid rgba(31, 31, 31, 0.433);
+}
+.auth-container .auth-form .auth-submit-btn:active {
+  outline: none;
+  border: none;
+  background-color: crimson;
+}
+
+.st-index {
+  display: flex;
+}
+
+.st-calendar {
+  height: 200px;
+  outline: 1px solid rgba(0, 0, 0, 0.508);
+  width: 80%;
 }

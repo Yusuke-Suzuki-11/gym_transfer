@@ -25,6 +25,7 @@ class MultiAuthTableSeeder extends Seeder
 				'member_num' => '11223344',
 				'birthday' => '1995-09-07',
 				'gender' => '1',
+				'stress_point' => '3',
 			],
 		];
 
@@ -37,6 +38,7 @@ class MultiAuthTableSeeder extends Seeder
 			$StudentRow->member_num = $student['member_num'];
 			$StudentRow->birthday = $student['birthday'];
 			$StudentRow->gender = $student['gender'];
+			$StudentRow->stress_point = $student['stress_point'];
 			$StudentRow->save();
 		}
 
