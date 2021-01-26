@@ -95,7 +95,7 @@ class AuthenticatedSessionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Laravel\Fortify\Contracts\LogoutResponse
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request): LogoutResponse
     {
         $this->guard->logout();
 
@@ -103,7 +103,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        $request->session()->flash('flash_message', 'ログアウトしました');
-        return redirect(route('show_login_form'));
+        return app(LogoutResponse::class);
     }
 }
