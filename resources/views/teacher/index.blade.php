@@ -2,9 +2,9 @@
 
 @section('content')
 @foreach ($CourseRowset as $CourseRow)
-{{$CourseRow->id}}
-<br>
-
+    @foreach ($CourseRow->week()->get() as $week){
+        {{$CourseRow->Week()->get()->first()->day_of_week + $week->lesson_times()->get()->id}}
+    }
 @endforeach
 
 @endsection
