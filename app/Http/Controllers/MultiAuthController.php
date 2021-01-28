@@ -26,16 +26,17 @@ class MultiAuthController extends Controller
 		$authCredentials = $request->only('email', 'password');
 		$guardType = $request->guard_type;
 
-		if(preg_match('/example/', $request->email)){
+		if (preg_match('/example/', $request->email)) {
 			$guardType = 'teachers';
 		}
 
 
-		if(Auth::guard($guardType)->attempt($authCredentials)){
+		if (Auth::guard($guardType)->attempt($authCredentials)) {
 			$request->session()->flash('flash_message', 'ログインしました');
 			return redirect($guardType);
 		}
 
-		return back()->withErrors(['auth' => ['ログインに失敗しました']]);
+		$request->session()->flash('flash_message', 'ログインに失敗しました');
+		return back();
 	}
 }

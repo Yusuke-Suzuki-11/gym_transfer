@@ -1,15 +1,15 @@
 <div class="st-sidebar">
 	<div class="st-events">
 		<div class="st-event-item">
-			<img class="st-event-item-img" src="/storage/events/sample_icon.jpg">
+			<img class="st-event-item-img" src="/image/test.jpg">
 			<span class="st-event-name">床:17級</span>
 		</div>
 		<div class="st-event-item">
-			<img class="st-event-item-img" src="/storage/events/sample_icon.jpg">
+			<img class="st-event-item-img" src="/image/test.jpg">
 			<span class="st-event-name">鉄棒:17級</span>
 		</div>
 		<div class="st-event-item">
-			<img class="st-event-item-img" src="/storage/events/sample_icon.jpg">
+			<img class="st-event-item-img" src="/image/test.jpg">
 			<span class="st-event-name">とび箱:17級</span>
 		</div>
 	</div>
