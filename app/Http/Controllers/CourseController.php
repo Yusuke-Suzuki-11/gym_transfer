@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\LessonTime;
+use App\Models\Student;
+use App\Models\Week;
 use App\Models\Transfer;
 use GuzzleHttp\Middleware;
 use Illuminate\Auth\Events\Login;
@@ -13,18 +16,23 @@ class CourseController extends Controller
 {
 	public function index()
 	{
-		return view('course.index');
+		$WeekRowset = Week::all();
+		$LessonTimeRowset = LessonTime::all();
+		$courseArry = [];
+
+		foreach (Course::all() as $course) {
+			$lessonTime = $LessonTimeRowset->where('id', $course->course_times_id)->first()->lesson_time;
+			$weekDay = $WeekRowset->where('id', $course->week_id)->first()->day_of_week;
+
+			$courseArry[] = $weekDay . ' ' . $lessonTime;
+		}
+		$CourseRowset = Course::all();
+		return view('course.admin_index')->with(['courseArry' => $courseArry, 'CourseRowset' => $CourseRowset, 'StudentRowset' => Student::all()]);
 	}
 
-	public function admin_index()
+	public function add()
 	{
-
-		return view('course.admin_index');
-	}
-
-	public function admin_add()
-	{
-		return view('course.admin_add');
+		return view('course.add');
 	}
 
 	public function admin_create(Request $request)
