@@ -35,8 +35,8 @@ class CourseController extends Controller
 		return view('course.add');
 	}
 
-	public function admin_create(Request $request)
+	public function create(Request $request)
 	{
-		return redirect('teachers.course.add');
+		return redirect('tc.course.add');
 	}
 }

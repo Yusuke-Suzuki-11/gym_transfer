@@ -30,7 +30,6 @@ class MultiAuthController extends Controller
 			$guardType = 'teachers';
 		}
 
-
 		if (Auth::guard($guardType)->attempt($authCredentials)) {
 			$request->session()->flash('flash_message', 'ログインしました');
 			return redirect($guardType);

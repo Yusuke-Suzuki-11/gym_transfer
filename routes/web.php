@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MultiAuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TeacherStudentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,8 +24,9 @@ Route::prefix('teachers')->middleware('auth:teachers')->group(function () {
 	Route::get('', [TeacherController::class, 'index'])->name('tc');
 
 	// 生徒管理
-	Route::get('/student', [StudentController::class, 'teachers.student.index'])->name('tc.student.');
-	Route::get('/student/{id}', [StudentController::class, 'teachers.student.show'])->name('tc.student.show');
+	Route::get('/student', [TeacherStudentController::class, 'index'])->name('tc.student.');
+	Route::get('/student/{id}', [TeacherStudentController::class, 'show'])->name('tc.student.show');
+	Route::get('/student/{id}/edit', [TeacherStudentController::class, 'edit'])->name('tc.student.edit');
 
 	// コース
 	Route::get('/courses', [CourseController::class, 'index'])->name('tc.course');
