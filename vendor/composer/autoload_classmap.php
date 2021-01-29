@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\MultiAuthController' => $baseDir . '/app/Http/Controllers/MultiAuthController.php',
     'App\\Http\\Controllers\\StudentController' => $baseDir . '/app/Http/Controllers/StudentController.php',
     'App\\Http\\Controllers\\TeacherController' => $baseDir . '/app/Http/Controllers/TeacherController.php',
+    'App\\Http\\Controllers\\TeacherStudentController' => $baseDir . '/app/Http/Controllers/TeacherStudentController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

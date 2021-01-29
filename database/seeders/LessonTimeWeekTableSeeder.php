@@ -26,9 +26,7 @@ class LessonTimeWeekTableSeeder extends Seeder
 				"16:20~17:10",
 				"17:20~18:10",
 			],
-			[
-
-			],
+			[],
 			[
 				"15:10~16:00",
 				"16:10~17:00",
@@ -68,11 +66,11 @@ class LessonTimeWeekTableSeeder extends Seeder
 		];
 
 		$count = 1;
-		foreach($lessonTimes as $lessonTime){
-			foreach($lessonTime as $time){
+		foreach ($lessonTimes as $lessonTime) {
+			foreach ($lessonTime as $time) {
 				$week = new Week();
 				$week = $week->find($count);
-				if(empty($week)){
+				if (empty($week)) {
 					continue;
 				}
 				$lessonTimeId = LessonTime::where('lesson_time', $time)->first()->id;

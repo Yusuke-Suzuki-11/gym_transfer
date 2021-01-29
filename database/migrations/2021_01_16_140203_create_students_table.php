@@ -23,6 +23,8 @@ class CreateStudentsTable extends Migration
 			$table->string('member_num');
 			$table->date('birthday');
 			$table->string('gender');
+			$table->integer('stress_point');
+			$table->integer();
 			$table->timestamps();
 		});
 	}

@@ -582,6 +582,7 @@ class ComposerStaticInit703d3d16d1f19a41daf4ca582af78704
         'App\\Http\\Controllers\\MultiAuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/MultiAuthController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\TeacherController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherController.php',
+        'App\\Http\\Controllers\\TeacherStudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherStudentController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

@@ -8,5 +8,10 @@ use Illuminate\foundation\Auth\User as Authenticatable;
 
 class Student extends Authenticatable
 {
-    use HasFactory;
+	use HasFactory;
+
+	public function getCourseRowset()
+	{
+		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
+	}
 }

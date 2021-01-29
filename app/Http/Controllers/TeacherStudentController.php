@@ -27,6 +27,6 @@ class TeacherStudentController extends Controller
 	public function edit($id)
 	{
 		$StudentRow = Student::find($id);
-		return view();
+		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow]);
 	}
 }
