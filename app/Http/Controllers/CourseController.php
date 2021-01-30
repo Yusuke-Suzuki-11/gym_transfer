@@ -21,7 +21,7 @@ class CourseController extends Controller
 		$courseArry = [];
 
 		foreach (Course::all() as $course) {
-			$lessonTime = $LessonTimeRowset->where('id', $course->course_times_id)->first()->lesson_time;
+			$lessonTime = $LessonTimeRowset->where('id', $course->lesson_time_id)->first()->lesson_time;
 			$weekDay = $WeekRowset->where('id', $course->week_id)->first()->day_of_week;
 
 			$courseArry[] = $weekDay . ' ' . $lessonTime;

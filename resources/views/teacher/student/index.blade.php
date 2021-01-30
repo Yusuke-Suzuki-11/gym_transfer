@@ -5,7 +5,7 @@
 
 @foreach ($StudentRowset as $StudentRow)
 	<a href="{{route('tc.student.show', ['id' => $StudentRow->id])}}">
-		{{$StudentRow->name}}
+		{{$StudentRow->full_name}}
 	</a>
 	<br>
 @endforeach
