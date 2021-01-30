@@ -15,8 +15,8 @@ class CreateLessonTimeWeekTable extends Migration
     {
         Schema::create('lesson_time_week', function (Blueprint $table) {
             $table->id();
-            $table->integer("lesson_times_id");
-            $table->integer('weeks_id');
+            $table->integer("lesson_time_id");
+            $table->integer('week_id');
             $table->timestamps();
         });
     }

@@ -74,7 +74,7 @@ class LessonTimeWeekTableSeeder extends Seeder
 					continue;
 				}
 				$lessonTimeId = LessonTime::where('lesson_time', $time)->first()->id;
-				$week->lesson_times()->attach($lessonTimeId);
+				$week->lessonTimes()->attach($lessonTimeId);
 			}
 			$count++;
 		}

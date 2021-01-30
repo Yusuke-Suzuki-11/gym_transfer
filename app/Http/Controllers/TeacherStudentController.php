@@ -29,4 +29,11 @@ class TeacherStudentController extends Controller
 		$StudentRow = Student::find($id);
 		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow]);
 	}
+
+	public function update($id)
+	{
+		$StudentRow = Student::find($id);
+		dd($StudentRow);
+		redirect(route('teacher.student.edit', ['id' => $StudentRow->id]));
+	}
 }

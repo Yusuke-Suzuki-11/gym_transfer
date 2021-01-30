@@ -10,7 +10,7 @@ class Student extends Authenticatable
 {
 	use HasFactory;
 
-	public function getCourseRowset()
+	public function courses()
 	{
 		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
 	}

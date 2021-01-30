@@ -11,8 +11,8 @@ class Week extends Model
 {
 	use HasFactory;
 
-	public function lesson_times()
+	public function lessonTimes()
 	{
-		return $this->belongsToMany("App\Models\LessonTime", 'lesson_time_week', 'weeks_id', 'lesson_times_id');
+		return $this->belongsToMany("App\Models\LessonTime", 'lesson_time_week', 'week_id', 'lesson_time_id');
 	}
 }
