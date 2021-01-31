@@ -14,8 +14,8 @@ class Course extends Model
 		return $this->belongsTo('App\Models\Week');
 	}
 
-	public function lessonTimes()
+	public function lessonTime()
 	{
-		return $this->belongsTo('App\Models\LessonTime', 'course_student', 'course_id', 'student_id');
+		return $this->belongsTo('App\Models\LessonTime');
 	}
 }

@@ -21,4 +21,19 @@ class Student extends Authenticatable
 		$birthday = str_replace("-", "", $birthday);
 		return floor(($now - $birthday) / 10000) . '歳';
 	}
+
+	public function getCourseAndLessonTimesBy()
+	{
+		$CourseRowset = $this->courses()->get();
+
+		$courseArray = [];
+		foreach ($CourseRowset as $CourseRow) {
+			$courseArray[] = [
+				'week' => $CourseRow->week()->first()->day_of_week,
+				'lessonTime' => $CourseRow->lessonTime()->first()->lesson_time,
+			];
+		}
+
+		return $courseArray;
+	}
 }

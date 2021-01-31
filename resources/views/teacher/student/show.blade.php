@@ -31,13 +31,13 @@
 				<p>生年月日　：　{{$StudentRow->birthday}}</p>
 			</div>
 			<div class="tc-prof-content">
-				<p>性別　：　{{$StudentRow->gender}}</p>
+				<p>性別　：　{{config('const.STUDENTS.GENDER_TYPE')[$StudentRow->gender]}}</p>
 			</div>
 			<div class="tc-prof-content">
-				<p>ストレスポイント　：　{{$StudentRow->stress_point}}</p>
+				<p>ストレスポイント　：　{{config('const.STUDENTS.STRESS_POINT')[$StudentRow->stress_point]}}</p>
 			</div>
 			<div class="tc-prof-content">
-				<p>今月の振替　：　{{$StudentRow->stress_point}}</p>
+				<p>今月の振替　：　{{$StudentRow->transfer_enabled}}</p>
 			</div>
 
 
