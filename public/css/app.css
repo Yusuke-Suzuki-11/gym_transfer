@@ -214,6 +214,46 @@ input, select {
   font-size: 0.85rem;
 }
 
+.tc-sidebar {
+  width: 20%;
+}
+.tc-sidebar .tc-events {
+  padding: 42px 0;
+  display: inline-flex;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+}
+.tc-sidebar .tc-events .tc-event-item {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.tc-sidebar .tc-events .tc-event-item-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.tc-sidebar .tc-events .tc-event-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-menu {
+  margin: 0 auto;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li {
+  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+  line-height: 50px;
+  cursor: pointer;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li:hover {
+  background-color: aquamarine;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li .tc-side-menu-item {
+  width: 88%;
+  float: right;
+  margin: 0 auto;
+  font-size: 0.85rem;
+}
+
 .auth-logo {
   margin: 40px 0 15px;
   text-align: center;
@@ -297,4 +337,54 @@ input, select {
   height: 200px;
   outline: 1px solid rgba(0, 0, 0, 0.508);
   width: 80%;
+}
+
+.tc-index {
+  color: #004361;
+  display: flex;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px -6px #00000073;
+}
+
+table tr {
+  background-color: #fff;
+}
+
+table th,
+table td {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+table th {
+  width: 20%;
+  padding: 10px 0;
+  font-size: 14px;
+  padding: 15px;
+  background-color: #FFC107;
+  color: #fff;
+}
+
+table tr {
+  text-align: center;
+  width: 20%;
+  padding: 20px 0;
+  background-color: #fff;
+  color: #3a3a3a;
+}
+
+table tr:hover {
+  background-color: #d4faff;
 }
