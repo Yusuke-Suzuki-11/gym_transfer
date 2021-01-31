@@ -5,59 +5,60 @@
 	@include('elements.tc_sidebar')
 
 	<div class="tc-main">
-		<div class="tc-student-top">
-			<p>生徒一覧</p>
-			<h2>Table Design</h2>
+		<div class="tc-box">
 
-		<table class="table_box">
-		<tr>
-			<th>アイテム一覧</th>
-			<th>値段</th>
-			<th>状態</th>
-			<th>色</th>
-			<th>場所</th>
-		</tr>
-		<tr>
-			<td>ボトムス</td>
-			<td>¥25,000</td>
-			<td>古着</td>
-			<td>ブラック</td>
-			<td>下北沢</td>
-		</tr>
-		<tr>
-			<td>スニーカー</td>
-			<td>¥38,000</td>
-			<td>古着</td>
-			<td>ホワイト</td>
-			<td>吉祥寺</td>
-		</tr>
-		<tr>
-			<td>キャップ</td>
-			<td>¥8,000</td>
-			<td>古着</td>
-			<td>ネイビー</td>
-			<td>高円寺</td>
-		</tr>
-			<tr>
-			<td>バッグ</td>
-			<td>¥80,000</td>
-			<td>古着</td>
-			<td>ブラック</td>
-			<td>代官山</td>
-		</tr>
-		</table>
+			<div class="tc-student-top">
+				<p>生徒一覧</p>
+			</div>
+			<div class="tc-student-search">
+				<p class="tc-student-search-title">検索条件</p>
+				<div class="tc-student-search-main">
+					<div>
+						ダミー
+					</div>
+					<div>
+						ダミー
+					</div>
+					<div>
+						ダミー
+					</div>
+				</div>
+			</div>
 
+			<div class="tc-student-list">
+
+				<table class="table-box">
+					<tr>
+						<th>名前</th>
+						<th>クラス</th>
+						<th>メールアドレス</th>
+						<th>生年月日</th>
+						<th>電話番号</th>
+					</tr>
+					@foreach ($StudentRowset as $StudentRow)
+					<tr>
+						<td>{{$StudentRow->full_name}}</td>
+						<td>月曜 11:00~11:50</td>
+						<td>{{$StudentRow->email}}</td>
+						<td>{{$StudentRow->birthday}}</td>
+						<td>{{$StudentRow->phone}}</td>
+					</tr>
+					@endforeach
+				</table>
+			</div>
+
+
+	{{--
+			@foreach ($StudentRowset as $StudentRow)
+
+
+
+				<a href="{{route('tc.student.show', ['id' => $StudentRow->id])}}">
+					{{$StudentRow->full_name}}
+				</a>
+				<br>
+			@endforeach --}}
 		</div>
-{{--
-		@foreach ($StudentRowset as $StudentRow)
-
-
-
-			<a href="{{route('tc.student.show', ['id' => $StudentRow->id])}}">
-				{{$StudentRow->full_name}}
-			</a>
-			<br>
-		@endforeach --}}
 	</div>
 </div>
 

@@ -216,6 +216,7 @@ input, select {
 
 .tc-sidebar {
   width: 20%;
+  border-right: 1px solid rgba(90, 90, 90, 0.152);
 }
 .tc-sidebar .tc-events {
   padding: 42px 0;
@@ -344,47 +345,67 @@ input, select {
   display: flex;
 }
 
-h2 {
-  text-align: center;
+.tc-main {
+  width: 80%;
 }
 
-table {
-  border-collapse: collapse;
+.tc-box {
+  width: 96%;
   margin: 0 auto;
-  padding: 0;
+}
+.tc-box .tc-student-top {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+.tc-box .tc-student-top p {
+  display: inline-block;
+  padding: 17px 50px;
+  border-top: 3px double #004361;
+  border-bottom: 3px double #004361;
+  background-color: rgba(255, 255, 255, 0.508);
+}
+.tc-box .tc-student-search {
+  margin-top: 20px;
+}
+.tc-box .tc-student-search .tc-student-search-title {
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 20px 25px;
+  background-color: #004361;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-box .tc-student-search .tc-student-search-main {
+  background-color: white;
+  border: 1px solid #0042612f;
+}
+.tc-box .tc-student-list {
+  margin-top: 50px;
+}
+.tc-box .tc-student-list .table-box {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0 0 15px -6px #00000073;
 }
-
-table tr {
+.tc-box .tc-student-list .table-box tr {
   background-color: #fff;
-}
-
-table th,
-table td {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-}
-
-table th {
-  width: 20%;
-  padding: 10px 0;
-  font-size: 14px;
-  padding: 15px;
-  background-color: #FFC107;
-  color: #fff;
-}
-
-table tr {
   text-align: center;
   width: 20%;
   padding: 20px 0;
   background-color: #fff;
   color: #3a3a3a;
 }
-
-table tr:hover {
-  background-color: #d4faff;
+.tc-box .tc-student-list .table-box th, .tc-box .tc-student-list .table-box td {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.tc-box .tc-student-list .table-box th {
+  width: 20%;
+  padding: 10px 0;
+  padding: 15px;
+  background-color: #004361;
+  color: #fff;
 }
