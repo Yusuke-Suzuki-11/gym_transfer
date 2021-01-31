@@ -19,8 +19,8 @@ class MultiAuthTableSeeder extends Seeder
 	{
 		$students = [
 			[
-				'first_name' => '鈴木',
-				'last_name' => '佑輔',
+				'last_name' => '鈴木',
+				'first_name' => '佑輔',
 				'email' => 'mr.suzuki.11@gmail.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114514',
@@ -30,8 +30,8 @@ class MultiAuthTableSeeder extends Seeder
 				'phone' => '08055264327',
 			],
 			[
-				'first_name' => '国井',
-				'last_name' => 'ゆめ',
+				'last_name' => '国井',
+				'first_name' => 'ゆめ',
 				'email' => 'yume@example.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114515',
@@ -41,8 +41,8 @@ class MultiAuthTableSeeder extends Seeder
 				'phone' => '08055264327',
 			],
 			[
-				'first_name' => '伊藤',
-				'last_name' => 'ひろき',
+				'last_name' => '伊藤',
+				'first_name' => 'ひろき',
 				'email' => 'hiroki@example.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114516',
@@ -52,8 +52,8 @@ class MultiAuthTableSeeder extends Seeder
 				'phone' => '08055264327',
 			],
 			[
-				'first_name' => '大出',
-				'last_name' => 'はるな',
+				'last_name' => '大出',
+				'first_name' => 'はるな',
 				'email' => 'haruna@example.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114517',
@@ -69,7 +69,7 @@ class MultiAuthTableSeeder extends Seeder
 
 			$StudentRow->first_name = $student['first_name'];
 			$StudentRow->last_name = $student['last_name'];
-			$StudentRow->full_name = $student['first_name'] . ' ' . $student['last_name'];
+			$StudentRow->full_name = $student['last_name'] . ' ' . $student['first_name'];
 			$StudentRow->email = $student['email'];
 			$StudentRow->password = Hash::make($student['password']);
 			$StudentRow->member_num = $student['member_num'];
