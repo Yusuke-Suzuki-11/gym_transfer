@@ -7,3 +7,30 @@
 	width: 80%;
 }
 
+.tc-title-top{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	height: 55px;
+	background-color: #004361;
+	vertical-align: center;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+	align-items: center; /* 縦方向中央揃え */
+	-webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+	justify-content: center; /* 横方向中央揃え */
+
+
+	p{
+		color: white;
+		padding: 5px 22px;
+		border-top:  double 3px white;
+		border-bottom: double 3px white;
+
+		span{
+			text-shadow: 1px 1px 1px rgb(255, 255, 255);
+		}
+	}
+}
+

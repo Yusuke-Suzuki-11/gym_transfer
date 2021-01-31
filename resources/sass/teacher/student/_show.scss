@@ -1,0 +1,37 @@
+.tc-prof-box{
+	width: 90%;
+	margin: 50px auto 0;
+	background-color: white;
+	border-radius: 10px;
+	border: 3px solid #00426185;
+	padding: 30px 0;
+
+
+	.tc-prof-content{
+		font-size: 1.2rem;
+		width: 90%;
+		margin: 20px auto;
+		border-bottom: 1.5px solid #00426185;
+		display: flex;
+		padding-bottom: 3px;
+
+		p{
+			display: inline-block;
+		}
+
+		.tc-prof-item-title{
+			width: 30%;
+		}
+
+		.tc-prof-item-center{
+			width: 10%;
+		}
+
+		.tc-prof-item{
+			width: 60%;
+		}
+
+	}
+}
+
+

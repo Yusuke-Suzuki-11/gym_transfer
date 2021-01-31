@@ -14,4 +14,11 @@ class Student extends Authenticatable
 	{
 		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
 	}
+
+	public function getAgeByBirthDay($birthday)
+	{
+		$now = date("Ymd");
+		$birthday = str_replace("-", "", $birthday);
+		return floor(($now - $birthday) / 10000) . '歳';
+	}
 }
