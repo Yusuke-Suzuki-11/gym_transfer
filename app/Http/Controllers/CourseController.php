@@ -26,6 +26,7 @@ class CourseController extends Controller
 
 			$courseArry[] = $weekDay . ' ' . $lessonTime;
 		}
+
 		$CourseRowset = Course::all();
 		return view('teacher.course.index')->with(['courseArry' => $courseArry, 'CourseRowset' => $CourseRowset, 'StudentRowset' => Student::all()]);
 	}

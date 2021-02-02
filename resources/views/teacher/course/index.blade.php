@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('content')
-@foreach ($courseArry as $item)
-{{$item}}
-<br>
+@foreach ($CourseRowset as $CourseRow)
+	{{$CourseRow->getWeekAndLessonTimes()}}
+	<br>
 
 @endforeach
 @endsection

@@ -18,4 +18,10 @@ class Course extends Model
 	{
 		return $this->belongsTo('App\Models\LessonTime');
 	}
+
+	public function getWeekAndLessonTimes()
+	{
+		$weekAndLessonTime = $this->lessonTime()->first()->lesson_time . ' ' . $this->week()->first()->day_of_week;
+		return $weekAndLessonTime;
+	}
 }

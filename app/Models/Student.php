@@ -10,6 +10,10 @@ class Student extends Authenticatable
 {
 	use HasFactory;
 
+	protected $fillable = [
+		'last_name',
+	];
+
 	public function courses()
 	{
 		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
