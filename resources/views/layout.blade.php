@@ -13,16 +13,23 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	</head>
 	<header>
+
 		@auth('teachers')
-			@include('elements.admin_header')
+		@include('elements.admin_header')
 
 		@else
-			@include('elements.header')
+		@include('elements.header')
 		@endauth
 	</header>
 
 	<body>
-		@yield('content')
-		@include('js.session_message_js')
+		<div id="app">
+			@yield('content')
+			@include('js.session_message_js')
+		</div>
+		<script src="{{ mix('js/app.js') }}"></script>
 	</body>
+
+
+
 </html>

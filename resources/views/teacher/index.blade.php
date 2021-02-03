@@ -7,9 +7,12 @@
 	<div class="tc-main">
 		ここにカレンダー
 	</div>
+
+	<show-list-component></show-list-component>
 </div>
 
 <a href="{{route('tc.course')}}">レッスン一覧</a>
+
 
 
 @endsection
