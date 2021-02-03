@@ -15,7 +15,9 @@ class CreateStudentsTable extends Migration
 	{
 		Schema::create('students', function (Blueprint $table) {
 			$table->id();
-			$table->string('name');
+			$table->string('full_name');
+			$table->string('first_name');
+			$table->string('last_name');
 			$table->string('email')->unique();
 			$table->timestamp('email_verified_at')->nullable();
 			$table->string('password');
@@ -23,6 +25,9 @@ class CreateStudentsTable extends Migration
 			$table->string('member_num');
 			$table->date('birthday');
 			$table->string('gender');
+			$table->integer('stress_point');
+			$table->text('phone');
+			$table->integer('transfer_enabled')->default(1);
 			$table->timestamps();
 		});
 	}

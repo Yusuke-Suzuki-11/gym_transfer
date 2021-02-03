@@ -18,11 +18,11 @@ class CoursesTableSeeder extends Seeder
 
 		$weeks = Week::all();
 
-		foreach($weeks as $week){
-			$lessonTimes = $week->lesson_times()->get();
-			foreach($lessonTimes as $lessonTime){
+		foreach ($weeks as $week) {
+			$lessonTimes = $week->lessonTimes()->get();
+			foreach ($lessonTimes as $lessonTime) {
 				$course = new Course();
-				$course->course_times_id = $lessonTime->id;
+				$course->lesson_time_id = $lessonTime->id;
 				$course->week_id = $week->id;
 				$course->stress_point_capacity = 45;
 				$course->people_capacity = 15;

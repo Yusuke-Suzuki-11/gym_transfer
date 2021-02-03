@@ -20,6 +20,11 @@
                             本日の練習
 						</a>
                     </li>
+					<li class="header-menu-item">
+						<a href="{{route('tc.student.index')}}">
+                            生徒一覧
+						</a>
+                    </li>
 				@endauth
 			</ul>
 		</div>

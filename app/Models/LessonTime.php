@@ -11,7 +11,6 @@ class LessonTime extends Model
 
     public function weeks()
     {
-        return $this->belongsToMany('App\Models\LessonTime', 'lesson_time_week', 'lesson_times_id', 'weeks_id');
+        return $this->belongsToMany('App\Models\LessonTime', 'lesson_time_week', 'lesson_time_id', 'week_id');
     }
-
 }

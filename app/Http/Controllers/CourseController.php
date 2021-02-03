@@ -21,13 +21,14 @@ class CourseController extends Controller
 		$courseArry = [];
 
 		foreach (Course::all() as $course) {
-			$lessonTime = $LessonTimeRowset->where('id', $course->course_times_id)->first()->lesson_time;
+			$lessonTime = $LessonTimeRowset->where('id', $course->lesson_time_id)->first()->lesson_time;
 			$weekDay = $WeekRowset->where('id', $course->week_id)->first()->day_of_week;
 
 			$courseArry[] = $weekDay . ' ' . $lessonTime;
 		}
+
 		$CourseRowset = Course::all();
-		return view('course.admin_index')->with(['courseArry' => $courseArry, 'CourseRowset' => $CourseRowset, 'StudentRowset' => Student::all()]);
+		return view('teacher.course.index')->with(['courseArry' => $courseArry, 'CourseRowset' => $CourseRowset, 'StudentRowset' => Student::all()]);
 	}
 
 	public function add()

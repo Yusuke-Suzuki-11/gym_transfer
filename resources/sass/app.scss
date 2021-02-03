@@ -1,7 +1,25 @@
+// リセットcss
 @import "reset";
+
+// パーツエレメント
 @import "elements/header";
 @import "elements/session_message";
 @import "elements/st_sidebar";
+@import "elements/tc_sidebar";
+
+// 認証画面
 @import "multi_auth/login";
+
+// 顧客ページ
 @import "students/index";
+
+// 管理者（トップ）
+@import "teacher/index";
+
+// 管理者（生徒管理）
+@import "teacher/student/index";
+@import "teacher/student/show";
+
+
+
 

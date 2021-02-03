@@ -1,0 +1,55 @@
+
+.tc-sidebar{
+	width: 20%;
+	border-right: 1px solid rgba(255, 255, 255, 0.439);
+	background-color: #004361;
+	color: white;
+
+	// 種目別の情報
+	.tc-events{
+		padding: 42px 0;
+		display: inline-flex;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+
+		.tc-event-item{
+			width: 30%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.tc-event-item-img{
+			max-width: 100%;
+			height: auto;
+			border-radius: 50%;
+		}
+
+		.tc-event-name{
+			font-size: 0.8rem;
+			font-weight: bold;
+		}
+	}
+
+	// サイドメニュー
+	.tc-side-menu-box{
+		.tc-side-menu{
+			margin: 0 auto;
+
+			.tc-side-menu-li{
+				border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+				line-height: 50px;
+				cursor: pointer;
+
+				&:hover{
+					background-color: aquamarine;
+				}
+
+				.tc-side-menu-item{
+					width: 88%;
+					float: right;
+					margin: 0 auto;
+					font-size: 0.85rem;
+				}
+			}
+		}
+	}
+}

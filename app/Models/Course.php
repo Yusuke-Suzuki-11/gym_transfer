@@ -16,6 +16,12 @@ class Course extends Model
 
 	public function lessonTime()
 	{
-		return $this->belongsTo('App\Models\LessonTime', 'course_times_id', 'id');
+		return $this->belongsTo('App\Models\LessonTime');
+	}
+
+	public function getWeekAndLessonTimes()
+	{
+		$weekAndLessonTime = $this->lessonTime()->first()->lesson_time . ' ' . $this->week()->first()->day_of_week;
+		return $weekAndLessonTime;
 	}
 }

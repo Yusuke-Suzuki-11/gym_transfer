@@ -17,7 +17,8 @@ class CreateCoursesTable extends Migration
 			$table->id();
 			$table->integer('people_capacity');
 			$table->integer('stress_point_capacity');
-			$table->integer('course_times_id');
+			$table->text('grade')->nullable();
+			$table->integer('lesson_time_id');
 			$table->integer('week_id');
 			$table->timestamps();
 		});
