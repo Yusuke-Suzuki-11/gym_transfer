@@ -11,34 +11,87 @@
 				<span>プロフィール</span>
 			</p>
 		</div>
+
 		<div class="tc-prof-box">
-			<div class="tc-prof-content">
-				<p>名前　：　{{$StudentRow->full_name}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>メールアドレス　：　{{$StudentRow->email}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>電話番号　：　{{$StudentRow->phone}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>会員番号　：　{{$StudentRow->member_num}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>クラス　：　月曜11:00~11:50</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>生年月日　：　{{$StudentRow->birthday}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>性別　：　{{config('const.STUDENTS.GENDER_TYPE')[$StudentRow->gender]}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>ストレスポイント　：　{{config('const.STUDENTS.STRESS_POINT')[$StudentRow->stress_point]}}</p>
-			</div>
-			<div class="tc-prof-content">
-				<p>今月の振替　：　{{$StudentRow->transfer_enabled}}</p>
-			</div>
+			<table class="tc-prof-table">
+				<tr>
+					<th class="tc-prof-item-title"></th>
+					<th class="tc-prof-item"></th>
+				</tr>
+				<tr>
+					<td class="item-1">
+						名前
+					</td>
+					<td class="item-2">
+						{{$StudentRow->full_name}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						メールアドレス
+					</td>
+					<td>
+						{{$StudentRow->email}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						電話番号
+					</td>
+					<td>
+						{{$StudentRow->phone}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						会員番号
+					</td>
+					<td>
+						{{$StudentRow->member_num}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						クラス
+					</td>
+					<td>
+						{{'月曜11:00~11:50'}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						生年月日
+					</td>
+					<td>
+						{{$StudentRow->birthday}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						性別
+					</td>
+					<td>
+						{{config('const.STUDENTS.GENDER_TYPE')[$StudentRow->gender]}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						ストレスポイント
+					</td>
+					<td>
+						{{config('const.STUDENTS.STRESS_POINT')[$StudentRow->stress_point]}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						今月の振替
+					</td>
+					<td>
+						{{$StudentRow->transfer_enabled}}
+					</td>
+				</tr>
+
+			</table>
 
 
 		</div>
