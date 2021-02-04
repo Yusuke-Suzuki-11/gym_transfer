@@ -22,7 +22,6 @@
 	<body>
 		@yield('content')
 		@include('js.session_message_js')
-
 		<script src="{{mix('js/app.js')}}"></script>
 	</body>
 </html>
