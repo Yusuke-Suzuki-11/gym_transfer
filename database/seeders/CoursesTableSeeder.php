@@ -24,6 +24,7 @@ class CoursesTableSeeder extends Seeder
 				$course = new Course();
 				$course->lesson_time_id = $LessonTimeRow->id;
 				$course->week_id = $WeekRow->id;
+				$course->grade_id = $LessonTimeRow->grade_id;
 				$course->stress_point_capacity = 45;
 				$course->people_capacity = 15;
 				$course->save();
