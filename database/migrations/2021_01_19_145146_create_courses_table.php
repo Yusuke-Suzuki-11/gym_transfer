@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
 			$table->text('grade')->nullable();
 			$table->integer('lesson_time_id');
 			$table->integer('week_id');
+			$table->integer('grade_id');
 			$table->timestamps();
 		});
 	}
