@@ -15,24 +15,51 @@ class LessonTimesTableSeeder extends Seeder
 	public function run()
 	{
 		$lessonTimes = [
-			"10:00~10:50",
-			"10:30~11:15",
-			"11:00~11:50",
-			"13:20~14:10",
-			"14:20~15:10",
-			"15:10~16:00",
-			"15:20~16:10",
-			"16:10~17:00",
-			"16:20~17:10",
-			"17:10~18:00",
-			"17:20~18:10",
-			"18:10~19:00",
-			"19:10~20:00",
+			[
+				['lessonTime' => "10:00~10:50", 'grId' => 2],
+			],
+			[
+				['lessonTime' => "10:30~11:15", 'grId' => 1],
+			],
+			[
+				['lessonTime' => "11:00~11:50", 'grId' => 3],
+			],
+			[
+				['lessonTime' => "13:20~14:10", 'grId' => 2],
+			],
+			[
+				['lessonTime' => "14:20~15:10", 'grId' => 3],
+			],
+			[
+				['lessonTime' => "15:10~16:00", 'grId' => 2],
+			],
+			[
+				['lessonTime' => "15:20~16:10", 'grId' => 4],
+			],
+			[
+				['lessonTime' => "16:10~17:00", 'grId' => 3],
+			],
+			[
+				['lessonTime' => "16:20~17:10", 'grId' => 5],
+			],
+			[
+				['lessonTime' => "17:10~18:00", 'grId' => 4],
+			],
+			[
+				['lessonTime' => "17:20~18:10", 'grId' => 6],
+			],
+			[
+				['lessonTime' => "18:10~19:00", 'grId' => 5],
+			],
+			[
+				['lessonTime' => "19:10~20:00", 'grId' => 6],
+			],
 		];
 
-		foreach($lessonTimes as $lessonTime){
+		foreach ($lessonTimes as $lessonTime) {
 			$LessonTimeRow = new LessonTime;
-			$LessonTimeRow->lesson_time = $lessonTime;
+			$LessonTimeRow->lesson_time = $lessonTime['lessonTime'];
+			$LessonTimeRow->grade_id = $lessonTime['grId'];
 			$LessonTimeRow->save();
 		}
 	}
