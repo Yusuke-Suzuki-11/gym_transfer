@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Models\Course;
 
 class TeacherStudentController extends Controller
 {
@@ -27,7 +28,8 @@ class TeacherStudentController extends Controller
 	public function edit($id)
 	{
 		$StudentRow = Student::find($id);
-		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow]);
+		$CourseRowset = Course::all();
+		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
 	}
 
 	public function update($id, Request $request)
@@ -46,6 +48,10 @@ class TeacherStudentController extends Controller
 		$StudentRow->stress_point = $request->stress_point;
 		$StudentRow->gender = $request->gender;
 		$StudentRow->save();
+
+		$StudentRow->courses()->attach($request->course_id);
+
+
 
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
 	}
