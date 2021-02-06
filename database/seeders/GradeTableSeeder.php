@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Grade;
 use Illuminate\Database\Seeder;
 
-class GenderTableSeeder extends Seeder
+class GradeTableSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
