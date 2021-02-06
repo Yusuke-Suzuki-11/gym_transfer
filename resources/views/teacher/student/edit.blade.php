@@ -36,12 +36,17 @@
 				<input type="radio" name="gender" {{ $count == old('gender', $StudentRow->gender) ? 'checked' : '' }} value="{{$count}}">{{config('const.STUDENTS.GENDER_TYPE')[$count]}}
 			@endfor
 			<p>通っているクラス</p>
-			@foreach ($StudentRow->getCourseAndLessonTimesBy() as $courseArray)
-				@foreach ($courseArray as $key => $val)
-					{{$val}}
-				@endforeach
+			@foreach ($StudentRow->courses()->get() as $StudentCourseRow)
+				{{$StudentCourseRow->getWeekAndLessonTimes()}}
 			@endforeach
 			<br>
+
+			<p>クラスを追加する</p>
+			<select name="course_id" id="course">
+				@foreach ($CourseRowset as $CourseRow)
+					<option value="{{$CourseRow->id}}">{{$CourseRow->getWeekAndLessonTimes()}}</option>
+				@endforeach
+			</select>
 
 			<button type="submit">送信</button>
 

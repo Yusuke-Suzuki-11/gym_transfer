@@ -21,7 +21,17 @@ class Course extends Model
 
 	public function getWeekAndLessonTimes()
 	{
-		$weekAndLessonTime = $this->lessonTime()->first()->lesson_time . ' ' . $this->week()->first()->day_of_week;
+		$weekAndLessonTime = $this->week()->first()->day_of_week . ' ' . $this->lessonTime()->first()->lesson_time;
 		return $weekAndLessonTime;
+	}
+
+	public function getWeek()
+	{
+		return isset($this->week_id) ? $this->week()->first()->day_of_week : '';
+	}
+
+	public function getLessonTimesByWeek()
+	{
+		return $this->week()->lessonTimes()->get();
 	}
 }
