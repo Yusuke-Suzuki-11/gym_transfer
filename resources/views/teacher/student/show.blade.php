@@ -52,15 +52,14 @@
 				</tr>
 
 				@php
-					$__StudentCourseRowset = $StudentRow->getCourseRowsetByRowset();
-
+					$__StudentCourseRowset = $StudentRow->getCourseRowsetByRowset()->get();
 					$__count = 0;
 				@endphp
 				@if (count($__StudentCourseRowset))
 					@foreach ($__StudentCourseRowset as $__StudentCourseRow)
 						<tr>
 							<td>
-								クラス {{$__count =+ 1}}
+								クラス {{$__count+=1}}
 							</td>
 							<td>
 								{{$__StudentCourseRow->getGradeRowByRow()->grade}} ( {{$__StudentCourseRow->getWeekAndLessonTimes()}} )
@@ -98,7 +97,7 @@
 						今月の振替
 					</td>
 					<td>
-						{{$StudentRow->transfer_enabled}}
+						{{!empty($StudentRow->transfer_enabled) ? '今月の振替はありません' : $StudentRow->transfer_enabled}}
 					</td>
 				</tr>
 

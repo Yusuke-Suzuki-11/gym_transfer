@@ -36,9 +36,15 @@
 				<input type="radio" name="gender" {{ $count == old('gender', $StudentRow->gender) ? 'checked' : '' }} value="{{$count}}">{{config('const.STUDENTS.GENDER_TYPE')[$count]}}
 			@endfor
 			<p>通っているクラス</p>
-			@foreach ($StudentRow->getCourseRowsetByRowset()->get() as $StudentCourseRow)
-				{{$StudentCourseRow->getWeekAndLessonTimes()}}
-			@endforeach
+			@php
+				$__StudentCourseRowset = $StudentRow->getCourseRowsetByRowset()->get();
+			@endphp
+			@if (count($__StudentCourseRowset))
+				@foreach ($__StudentCourseRowset as $__StudentCourseRow)
+					{{$__StudentCourseRow->getWeekAndLessonTimes()}}
+				@endforeach
+
+			@endif
 			<br>
 
 			<p>クラスを追加する</p>

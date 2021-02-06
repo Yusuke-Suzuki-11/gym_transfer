@@ -16,7 +16,7 @@ class Student extends Authenticatable
 
 	public function getCourseRowsetByRowset()
 	{
-		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id')->get();
+		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
 	}
 
 	public function getAgeByBirthDay($birthday)
@@ -28,7 +28,7 @@ class Student extends Authenticatable
 
 	public function getCourseAndLessonTimesBy()
 	{
-		$CourseRowset = $this->getCourseRowsetByRowset();
+		$CourseRowset = $this->getCourseRowsetByRowset()->get();
 
 		$courseArray = [];
 		foreach ($CourseRowset as $CourseRow) {
