@@ -16,6 +16,7 @@ class CreateLessonTimesTable extends Migration
         Schema::create('lesson_times', function (Blueprint $table) {
             $table->id();
             $table->text('lesson_time');
+            $table->integer('grade_id');
             $table->timestamps();
         });
     }

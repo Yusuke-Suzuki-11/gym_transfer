@@ -16,14 +16,15 @@ class CoursesTableSeeder extends Seeder
 	public function run()
 	{
 
-		$weeks = Week::all();
+		$WeekRowset = Week::all();
 
-		foreach ($weeks as $week) {
-			$lessonTimes = $week->lessonTimes()->get();
-			foreach ($lessonTimes as $lessonTime) {
+		foreach ($WeekRowset as $WeekRow) {
+			$LessonTimeRowset = $WeekRow->lessonTimes()->get();
+			foreach ($LessonTimeRowset as $LessonTimeRow) {
 				$course = new Course();
-				$course->lesson_time_id = $lessonTime->id;
-				$course->week_id = $week->id;
+				$course->lesson_time_id = $LessonTimeRow->id;
+				$course->week_id = $WeekRow->id;
+				$course->grade_id = $LessonTimeRow->grade_id;
 				$course->stress_point_capacity = 45;
 				$course->people_capacity = 15;
 				$course->save();

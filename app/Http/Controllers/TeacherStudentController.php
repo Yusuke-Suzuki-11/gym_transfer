@@ -51,7 +51,7 @@ class TeacherStudentController extends Controller
 		$StudentRow->gender = $request->gender;
 		$StudentRow->save();
 
-		$StudentRow->courses()->attach($request->course_id);
+		$StudentRow->getCourseRowsetByRowset()->attach($request->course_id);
 
 		Mail::to('mr.suzuki.11@gmail.com')->send(new LessonTransferNotification($StudentRow->full_name));
 

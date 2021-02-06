@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Grade extends Model
 {
     use HasFactory;
+
+    public function getCourseRowsetByRow()
+    {
+        return $this->belongsToMany('App\Models\Course');
+    }
 }
