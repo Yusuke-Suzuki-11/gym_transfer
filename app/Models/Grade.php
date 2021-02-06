@@ -11,6 +11,6 @@ class Grade extends Model
 
     public function getCourseRowsetByRow()
     {
-        return $this->hasMany('App\Course');
+        return $this->belongsToMany('App\Models\Course');
     }
 }

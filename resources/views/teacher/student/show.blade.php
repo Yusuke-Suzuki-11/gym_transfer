@@ -50,14 +50,25 @@
 						{{$StudentRow->member_num}}
 					</td>
 				</tr>
-				<tr>
-					<td>
-						クラス
-					</td>
-					<td>
-						{{'月曜11:00~11:50'}}
-					</td>
-				</tr>
+
+				@php
+					$__StudentCourseRowset = $StudentRow->getCourseRowsetByRowset();
+
+					$__count = 0;
+				@endphp
+				@if (count($__StudentCourseRowset))
+					@foreach ($__StudentCourseRowset as $__StudentCourseRow)
+						<tr>
+							<td>
+								クラス {{$__count =+ 1}}
+							</td>
+							<td>
+								{{$__StudentCourseRow->getGradeRowByRow()->grade}} ( {{$__StudentCourseRow->getWeekAndLessonTimes()}} )
+							</td>
+						</tr>
+					@endforeach
+				@endif
+
 				<tr>
 					<td>
 						生年月日
