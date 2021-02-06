@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\LessonTransferNotification;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
+use Illuminate\Support\Facades\Mail;
 
 class TeacherStudentController extends Controller
 {
@@ -51,7 +53,7 @@ class TeacherStudentController extends Controller
 
 		$StudentRow->courses()->attach($request->course_id);
 
-
+		Mail::to('mr.suzuki.11@gmail.com')->send(new LessonTransferNotification($StudentRow->full_name));
 
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
 	}
