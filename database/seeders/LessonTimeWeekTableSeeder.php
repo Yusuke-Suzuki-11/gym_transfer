@@ -68,8 +68,7 @@ class LessonTimeWeekTableSeeder extends Seeder
 		$count = 1;
 		foreach ($lessonTimes as $lessonTime) {
 			foreach ($lessonTime as $time) {
-				$week = new Week();
-				$week = $week->find($count);
+				$week = Week::find($count);
 				if (empty($week)) {
 					continue;
 				}
