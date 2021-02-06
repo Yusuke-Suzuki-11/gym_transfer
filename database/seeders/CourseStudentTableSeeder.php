@@ -17,7 +17,7 @@ class CourseStudentTableSeeder extends Seeder
 		$StudentRowset = Student::all();
 
 		foreach ($StudentRowset as $StudentRow) {
-			$StudentRow->courses()->attach($StudentRow->id);
+			$StudentRow->getCourseRowsetByRow()->attach($StudentRow->id);
 		}
 	}
 }
