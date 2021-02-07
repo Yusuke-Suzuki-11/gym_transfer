@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public function getCourseRowByRow()
-    {
-        return $this->belongsTo('App\Models\Course');
-    }
+	public function getCourseRowByRow()
+	{
+		return $this->belongsTo('App\Models\Course');
+	}
 }

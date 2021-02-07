@@ -16,11 +16,10 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->date('lesson_date');
-            $table->text('memo');
-            $table->integer('attendance');
+            $table->text('memo')->nullable();
+            $table->integer('attendance')->default('1');
             $table->integer('course_id');
             $table->integer('student_id');
-            $table->integer('teacher_id');
             $table->timestamps();
         });
     }
