@@ -11,6 +11,6 @@ class Lesson extends Model
 
 	public function getCourseRowByRow()
 	{
-		return $this->belongsTo('App\Models\Course');
+		return $this->belongsTo(Course::class, 'course_id');
 	}
 }

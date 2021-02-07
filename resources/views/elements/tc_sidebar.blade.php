@@ -28,13 +28,6 @@
 						今月の練習
 					</div>
 				</li>
-				<a href="{{route('students.course')}}">
-					<li class="tc-side-menu-li">
-						<div class="tc-side-menu-item">
-							登録クラスの詳細
-						</div>
-					</li>
-				</a>
 			</ul>
 		</div>
 	</div>
