@@ -14,19 +14,24 @@ class Course extends Model
 		return $this->belongsTo('App\Models\Week');
 	}
 
-	public function lessonTime()
+	public function getLessonTimeRowByRow()
 	{
-		return $this->belongsTo('App\Models\LessonTime');
+		return $this->belongsTo('App\Models\LessonTime', 'lesson_time_id');
 	}
 
 	public function getGradeRowByRow()
 	{
-		return $this->belongsTo('App\Models\Grade', 'grade_id')->first();
+		return $this->belongsTo('App\Models\Grade', 'grade_id');
+	}
+
+	public function getLessonRowsetByRow()
+	{
+		return $this->belongsToMany('App\Models\Lesson');
 	}
 
 	public function getWeekAndLessonTimes()
 	{
-		$weekAndLessonTime = $this->week()->first()->day_of_week . ' ' . $this->lessonTime()->first()->lesson_time;
+		$weekAndLessonTime = $this->week()->first()->day_of_week . ' ' . $this->getLessonTimeRowByRow()->first()->lesson_time;
 		return $weekAndLessonTime;
 	}
 

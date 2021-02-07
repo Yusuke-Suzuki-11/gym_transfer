@@ -19,6 +19,11 @@ class Student extends Authenticatable
 		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
 	}
 
+	public function getLessonRowsetByRow()
+	{
+		return $this->hasMany('App\Models\Lesson');
+	}
+
 	public function getAgeByBirthDay($birthday)
 	{
 		$now = date("Ymd");

@@ -62,7 +62,7 @@
 								クラス {{$__count+=1}}
 							</td>
 							<td>
-								{{$__StudentCourseRow->getGradeRowByRow()->grade}} ( {{$__StudentCourseRow->getWeekAndLessonTimes()}} )
+								{{$__StudentCourseRow->getGradeRowByRow()->first()->grade}} ( {{$__StudentCourseRow->getWeekAndLessonTimes()}} )
 							</td>
 						</tr>
 					@endforeach
