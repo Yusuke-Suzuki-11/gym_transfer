@@ -21,7 +21,7 @@ class Course extends Model
 
 	public function getGradeRowByRow()
 	{
-		return $this->belongsTo('App\Models\Grade', 'grade_id')->first();
+		return $this->belongsTo('App\Models\Grade', 'grade_id');
 	}
 
 	public function getWeekAndLessonTimes()
