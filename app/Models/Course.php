@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use GuzzleHttp\Promise\Is;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use SebastianBergmann\LinesOfCode\Counter;
+
+use function PHPUnit\Framework\isNull;
 
 class Course extends Model
 {
+	private $__name = 'courses';
 	use HasFactory;
 
 	public function week()
@@ -43,5 +49,20 @@ class Course extends Model
 	public function getLessonTimesByWeek()
 	{
 		return $this->week()->lessonTimes()->get();
+	}
+
+	public function getRowByLessonTimeAndWeek($weekId, $lessonTimeId)
+	{
+		$weekId += 1;
+		$CourseRow = DB::table($this->__name)
+			->select('*')
+			->where('week_id', $weekId)
+			->where('lesson_time_id',  $lessonTimeId)
+			->first();
+		if (isset($CourseRow) <= 0) {
+			$CourseRow = '';
+		}
+
+		return $CourseRow;
 	}
 }

@@ -13,8 +13,8 @@
         $__count ++;
     @endphp
     <p>日付</p>
-    {{$__LessonRow->getWeekRow()->getDayOfWeek()}}
     {{$__LessonRow->lesson_date}}
+    {{$__LessonRow->getCourseRowByRow()->first()->getWeekAndLessonTimes()}}
     <br>
     <br>
 

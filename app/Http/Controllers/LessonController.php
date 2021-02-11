@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\LessonTime;
 use App\Models\Lesson;
-use App\Models\Week;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class LessonController extends Controller
@@ -22,16 +22,20 @@ class LessonController extends Controller
 	{
 		$AuthStudentRow = Auth::user();
 
+		//現在の
 		$gradeId = $AuthStudentRow->getCourseRowsetByRowset()->first()->grade_id;
 
 		$LessonRow = new Lesson();
-		$LessonRow->course_id = $CourseRow->id;
 		$LessonRow->student_id = $AuthStudentRow->id;
-		$LessonRow->lesson_date = $$request->targetDate;
-		$LessonRow->save();
 
-		// dd($gradeId);
-		// dd($request->targetDate);
+		$CourseRow = new Course();
+		$CourseRow = $CourseRow->getRowByLessonTimeAndWeek(date('w', strtotime($request->targetDate)), $request->nowLessonId);
+		if (empty($CourseRow)) {
+			return App::abort(404);
+		}
+		$LessonRow->course_id = $CourseRow->id;
+		$LessonRow->lesson_date = $request->targetDate;
+		$LessonRow->save();
 
 		return redirect(route('st.course.index'));
 	}
