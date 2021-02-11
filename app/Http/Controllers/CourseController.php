@@ -19,7 +19,6 @@ class CourseController extends Controller
 	public function index()
 	{
 		$AuthStudentRow = Auth::user();
-
 		return view('student.course.index')->with(['AuthStudentRow' => $AuthStudentRow]);
 	}
 

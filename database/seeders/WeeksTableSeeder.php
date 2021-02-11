@@ -24,7 +24,7 @@ class WeeksTableSeeder extends Seeder
             '土曜日',
         ];
 
-        foreach($dayOfWeeks as $dayofweek){
+        foreach ($dayOfWeeks as $key => $dayofweek) {
             $WeekRow = new Week();
             $WeekRow->day_of_week = $dayofweek;
             $WeekRow->save();

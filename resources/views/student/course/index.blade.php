@@ -6,14 +6,14 @@
 @endphp
 <div>
     @foreach ($AuthStudentRow->getLessonRowsetByRow()->get() as $__LessonRow)
-    <a href="">
+    <a href="{{route('st.lesson.detail', ['id' => $__LessonRow->id])}}">
         <p>今月の練習{{$__count}}</p>
     </a>
     @php
         $__count ++;
     @endphp
     <p>日付</p>
-    {{$__LessonRow->first()->getCourseRowByRow()->first()->week()->first()->day_of_week}}
+    {{$__LessonRow->getWeekRow()->getDayOfWeek()}}
     {{$__LessonRow->lesson_date}}
     <br>
     <br>
