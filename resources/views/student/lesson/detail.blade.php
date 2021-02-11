@@ -13,7 +13,8 @@
 
 <form action="{{route('st.lesson.transfer')}}" method="POST">
 	@csrf
-	<input type="hidden" name="nowLessonId" value="{{$LessonRow->getCourseRowByRow()->first()->lesson_time_id}}">
+	<input type="hidden" name="nowLessonTimeId" value="{{$LessonRow->getCourseRowByRow()->first()->lesson_time_id}}">
+	<input type="hidden" name="nowLessonId" value="{{$LessonRow->id}}">
 
 	<p>日付を選択してください</p>
 	<input type="date" name='targetDate'>

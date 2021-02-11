@@ -22,6 +22,8 @@ class LessonController extends Controller
 	{
 		$AuthStudentRow = Auth::user();
 
+		Lesson::find($request->nowLessonId)->delete();
+
 		//現在の
 		$gradeId = $AuthStudentRow->getCourseRowsetByRowset()->first()->grade_id;
 
@@ -29,7 +31,7 @@ class LessonController extends Controller
 		$LessonRow->student_id = $AuthStudentRow->id;
 
 		$CourseRow = new Course();
-		$CourseRow = $CourseRow->getRowByLessonTimeAndWeek(date('w', strtotime($request->targetDate)), $request->nowLessonId);
+		$CourseRow = $CourseRow->getRowByLessonTimeAndWeek(date('w', strtotime($request->targetDate)), $request->nowLessonTimeId);
 		if (empty($CourseRow)) {
 			return App::abort(404);
 		}
