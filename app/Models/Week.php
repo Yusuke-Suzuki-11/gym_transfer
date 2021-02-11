@@ -15,4 +15,9 @@ class Week extends Model
 	{
 		return $this->belongsToMany("App\Models\LessonTime", 'lesson_time_week', 'week_id', 'lesson_time_id');
 	}
+
+	public function getDayOfWeek()
+	{
+		return $this->day_of_week;
+	}
 }

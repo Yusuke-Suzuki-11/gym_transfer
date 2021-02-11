@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MultiAuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -17,6 +18,8 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 Route::prefix('students')->middleware('auth:students')->group(function () {
 	Route::get('', [StudentController::class, 'index'])->name('students');
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');
+	Route::get('/lesson/detail/{id}', [LessonController::class, 'detail'])->name('st.lesson.detail');
+	Route::post('/lesson/transfer', [LessonController::class, 'transfer'])->name('st.lesson.transfer');
 });
 
 // 先生ページ

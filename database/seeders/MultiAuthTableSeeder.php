@@ -32,7 +32,7 @@ class MultiAuthTableSeeder extends Seeder
 			[
 				'last_name' => '国井',
 				'first_name' => 'ゆめ',
-				'email' => 'yume@example.com',
+				'email' => 'yume@gmail.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114515',
 				'birthday' => '1996-03-05',
@@ -43,7 +43,7 @@ class MultiAuthTableSeeder extends Seeder
 			[
 				'last_name' => '伊藤',
 				'first_name' => 'ひろき',
-				'email' => 'hiroki@example.com',
+				'email' => 'hiroki@gmail.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114516',
 				'birthday' => '1995-10-30',
@@ -54,7 +54,7 @@ class MultiAuthTableSeeder extends Seeder
 			[
 				'last_name' => '大出',
 				'first_name' => 'はるな',
-				'email' => 'haruna@example.com',
+				'email' => 'haruna@gmail.com',
 				'password' => 'Yy46498083',
 				'member_num' => '114517',
 				'birthday' => '1995-10-28',
