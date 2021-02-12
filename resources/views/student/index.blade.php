@@ -9,8 +9,9 @@
 	<div class="st-index">
 		@include('elements.st_sidebar')
 
-		<div class="st-calendar">
-			ここにカレンダー
+		<div class="st-calendar" id='app'>
+			<calendar-component>
+			</calendar-component>
 
 		</div>
 	</div>

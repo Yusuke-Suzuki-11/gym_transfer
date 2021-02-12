@@ -23,8 +23,6 @@ class LessonController extends Controller
 		$AuthStudentRow = Auth::user();
 
 		Lesson::find($request->nowLessonId)->delete();
-
-		//現在の
 		$gradeId = $AuthStudentRow->getCourseRowsetByRowset()->first()->grade_id;
 
 		$LessonRow = new Lesson();
