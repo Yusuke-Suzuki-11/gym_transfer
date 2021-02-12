@@ -28,6 +28,7 @@ Route::prefix('teachers')->middleware('auth:teachers')->group(function () {
 
 	// 生徒管理
 	Route::get('/student', [TeacherStudentController::class, 'index'])->name('tc.student.index');
+	Route::get('/student/add', [TeacherStudentController::class, 'add'])->name('tc.student.add');
 	Route::get('/student/{id}', [TeacherStudentController::class, 'show'])->name('tc.student.show');
 	Route::get('/student/{id}/edit', [TeacherStudentController::class, 'edit'])->name('tc.student.edit');
 	Route::post('/student/{id}/update', [TeacherStudentController::class, 'update'])->name('tc.student.update');

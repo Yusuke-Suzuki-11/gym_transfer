@@ -57,4 +57,9 @@ class TeacherStudentController extends Controller
 
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
 	}
+
+	public function add()
+	{
+		return view('teacher.student.add');
+	}
 }
