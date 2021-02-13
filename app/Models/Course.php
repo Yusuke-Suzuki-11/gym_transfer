@@ -46,6 +46,11 @@ class Course extends Model
 		return isset($this->week_id) ? $this->week()->first()->day_of_week : '';
 	}
 
+	public function getLessonTime()
+	{
+		return $this->getLessonTimeRowByRow()->first()->lesson_time;
+	}
+
 	public function getLessonTimesByWeek()
 	{
 		return $this->week()->lessonTimes()->get();

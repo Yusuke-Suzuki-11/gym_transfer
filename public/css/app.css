@@ -343,6 +343,13 @@ input, select {
   width: 80%;
 }
 
+.st-calendar {
+  background-color: white;
+  height: auto;
+  width: 90%;
+  max-width: 960px;
+}
+
 .tc-index {
   color: #004361;
   display: flex;

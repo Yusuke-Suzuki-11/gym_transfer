@@ -44,4 +44,17 @@ class Student extends Authenticatable
 		}
 		return $courseArray;
 	}
+
+	public function getJsonLessonDateAndTitle()
+	{
+		$LessonRowset = $this->getLessonRowsetByRow()->get();
+		if (!isset($LessonRowset)) {
+			return '';
+		}
+		$array = [];
+		foreach ($LessonRowset as $LessonRow) {
+			$array[] = ['title' => $LessonRow->getLessonTime(), 'date' => $LessonRow->lesson_date];
+		}
+		return json_encode($array);
+	}
 }

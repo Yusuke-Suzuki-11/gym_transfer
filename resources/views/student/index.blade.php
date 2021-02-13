@@ -10,9 +10,8 @@
 		@include('elements.st_sidebar')
 
 		<div class="st-calendar" id="app">
-			<full-calendar-component>
+			<full-calendar-component v-bind:date-data="{{ $JsonLessonDate }}">
 			</full-calendar-component>
-
 		</div>
 	</div>
 
