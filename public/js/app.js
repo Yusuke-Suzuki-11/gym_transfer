@@ -15386,19 +15386,18 @@ __webpack_require__.r(__webpack_exports__);
     FullCalendar: _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_0__.default // make the <FullCalendar> tag available
 
   },
+  props: {
+    dateData: {
+      type: Array
+    }
+  },
   data: function data() {
     return {
       calendarOptions: {
         plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__.default, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__.default],
         initialView: "dayGridMonth",
         dateClick: this.handleDateClick,
-        events: [{
-          title: "event 1",
-          date: "2021-03-01"
-        }, {
-          title: "event 2",
-          date: "2021-04-02"
-        }]
+        events: this.dateData
       }
     };
   },
