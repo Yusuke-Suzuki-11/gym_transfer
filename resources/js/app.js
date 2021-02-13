@@ -1,24 +1,13 @@
 require('./bootstrap');
 window.Vue = require('vue').default;
 
-import { createApp } from 'vue'
-import ExampleComponent from './components/ExampleComponent.vue'
-import ShowListComponent from './components/ShowListComponent.vue'
-
-createApp({
-	components: {
-		ExampleComponent,
-		ShowListComponent
-	}
-}).mount('#app')
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('full-calendar-component', require('./components/FullCalendarComponent.vue').default);
 
 
-// Vue.component('show-list-component', require('./components/ShowListComponent.vue').default);
-
-
-// var app = new Vue({
-// 	el: '#app',
-// 	data: {
-// 		message: 'Hello Vue!'
-// 	}
-// })
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
+})

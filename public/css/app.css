@@ -343,6 +343,11 @@ input, select {
   width: 80%;
 }
 
+.st-calendar {
+  background-color: white;
+  height: auto;
+}
+
 .tc-index {
   color: #004361;
   display: flex;

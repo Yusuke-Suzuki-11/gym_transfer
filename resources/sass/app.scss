@@ -12,6 +12,7 @@
 
 // 顧客ページ
 @import "students/index";
+@import "students/calendar";
 
 // 管理者（トップ）
 @import "teacher/index";
@@ -19,5 +20,3 @@
 // 管理者（生徒管理）
 @import "teacher/student/index";
 @import "teacher/student/show";
-
-
