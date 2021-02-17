@@ -5,6 +5,9 @@
 	position: relative;
 	display: block;
 	border-bottom: 1px solid rgba(118, 118, 118, 0.439);
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
 .admin-header-top{
@@ -14,6 +17,9 @@
 	position: relative;
 	display: block;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
 .header{

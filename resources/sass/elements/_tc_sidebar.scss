@@ -4,13 +4,13 @@
 		color: white;
 	}
 
-	float: left;
-	width: 25%;
+	width: 350px;
 	border-right: 1px solid rgba(255, 255, 255, 0.439);
 	background-color: #004361;
 	color: white;
 	height: calc(100vh - 70px);
 	position: fixed;
+	top: 71px;
 
 	// 種目別の情報
 	.tc-events{
