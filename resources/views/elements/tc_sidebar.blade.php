@@ -2,7 +2,7 @@
 	<div class="tc-events">
 		<div class="tc-event-item">
 			<img class="tc-event-item-img" src="/image/test2.jpg">
-			<span class="tc-event-name">床:17級</span>
+			<span class="tc-event-name">{{Auth::user()->full_name}}</span>
 		</div>
 	</div>
 	<div class="tc-side-menu-box">

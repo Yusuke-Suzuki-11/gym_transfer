@@ -1,14 +1,21 @@
 
 .tc-sidebar{
-	width: 20%;
+	a{
+		color: white;
+	}
+
+	float: left;
+	width: 25%;
 	border-right: 1px solid rgba(255, 255, 255, 0.439);
 	background-color: #004361;
 	color: white;
+	height: calc(100vh - 70px);
+	position: fixed;
 
 	// 種目別の情報
 	.tc-events{
 		padding: 42px 0;
-		display: inline-flex;
+		width: 80%;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.439);
 
 		.tc-event-item{

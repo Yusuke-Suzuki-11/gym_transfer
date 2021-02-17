@@ -27,10 +27,15 @@ time, mark, audio, video {
 		background:transparent;
 }
 
+html{
+	height: 100%;
+}
+
 body {
 		line-height:1;
 		background-color: #E9FBFC;
 		font-family: "M PLUS 1p";
+		height: 100%;
 }
 
 article,aside,details,figcaption,figure,
