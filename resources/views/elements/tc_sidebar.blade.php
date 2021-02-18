@@ -5,48 +5,59 @@
 			<span class="tc-event-name">{{Auth::user()->full_name}}</span>
 		</div>
 	</div>
+
+
+
+
 	<div class="tc-side-menu-box">
-		<div class="tc-side-menu">
-			<ul>
-				<li class="tc-side-menu-li">
-					<div class="tc-side-menu-item">
-						<a href="">
-							コースを編集する
-						</a>
+
+
+		{{-- 一つの項目 --}}
+		<div class="tc-side-sub-menu">
+			<a href="">
+				<div class="tc-side-menu-item">
+					<div class="tc-side-menu-icon">
+						<i class="fab fa-apple"></i>
 					</div>
-				</li>
-				<li class="tc-side-menu-li">
-					<a href="{{route('tc.student.add')}}">
-						<div class="tc-side-menu-item">
-							新規入会者登録
-						</div>
-					</a>
-				</li>
-				<li class="tc-side-menu-li">
-					<a href="{{route('tc.student.index')}}">
-						<div class="tc-side-menu-item">
-							生徒を編集する
-						</div>
-					</a>
-				</li>
-				<li class="tc-side-menu-li">
-					<div class="tc-side-menu-item">
-						本日の練習
+					<div class="tc-side-menu-title">
+						コメントテスト
 					</div>
-				</li>
-				<li class="tc-side-menu-li">
-					<div class="tc-side-menu-item">
-						告知をする
-					</div>
-				</li>
-				<li class="tc-side-menu-li">
-					<div class="tc-side-menu-item">
-						<a href="{{route('tc.course')}}">
-							レッスン一覧
-						</a>
-					</div>
-				</li>
-			</ul>
+				</div>
+			</a>
 		</div>
+
+
+		<div class="tc-side-sub-menu">
+			<a href="">
+				<div class="tc-side-menu-item">
+					<div class="tc-side-menu-icon">
+						<i class="fab fa-apple"></i>
+					</div>
+					<div class="tc-side-menu-title">
+						コメントテスト
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="tc-side-sub-menu">
+			<a href="">
+				<div class="tc-side-menu-item">
+					<div class="tc-side-menu-icon">
+						<i class="fab fa-apple"></i>
+					</div>
+					<div class="tc-side-menu-title">
+						コメントテスト
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+
+
+
 	</div>
+
+
+
 </div>

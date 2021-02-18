@@ -15,9 +15,9 @@ class Authenticate extends Middleware
 	 */
 	protected function redirectTo($request)
 	{
-		if (! $request->expectsJson()) {
+		if (!$request->expectsJson()) {
 			$uri = $request->path();
-			if(Str::startsWith($uri, ['students/', 'teachers/'])) {
+			if (Str::startsWith($uri, ['student/', 'teacher/'])) {
 				return route('show_login_form');
 			}
 

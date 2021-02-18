@@ -10,7 +10,7 @@
 // 認証画面
 @import "multi_auth/login";
 
-// 顧客ページ
+// 会員ページ
 @import "students/index";
 @import "students/calendar";
 
@@ -20,3 +20,4 @@
 // 管理者（生徒管理）
 @import "teacher/student/index";
 @import "teacher/student/show";
+@import "teacher/top";
