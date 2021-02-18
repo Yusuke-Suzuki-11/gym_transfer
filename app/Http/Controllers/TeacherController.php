@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Lesson;
 use App\Models\LessonTime;
 use Illuminate\Http\Request;
 use App\Models\Student;
@@ -13,6 +14,9 @@ class TeacherController extends Controller
 {
 	public function index()
 	{
-		return view('teacher.index');
+
+		$Lesson = new Lesson;
+		$TodayLessonRowset = $Lesson->getLessonRowsetByNowDate(date('Y-m-d'));
+		return view('teacher.index')->with('TodayLessonRowset', $TodayLessonRowset);
 	}
 }
