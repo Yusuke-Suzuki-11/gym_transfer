@@ -1,20 +1,24 @@
-
 .tc-sidebar{
-	width: 20%;
+	a{
+		color: white;
+	}
+
+	width: 350px;
 	border-right: 1px solid rgba(255, 255, 255, 0.439);
 	background-color: #004361;
 	color: white;
+	height: calc(100vh - 70px);
+	position: fixed;
+	top: 71px;
 
 	// 種目別の情報
 	.tc-events{
 		padding: 42px 0;
-		display: inline-flex;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+		text-align: center;
 
 		.tc-event-item{
-			width: 30%;
+			width: 35%;
 			margin: auto;
-			text-align: center;
 		}
 
 		.tc-event-item-img{
@@ -29,27 +33,41 @@
 		}
 	}
 
-	// サイドメニュー
 	.tc-side-menu-box{
-		.tc-side-menu{
-			margin: 0 auto;
 
-			.tc-side-menu-li{
-				border-bottom: 1px solid rgba(255, 255, 255, 0.439);
-				line-height: 50px;
-				cursor: pointer;
-
-				&:hover{
-					background-color: aquamarine;
-				}
+		.tc-side-sub-menu{
+			height: 50px;
+			a{
+				display: block;
 
 				.tc-side-menu-item{
-					width: 88%;
-					float: right;
+
+					width: 60%;
 					margin: 0 auto;
-					font-size: 0.85rem;
+					display: flex;
+					justify-content: space-between;
+
+					.tc-side-menu-icon{
+						line-height: 50px;
+						width: 15%;
+						display: inline;
+						font-size: 20px;
+
+					}
+
+					.tc-side-menu-title{
+						font-size: 1.0rem;
+						line-height: 50px;
+						width: 85%;
+					}
+				}
+
+				&:hover{
+					font-size: 1.1rem;
+					background-color: #ffffff2a;
 				}
 			}
 		}
+
 	}
 }

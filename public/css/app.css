@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -25,6 +24,10 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -111,6 +114,9 @@ input, select {
   position: relative;
   display: block;
   border-bottom: 1px solid rgba(118, 118, 118, 0.439);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .admin-header-top {
@@ -120,6 +126,9 @@ input, select {
   position: relative;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header {
@@ -176,7 +185,10 @@ input, select {
 }
 
 .st-sidebar {
-  width: 20%;
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid rgba(90, 90, 90, 0.152);
+  background-color: white;
 }
 .st-sidebar .st-events {
   padding: 42px 0;
@@ -216,20 +228,24 @@ input, select {
 }
 
 .tc-sidebar {
-  width: 20%;
+  width: 350px;
   border-right: 1px solid rgba(255, 255, 255, 0.439);
   background-color: #004361;
+  color: white;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 71px;
+}
+.tc-sidebar a {
   color: white;
 }
 .tc-sidebar .tc-events {
   padding: 42px 0;
-  display: inline-flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+  text-align: center;
 }
 .tc-sidebar .tc-events .tc-event-item {
-  width: 30%;
+  width: 35%;
   margin: auto;
-  text-align: center;
 }
 .tc-sidebar .tc-events .tc-event-item-img {
   max-width: 100%;
@@ -240,22 +256,32 @@ input, select {
   font-size: 0.8rem;
   font-weight: bold;
 }
-.tc-sidebar .tc-side-menu-box .tc-side-menu {
-  margin: 0 auto;
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu {
+  height: 50px;
 }
-.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.439);
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu a {
+  display: block;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu a .tc-side-menu-item {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu a .tc-side-menu-item .tc-side-menu-icon {
   line-height: 50px;
-  cursor: pointer;
+  width: 15%;
+  display: inline;
+  font-size: 20px;
 }
-.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li:hover {
-  background-color: aquamarine;
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu a .tc-side-menu-item .tc-side-menu-title {
+  font-size: 1rem;
+  line-height: 50px;
+  width: 85%;
 }
-.tc-sidebar .tc-side-menu-box .tc-side-menu .tc-side-menu-li .tc-side-menu-item {
-  width: 88%;
-  float: right;
-  margin: 0 auto;
-  font-size: 0.85rem;
+.tc-sidebar .tc-side-menu-box .tc-side-sub-menu a:hover {
+  font-size: 1.1rem;
+  background-color: #ffffff2a;
 }
 
 .auth-logo {
@@ -335,6 +361,7 @@ input, select {
 
 .st-index {
   display: flex;
+  height: 100%;
 }
 
 .st-calendar {
@@ -352,36 +379,23 @@ input, select {
 
 .tc-index {
   color: #004361;
-  display: flex;
-}
-
-.tc-main {
-  width: 80%;
+  margin-top: 70px;
+  margin-left: 350px;
+  width: 75%;
+  width: calc(100vw - 350px);
 }
 
 .tc-title-top {
   text-align: center;
-  font-size: 20px;
+  margin-top: 110px;
+}
+.tc-title-top .tc-title-txt {
+  font-size: 25px;
   font-weight: bold;
-  height: 55px;
-  background-color: #004361;
-  vertical-align: center;
-  display: flex;
-  /* 縦方向中央揃え（Safari用） */
-  align-items: center;
-  /* 縦方向中央揃え */
-  /* 横方向中央揃え（Safari用） */
-  justify-content: center;
-  /* 横方向中央揃え */
 }
-.tc-title-top p {
-  color: white;
-  padding: 5px 22px;
-  border-top: double 3px white;
-  border-bottom: double 3px white;
-}
-.tc-title-top p span {
-  text-shadow: 1px 1px 1px white;
+.tc-title-top .tc-title-date {
+  margin-top: 7px;
+  font-size: 35px;
 }
 
 .tc-box {
@@ -463,4 +477,70 @@ input, select {
 }
 .tc-prof-box .tc-prof-content .tc-prof-item {
   width: 60%;
+}
+
+.tc-top-lesson-container {
+  margin: 0 auto;
+  width: 80%;
+}
+.tc-top-lesson-container .tc-top-lesson-title {
+  background-color: #004361;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 50px;
+  padding: 12px 0;
+  color: white;
+  display: flex;
+}
+.tc-top-lesson-container .tc-top-lesson-title .tc-top-lesson-grade {
+  margin-left: 25px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.tc-top-lesson-container .tc-top-lesson-title .tc-top-lesson-category {
+  margin-left: 15px;
+  display: flex;
+}
+.tc-top-lesson-container .tc-top-lesson-title .tc-top-lesson-category i {
+  line-height: 1.2rem;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+.tc-top-lesson-container .tc-top-lesson-title .tc-top-lesson-category .tc-top-lesson-time {
+  margin-left: 3px;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-top: 6px;
+}
+.tc-top-lesson-container .tc-top-lesson-title .tc-top-lesson-category .tc-top-lesson-tc {
+  margin-left: 6px;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-top: 6px;
+}
+.tc-top-lesson-container .tc-top-lesson-main {
+  background-color: white;
+  border: 1px solid #004361;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 30px;
+}
+.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box {
+  width: 97%;
+  margin: 0 auto;
+  padding: 20px 0 5px;
+  border-bottom: 1px solid #00426154;
+  display: flex;
+}
+.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-mem-num {
+  margin-left: 3px;
+}
+.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-membox {
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-membox p {
+  width: 16.2%;
 }
