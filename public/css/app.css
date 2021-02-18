@@ -528,7 +528,7 @@ input, select {
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box {
   width: 97%;
   margin: 0 auto;
-  padding: 20px 0 3px;
+  padding: 20px 0 5px;
   border-bottom: 1px solid #00426154;
   display: flex;
 }
