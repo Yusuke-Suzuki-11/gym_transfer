@@ -6,9 +6,9 @@
 
 	@if (empty($TodayLessonRowset))
 		<div class="tc-title-top">
-			<p class="tc-title-txt">
+			<p class="tc-title-txt font-error">
 				本日の練習はありません
-			<p class="tc-title-date">
+			<p class="tc-title-date font-error">
 				2021年03月21日(火)
 			</p>
 		</div>

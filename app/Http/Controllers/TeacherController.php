@@ -14,7 +14,6 @@ class TeacherController extends Controller
 {
 	public function index()
 	{
-
 		$Lesson = new Lesson;
 		$TodayLessonRowset = $Lesson->getLessonRowsetByNowDate(date('Y-m-d'));
 		return view('teacher.index')->with('TodayLessonRowset', $TodayLessonRowset);
