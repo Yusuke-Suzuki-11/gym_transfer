@@ -70,4 +70,14 @@ class Course extends Model
 
 		return $CourseRow;
 	}
+
+	public function getRowsetByWeek($weekId)
+	{
+		$weekId += 1;
+		$CourseRowset = DB::table($this->__name)
+			->select('*')
+			->where('week_id', $weekId)
+			->get();
+		return  $CourseRowset;
+	}
 }

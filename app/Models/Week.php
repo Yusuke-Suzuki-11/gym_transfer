@@ -20,4 +20,9 @@ class Week extends Model
 	{
 		return $this->day_of_week;
 	}
+
+	public function getDayOfWeekById($id)
+	{
+		return $this->find($id)->day_of_week;
+	}
 }
