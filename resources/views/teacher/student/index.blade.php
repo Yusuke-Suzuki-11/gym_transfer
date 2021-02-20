@@ -50,7 +50,7 @@
 							{{$StudentRow->email}}
 						</td>
 						<td>
-							{{$StudentRow->getAgeByBirthDay($StudentRow->birthday)}}
+							{{$utility->getAgeByBirthDay($StudentRow->birthday)}}
 						</td>
 						<td>
 							{{$StudentRow->phone}}

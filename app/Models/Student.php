@@ -24,13 +24,6 @@ class Student extends Authenticatable
 		return $this->hasMany('App\Models\Lesson');
 	}
 
-	public function getAgeByBirthDay($birthday)
-	{
-		$now = date("Ymd");
-		$birthday = str_replace("-", "", $birthday);
-		return floor(($now - $birthday) / 10000) . '歳';
-	}
-
 	public function getCourseAndLessonTimesBy()
 	{
 		$CourseRowset = $this->getCourseRowsetByRowset()->get();

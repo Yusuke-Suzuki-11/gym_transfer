@@ -44,6 +44,9 @@
 				</div>
 				{{-- メイン情報 --}}
 				<div class="tc-top-lesson-main">
+					@php
+						$count = 0;
+					@endphp
 					@foreach ($__TodayCourseRow->getLessonRowset()->get() as $__LessonRow)
 						@php
 							$StudentRow = $__LessonRow->getStudentRow()->first();
@@ -51,11 +54,11 @@
 
 						<div class="tc-top-lesson-mem-box">
 							<div class="tc-top-lesson-mem-num">
-								<span>1</span>：
+								<span>{{$count+=1}}</span>：
 							</div>
 							<div class="tc-top-lesson-membox">
 								<p>{{$StudentRow->full_name}}</p>
-								<p>小学4年生</p>
+								<p>{{$utility->getAgeByBirthDay($StudentRow->birthday). '歳'}}</p>
 								<p>鉄棒14級</p>
 								<p>マット14級</p>
 								<p>引き継ぎなし</p>
