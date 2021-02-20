@@ -33,10 +33,10 @@
 			<div class="tc-top-lesson-container">
 				{{-- レッスンタイトル枠 --}}
 				<div class="tc-top-lesson-title">
-					<p class="tc-top-lesson-grade">幼児クラス</p>
+					<p class="tc-top-lesson-grade">{{$TodayCourseRow->getGradeRow()->first()->grade}}</p>
 					<div class="tc-top-lesson-category">
 						<i class="fas fa-clock"></i>
-						<span class="tc-top-lesson-time">10:00 ~ 11:00</span>
+						<span class="tc-top-lesson-time">{{$TodayCourseRow->getLessonTimeRowByRow()->first()->lesson_time}}</span>
 					</div>
 					<div class="tc-top-lesson-category">
 						<i class="fas fa-user-friends"></i>

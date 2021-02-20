@@ -15,8 +15,7 @@ class TeacherController extends Controller
 	public function index()
 	{
 		$CourseInstans = new Course;
-		$TodayCourseRowset = $CourseInstans->getRowsetByWeek(date('w'));
-
+		$TodayCourseRowset = $CourseInstans->getRowsetByWeekId(date('w'));
 		return view('teacher.index')->with('TodayCourseRowset', $TodayCourseRowset);
 	}
 }

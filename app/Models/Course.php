@@ -20,19 +20,14 @@ class Course extends Model
 		return $this->belongsTo('App\Models\Week');
 	}
 
+	public function getWeek()
+	{
+		return isset($this->week_id) ? $this->week()->first()->day_of_week : '';
+	}
+
 	public function getLessonTimeRowByRow()
 	{
 		return $this->belongsTo('App\Models\LessonTime', 'lesson_time_id');
-	}
-
-	public function getGradeRowByRow()
-	{
-		return $this->belongsTo('App\Models\Grade', 'grade_id');
-	}
-
-	public function getLessonRowsetByRow()
-	{
-		return $this->belongsToMany('App\Models\Lesson');
 	}
 
 	public function getWeekAndLessonTimes()
@@ -41,9 +36,16 @@ class Course extends Model
 		return $weekAndLessonTime;
 	}
 
-	public function getWeek()
+	public function getGradeRow()
 	{
-		return isset($this->week_id) ? $this->week()->first()->day_of_week : '';
+		return $this->belongsTo('App\Models\Grade', 'grade_id');
+	}
+
+
+
+	public function getLessonRowsetByRow()
+	{
+		return $this->belongsToMany('App\Models\Lesson');
 	}
 
 	public function getLessonTime()
@@ -71,13 +73,10 @@ class Course extends Model
 		return $CourseRow;
 	}
 
-	public function getRowsetByWeek($weekId)
+	public function getRowsetByWeekId($weekId)
 	{
 		$weekId += 1;
-		$CourseRowset = DB::table($this->__name)
-			->select('*')
-			->where('week_id', $weekId)
-			->get();
+		$CourseRowset = $this->where('week_id', $weekId)->get();
 		return  $CourseRowset;
 	}
 }
