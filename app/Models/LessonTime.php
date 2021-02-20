@@ -14,7 +14,7 @@ class LessonTime extends Model
 		return $this->belongsToMany('App\Models\LessonTime', 'lesson_time_week', 'lesson_time_id', 'week_id');
 	}
 
-	public function getGradeRowByRow()
+	public function getGradeRow()
 	{
 		return $this->belongsTo('App\Course');
 	}

@@ -41,4 +41,9 @@ class Lesson extends Model
 
 		return $LessonRowset;
 	}
+
+	public function getStudentRow()
+	{
+		return $this->belongsTo(Student::class, 'student_id');
+	}
 }

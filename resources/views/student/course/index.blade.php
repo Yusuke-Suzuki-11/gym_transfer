@@ -9,7 +9,7 @@
         $__count = 1;
     @endphp
     <div>
-        @foreach ($AuthStudentRow->getLessonRowsetByRow()->get() as $__LessonRow)
+        @foreach ($AuthStudentRow->getLessonRowset()->get() as $__LessonRow)
         <a href="{{route('st.lesson.detail', ['id' => $__LessonRow->id])}}">
             <p>今月の練習{{$__count}}</p>
         </a>
