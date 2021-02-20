@@ -19,7 +19,7 @@ class Student extends Authenticatable
 		return $this->belongsToMany("App\Models\Course", 'course_student', 'student_id', 'course_id');
 	}
 
-	public function getLessonRowsetByRow()
+	public function getLessonRowset()
 	{
 		return $this->hasMany('App\Models\Lesson');
 	}
@@ -47,7 +47,7 @@ class Student extends Authenticatable
 
 	public function getJsonLessonDateAndTitle()
 	{
-		$LessonRowset = $this->getLessonRowsetByRow()->get();
+		$LessonRowset = $this->getLessonRowset()->get();
 		if (!isset($LessonRowset)) {
 			return '';
 		}

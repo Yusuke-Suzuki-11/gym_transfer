@@ -41,11 +41,9 @@ class Course extends Model
 		return $this->belongsTo('App\Models\Grade', 'grade_id');
 	}
 
-
-
-	public function getLessonRowsetByRow()
+	public function getLessonRowset()
 	{
-		return $this->belongsToMany('App\Models\Lesson');
+		return $this->hasMany('App\Models\Lesson');
 	}
 
 	public function getLessonTime()

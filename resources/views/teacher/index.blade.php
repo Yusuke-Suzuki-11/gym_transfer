@@ -28,40 +28,42 @@
 		{{-- 練習情報 --}}
 		{{-- 外枠 --}}
 
-		@foreach ($TodayCourseRowset as $TodayCourseRow)
-
+		@foreach ($TodayCourseRowset as $__TodayCourseRow)
 			<div class="tc-top-lesson-container">
 				{{-- レッスンタイトル枠 --}}
 				<div class="tc-top-lesson-title">
-					<p class="tc-top-lesson-grade">{{$TodayCourseRow->getGradeRow()->first()->grade}}</p>
+					<p class="tc-top-lesson-grade">{{$__TodayCourseRow->getGradeRow()->first()->grade}}</p>
 					<div class="tc-top-lesson-category">
 						<i class="fas fa-clock"></i>
-						<span class="tc-top-lesson-time">{{$TodayCourseRow->getLessonTimeRowByRow()->first()->lesson_time}}</span>
+						<span class="tc-top-lesson-time">{{$__TodayCourseRow->getLessonTimeRowByRow()->first()->lesson_time}}</span>
 					</div>
 					<div class="tc-top-lesson-category">
 						<i class="fas fa-user-friends"></i>
 						<p class="tc-top-lesson-tc">岸本鷹斗</p>
 					</div>
 				</div>
-
 				{{-- メイン情報 --}}
-
-
-
 				<div class="tc-top-lesson-main">
-					<div class="tc-top-lesson-mem-box">
-						<div class="tc-top-lesson-mem-num">
-							<span>1</span>：
+					@foreach ($__TodayCourseRow->getLessonRowset()->get() as $__LessonRow)
+						@php
+							$StudentRow = $__LessonRow->getStudentRow()->first();
+						@endphp
+
+						<div class="tc-top-lesson-mem-box">
+							<div class="tc-top-lesson-mem-num">
+								<span>1</span>：
+							</div>
+							<div class="tc-top-lesson-membox">
+								<p>{{$StudentRow->full_name}}</p>
+								<p>小学4年生</p>
+								<p>鉄棒14級</p>
+								<p>マット14級</p>
+								<p>引き継ぎなし</p>
+								<p>振替ではない</p>
+							</div>
 						</div>
-						<div class="tc-top-lesson-membox">
-							<p>鈴木佑輔</p>
-							<p>小学4年生</p>
-							<p>鉄棒14級</p>
-							<p>マット14級</p>
-							<p>引き継ぎなし</p>
-							<p>振替ではない</p>
-						</div>
-					</div>
+					@endforeach
+
 				</div>
 			</div>
 		@endforeach
