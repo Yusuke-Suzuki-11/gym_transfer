@@ -108,6 +108,8 @@
 				</tr>
 				@endforeach
 			</table>
+
+			<student-search-component></student-search-component>
 		</div>
 	</div>
 </div>

@@ -16,6 +16,17 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRowset = Student::all();
 		$GradeRowset = Grade::all();
+
+		$formItem = [];
+		$GradeInstans = new Grade();
+
+		$formItem[] = [
+			'dayOfWeekSelect' => config('const.DAY_OF_WEEK'),
+			'gradeSelect' => $GradeInstans->getGradeNameForSearchForm()
+		];
+
+
+
 		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset, 'GradeRowset' => $GradeRowset]);
 	}
 
