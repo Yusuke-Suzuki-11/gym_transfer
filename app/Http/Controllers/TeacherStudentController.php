@@ -7,6 +7,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Mail;
 
 class TeacherStudentController extends Controller
@@ -14,7 +15,8 @@ class TeacherStudentController extends Controller
 	public function index()
 	{
 		$StudentRowset = Student::all();
-		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset]);
+		$GradeRowset = Grade::all();
+		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset, 'GradeRowset' => $GradeRowset]);
 	}
 
 	public function show($id)

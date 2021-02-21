@@ -6,12 +6,7 @@
 		</div>
 	</div>
 
-
-
-
 	<div class="tc-side-menu-box">
-
-
 		{{-- 一つの項目 --}}
 		<div class="tc-side-sub-menu">
 			<a href="">

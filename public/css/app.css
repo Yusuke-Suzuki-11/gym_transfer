@@ -239,7 +239,7 @@ input, select {
   color: white;
   height: calc(100vh - 70px);
   position: fixed;
-  top: 71px;
+  top: 70px;
 }
 .tc-sidebar a {
   color: white;
@@ -423,6 +423,45 @@ input, select {
 .tc-student-box .tc-student-search .tc-student-search-main {
   background-color: white;
   border: 1px solid #0042612f;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub {
+  display: flex;
+  justify-content: space-between;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form {
+  width: 48%;
+  font-size: 0.8rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form input {
+  width: 100%;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form select {
+  width: 100%;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button {
+  margin-top: 20px;
+  text-align: center;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button .search-btn {
+  letter-spacing: 3px;
+  width: 25%;
+  font-size: 0.9rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button .cross-btn {
+  letter-spacing: 1px;
+  width: 25%;
+  font-size: 0.9rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content p {
+  font-size: 0.8rem;
+  margin: 10px 0 3px;
 }
 .tc-student-box .tc-student-list {
   margin-top: 50px;
