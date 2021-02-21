@@ -1,5 +1,5 @@
 
-.tc-box{
+.tc-student-box{
 	width: 96%;
 	margin: 0 auto;
 
@@ -8,14 +8,14 @@
 
 
 		.tc-student-search-title{
-			font-weight: bold;
-			font-size: 1.0rem;
-			display: inline-block;
-			padding: 20px 25px;
-			background-color: #004361;
-			color: white;
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
+			font-weight: bold;
+			background-color: #004361;
+			color: white;
+			margin-top: 50px;
+			padding: 12px 0;
+			text-align: center;
 		}
 
 		.tc-student-search-main{

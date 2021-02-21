@@ -27,7 +27,6 @@
 
 		{{-- 練習情報 --}}
 		{{-- 外枠 --}}
-
 		@foreach ($TodayCourseRowset as $__TodayCourseRow)
 			<div class="tc-top-lesson-container">
 				{{-- レッスンタイトル枠 --}}
@@ -46,27 +45,35 @@
 				<div class="tc-top-lesson-main">
 					@php
 						$count = 0;
+						$__LessonRowset = $__TodayCourseRow->getLessonRowset()->get()
 					@endphp
-					@foreach ($__TodayCourseRow->getLessonRowset()->get() as $__LessonRow)
-						@php
-							$StudentRow = $__LessonRow->getStudentRow()->first();
-						@endphp
+					@if (count($__LessonRowset) > 0)
 
-						<div class="tc-top-lesson-mem-box">
-							<div class="tc-top-lesson-mem-num">
-								<span>{{$count+=1}}</span>：
+						@foreach ($__LessonRowset as $__LessonRow)
+							@php
+								$StudentRow = $__LessonRow->getStudentRow()->first();
+							@endphp
+							<div class="tc-top-lesson-mem-box">
+								<div class="tc-top-lesson-mem-num">
+									<span>{{$count+=1}}</span>：
+								</div>
+								<div class="tc-top-lesson-membox">
+									<p>{{$StudentRow->full_name}}</p>
+									<p>{{$utility->getAgeByBirthDay($StudentRow->birthday). '歳'}}</p>
+									<p>鉄棒14級</p>
+									<p>マット14級</p>
+									<p>引き継ぎなし</p>
+									<p>振替ではない</p>
+								</div>
 							</div>
-							<div class="tc-top-lesson-membox">
-								<p>{{$StudentRow->full_name}}</p>
-								<p>{{$utility->getAgeByBirthDay($StudentRow->birthday). '歳'}}</p>
-								<p>鉄棒14級</p>
-								<p>マット14級</p>
-								<p>引き継ぎなし</p>
-								<p>振替ではない</p>
-							</div>
+						@endforeach
+					@else
+						<div class="tc-top-lesson-mem-emp">
+							<p class="text font-error">
+								参加生徒はいません
+							</p>
 						</div>
-					@endforeach
-
+					@endif
 				</div>
 			</div>
 		@endforeach
