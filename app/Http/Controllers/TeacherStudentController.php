@@ -17,17 +17,19 @@ class TeacherStudentController extends Controller
 		$StudentRowset = Student::all();
 		$GradeRowset = Grade::all();
 
-		$formItem = [];
+
 		$GradeInstans = new Grade();
 
-		$formItem[] = [
+		$gender = config('const.STUDENTS.GENDER_TYPE');
+		array_unshift($gender, '----');
+
+		$formItem = [
 			'dayOfWeekSelect' => config('const.DAY_OF_WEEK'),
-			'gradeSelect' => $GradeInstans->getGradeNameForSearchForm()
+			'gradeSelect' => $GradeInstans->getGradeNameForSearchForm(),
+			'gender' => $gender,
 		];
 
-
-
-		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset, 'GradeRowset' => $GradeRowset]);
+		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset, 'GradeRowset' => $GradeRowset, 'formItem' => json_encode($formItem)]);
 	}
 
 	public function show($id)

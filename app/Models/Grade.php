@@ -22,8 +22,6 @@ class Grade extends Model
 		$IdAndGradeArray = DB::table($this->__name)
 			->select('id', 'grade')
 			->get();
-
-		$dataForForm = ['' => '----'];
 		foreach ($IdAndGradeArray as $IdAndGrade) {
 			$dataForForm[$IdAndGrade->id] = $IdAndGrade->grade;
 		}

@@ -11,7 +11,7 @@
 			<p class="tc-title-txt font-error">
 				本日の練習はありません
 			<p class="tc-title-date font-error">
-				{{$utility->getTodayDate()}}
+				{{$utility->getTodayDateString()}}
 			</p>
 		</div>
 	@else
@@ -24,6 +24,7 @@
 				{{$utility->getTodayDateString()}}
 			</p>
 		</div>
+		{{dd($TodayCourseRowset)}}
 
 		{{-- 練習情報 --}}
 		{{-- 外枠 --}}
