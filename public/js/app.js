@@ -16718,20 +16718,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     formItem: Object
   },
   data: function data() {
     return {
-      test: "test",
+      name: null,
       dayOfWeekSelect: null,
       gradeSelect: null,
-      gender: null
+      gender: null,
+      transfer: null
     };
   },
-  mounted: function mounted() {
-    conl;
+  methods: {
+    formClear: function formClear() {
+      this.name = null;
+      this.dayOfWeekSelect = null;
+      this.gradeSelect = null;
+      this.gender = null;
+      this.transfer = null;
+    }
   }
 });
 
@@ -53060,7 +53072,30 @@ var render = function() {
     _c("div", { staticClass: "tc-student-search-main" }, [
       _c("div", { staticClass: "tc-student-search-content" }, [
         _c("div", { staticClass: "tc-student-search-sub" }, [
-          _vm._m(1),
+          _c("div", { staticClass: "tc-student-search-form" }, [
+            _c("p", [_vm._v("名前")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
+                }
+              ],
+              attrs: { type: "text", name: "name" },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "tc-student-search-form" }, [
             _c("p", [_vm._v("曜日")]),
@@ -53233,9 +53268,80 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2),
+        _c("div", { staticClass: "tc-student-search-sub" }, [
+          _c("div", { staticClass: "tc-student-search-form" }, [
+            _c("p", [_vm._v("振替")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.transfer,
+                    expression: "transfer"
+                  }
+                ],
+                attrs: { name: "transfer" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.transfer = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c(
+                  "option",
+                  {
+                    staticClass: "dummy",
+                    attrs: { disabled: "" },
+                    domProps: { value: null }
+                  },
+                  [
+                    _vm._v(
+                      "\n              振替を選択してください\n            "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("option", { domProps: { value: 0 } }, [
+                  _vm._v("振替していない")
+                ]),
+                _vm._v(" "),
+                _c("option", { domProps: { value: 1 } }, [
+                  _vm._v("振替している")
+                ])
+              ]
+            )
+          ])
+        ]),
         _vm._v(" "),
-        _vm._m(3)
+        _c("div", { staticClass: "tc-student-search-button" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-outline-danger cross-btn",
+              on: { click: _vm.formClear }
+            },
+            [
+              _c("i", { staticClass: "fas fa-times" }),
+              _vm._v(" 条件をクリア\n        ")
+            ]
+          )
+        ])
       ])
     ])
   ])
@@ -53253,47 +53359,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tc-student-search-form" }, [
-      _c("p", [_vm._v("名前")]),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "text", name: "name" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tc-student-search-sub" }, [
-      _c("div", { staticClass: "tc-student-search-form" }, [
-        _c("p", [_vm._v("振替")]),
-        _vm._v(" "),
-        _c("select", { attrs: { name: "transfar" } }, [
-          _c("option", { staticClass: "dummy", attrs: { value: "" } }, [
-            _vm._v("振替を選択してください")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [_vm._v("振替している")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "0" } }, [_vm._v("振替していない")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tc-student-search-button" }, [
-      _c("button", { staticClass: "btn btn-outline-info search-btn" }, [
-        _c("i", { staticClass: "fas fa-search" }),
-        _vm._v(" 検索する\n        ")
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-danger cross-btn" }, [
-        _c("i", { staticClass: "fas fa-times" }),
-        _vm._v(" 条件をクリア\n        ")
-      ])
-    ])
+    return _c(
+      "button",
+      { staticClass: "btn btn-outline-info search-btn js-st-search-btn" },
+      [_c("i", { staticClass: "fas fa-search" }), _vm._v(" 検索する\n        ")]
+    )
   }
 ]
 render._withStripped = true

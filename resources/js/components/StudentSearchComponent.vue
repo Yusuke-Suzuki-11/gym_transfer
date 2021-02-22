@@ -8,7 +8,7 @@
         <div class="tc-student-search-sub">
           <div class="tc-student-search-form">
             <p>名前</p>
-            <input type="text" name="name" />
+            <input type="text" name="name" v-model="name" />
           </div>
           <div class="tc-student-search-form">
             <p>曜日</p>
@@ -58,18 +58,23 @@
         <div class="tc-student-search-sub">
           <div class="tc-student-search-form">
             <p>振替</p>
-            <select name="transfar">
-              <option class="dummy" value="">振替を選択してください</option>
-              <option value="1">振替している</option>
-              <option value="0">振替していない</option>
+            <select name="transfer" v-model="transfer">
+              <option class="dummy" :value="null" disabled>
+                振替を選択してください
+              </option>
+              <option :value="0">振替していない</option>
+              <option :value="1">振替している</option>
             </select>
           </div>
         </div>
         <div class="tc-student-search-button">
-          <button class="btn btn-outline-info search-btn">
+          <button class="btn btn-outline-info search-btn js-st-search-btn">
             <i class="fas fa-search"></i> 検索する
           </button>
-          <button class="btn btn-outline-danger cross-btn">
+          <button
+            class="btn btn-outline-danger cross-btn"
+            v-on:click="formClear"
+          >
             <i class="fas fa-times"></i> 条件をクリア
           </button>
         </div>
@@ -85,14 +90,21 @@ export default {
   },
   data() {
     return {
-      test: "test",
+      name: null,
       dayOfWeekSelect: null,
       gradeSelect: null,
       gender: null,
+      transfer: null,
     };
   },
-  mounted() {
-    conl;
+  methods: {
+    formClear: function () {
+      this.name = null;
+      this.dayOfWeekSelect = null;
+      this.gradeSelect = null;
+      this.gender = null;
+      this.transfer = null;
+    },
   },
 };
 </script>
