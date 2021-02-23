@@ -105,7 +105,9 @@
           <td>
             <a href="URL">{{ student.lastName }} {{ student.firstName }}</a>
           </td>
-          <td>月曜 11:00~11:50</td>
+          <td v-for="lessonData in student.courseAndLessonTime">
+            {{ lessonData.week }} {{ lessonData.lessonTime }}
+          </td>
           <td>{{ student.email }}</td>
           <td>{{ student.birthday }}</td>
           <td>{{ student.phone }}</td>
