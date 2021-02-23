@@ -81,6 +81,12 @@
             >
               <i class="fas fa-times"></i> 条件をクリア
             </button>
+            <button
+              class="btn btn-outline-danger cross-btn"
+              v-on:click="showAll"
+            >
+              <i class="fas fa-times"></i> All
+            </button>
           </div>
         </div>
       </div>
@@ -94,7 +100,6 @@
           <th>年齢</th>
           <th>電話番号</th>
         </tr>
-
         <tr v-for="student in this.studentData">
           <td>
             <a href="URL">{{ student.lastName }} {{ student.firstName }}</a>
@@ -104,7 +109,6 @@
           <td>{{ student.birthday }}</td>
           <td>{{ student.phone }}</td>
         </tr>
-
         <!-- ループ終わり -->
       </table>
     </div>
@@ -121,6 +125,7 @@ export default {
   },
   mounted() {
     this.studentData = this.studens;
+    this.allStudent = this.studens;
     console.log(this.studentData);
   },
   data() {
@@ -131,6 +136,7 @@ export default {
       gender: null,
       transfer: null,
       studentData: {},
+      allStudent: {},
     };
   },
   methods: {
@@ -140,6 +146,11 @@ export default {
       this.gradeSelect = null;
       this.gender = null;
       this.transfer = null;
+    },
+    showAll: function () {
+      this.formClear();
+      this.studentData = this.allStudent;
+      console.log(this.allStudent);
     },
     searchStudent: function () {
       if (

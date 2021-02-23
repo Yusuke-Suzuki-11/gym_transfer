@@ -16753,6 +16753,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -16762,6 +16766,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.studentData = this.studens;
+    this.allStudent = this.studens;
     console.log(this.studentData);
   },
   data: function data() {
@@ -16771,7 +16776,8 @@ __webpack_require__.r(__webpack_exports__);
       gradeSelect: null,
       gender: null,
       transfer: null,
-      studentData: {}
+      studentData: {},
+      allStudent: {}
     };
   },
   methods: {
@@ -16781,6 +16787,11 @@ __webpack_require__.r(__webpack_exports__);
       this.gradeSelect = null;
       this.gender = null;
       this.transfer = null;
+    },
+    showAll: function showAll() {
+      this.formClear();
+      this.studentData = this.allStudent;
+      console.log(this.allStudent);
     },
     searchStudent: function searchStudent() {
       var _this = this;
@@ -53413,6 +53424,18 @@ var render = function() {
               [
                 _c("i", { staticClass: "fas fa-times" }),
                 _vm._v(" 条件をクリア\n          ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger cross-btn",
+                on: { click: _vm.showAll }
+              },
+              [
+                _c("i", { staticClass: "fas fa-times" }),
+                _vm._v(" All\n          ")
               ]
             )
           ])
