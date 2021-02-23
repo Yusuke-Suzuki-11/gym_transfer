@@ -27,7 +27,6 @@ class CreateStudentsTable extends Migration
 			$table->string('gender');
 			$table->integer('stress_point');
 			$table->text('phone');
-			$table->integer('transfer_enabled')->default(1);
 			$table->timestamps();
 		});
 	}

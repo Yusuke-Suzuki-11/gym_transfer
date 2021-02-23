@@ -11,9 +11,10 @@
 	</div>
 	<div class="tc-student-box">
 		<student-search-component
-			:form-item={{$formItem}}
+			:form-item={{$formItemJson}}
+			:url={{json_encode(route('tc.student.search'))}}
 		></student-search-component>
-		{{-- メインコンテンツ --}}
+
 		<div class="tc-student-list">
 			<table class="table-box">
 				<tr>
