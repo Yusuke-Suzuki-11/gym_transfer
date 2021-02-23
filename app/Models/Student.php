@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class Student extends Authenticatable
 {
@@ -54,7 +55,7 @@ class Student extends Authenticatable
 		return json_encode($array);
 	}
 
-	public function getStudentRowsetBy($name, $dayOfWeek, $gender, $grade, $transfer)
+	public function getStudentRowsetForSearch($name, $dayOfWeek, $gender, $grade, $transfer)
 	{
 		$StudentRowset = DB::table($this->__name)
 			->join('course_student', $this->__name . '.id', 'course_student.student_id')
@@ -74,17 +75,42 @@ class Student extends Authenticatable
 		if (isset($transfer)) {
 			$StudentRowset = $StudentRowset->where('course_student.transfer_enabled', $transfer);
 		}
-
-		$StudentRowset->select('students.id', 'students.full_name', 'students.email', 'students.birthday', 'students.phone');
+		$StudentRowset->select('students.id', 'students.last_name', 'students.first_name', 'students.email', 'students.gender', 'students.birthday', 'students.phone');
 
 		$data = [];
 		if (!$StudentRowset->get()->isEmpty()) {
 			foreach ($StudentRowset->get() as $StudentRow) {
 				$data[] = [
-					'name' => $StudentRow->full_name,
+					'id' => $StudentRow->id,
+					'lastName' => $StudentRow->last_name,
+					'firstName' => $StudentRow->first_name,
 					'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
 					'email' => $StudentRow->email,
+					'birthday' => $StudentRow->birthday,
 					'gender' => $StudentRow->birthday,
+					'phone' => $StudentRow->phone,
+				];
+			}
+		} else {
+			return '';
+		}
+		return $data;
+	}
+
+	public function getStudentAllForJson()
+	{
+		$StudentRowset = DB::table($this->__name)->select('id', 'last_name', 'first_name', 'email', 'birthday', 'gender', 'phone');
+		$data = [];
+		if (!$StudentRowset->get()->isEmpty()) {
+			foreach ($StudentRowset->get() as $StudentRow) {
+				$data[] = [
+					'id' => $StudentRow->id,
+					'lastName' => $StudentRow->last_name,
+					'firstName' => $StudentRow->first_name,
+					'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
+					'email' => $StudentRow->email,
+					'birthday' => $StudentRow->birthday,
+					'gender' => $StudentRow->gender,
 					'phone' => $StudentRow->phone,
 				];
 			}

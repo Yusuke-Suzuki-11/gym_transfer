@@ -17,15 +17,14 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRowset = Student::all();
 		$GradeInstans = new Grade();
-
-
 		$gender = config('const.STUDENTS.GENDER_TYPE');
 		$formItem = [
 			'dayOfWeekSelect' => config('const.DAY_OF_WEEK'),
 			'gradeSelect' => $GradeInstans->getGradeNameForSearchForm(),
 			'gender' => $gender,
 		];
-		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset, 'formItemJson' => json_encode($formItem)]);
+		$StudentInstans = new Student();
+		return view('teacher.student.index')->with(['Students' => json_encode($StudentInstans->getStudentAllForJson()), 'formItemJson' => json_encode($formItem)]);
 	}
 
 	public function show($id)
@@ -41,7 +40,7 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRow = Student::find($id);
 		$CourseRowset = Course::all();
-		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
+		return view('teacher.student.edit') > with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
 	}
 
 	public function update($id, Request $request)
@@ -76,9 +75,7 @@ class TeacherStudentController extends Controller
 	public function axios_search(Request $request)
 	{
 		$StudentInstans = new Student();
-
-		$test = $StudentInstans->getStudentRowsetBy($request->query('name'), $request->query('dayOfWeek'), $request->query('gender'), $request->query('grade'), $request->query('transfer'));
-
-		dd($test);
+		$data = $StudentInstans->getStudentRowsetForSearch($request->query('name'), $request->query('dayOfWeek'), $request->query('gender'), $request->query('grade'), $request->query('transfer'));
+		return $data;
 	}
 }

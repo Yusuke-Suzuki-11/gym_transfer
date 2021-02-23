@@ -16728,20 +16728,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     formItem: Object,
-    url: String
+    url: String,
+    studens: Array
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.studentData = this.studens;
+    console.log(this.studentData);
+  },
   data: function data() {
     return {
       name: null,
       dayOfWeekSelect: null,
       gradeSelect: null,
       gender: null,
-      transfer: null
+      transfer: null,
+      studentData: {}
     };
   },
   methods: {
@@ -16753,6 +16783,8 @@ __webpack_require__.r(__webpack_exports__);
       this.transfer = null;
     },
     searchStudent: function searchStudent() {
+      var _this = this;
+
       if (this.name == null && this.dayOfWeekSelect == null && this.gradeSelect == null && this.gender == null && this.transfer == null) {
         alert("検索条件を入力してください");
         return;
@@ -16766,7 +16798,12 @@ __webpack_require__.r(__webpack_exports__);
           gender: this.gender,
           transfer: this.transfer
         }
-      }).then();
+      }).then(function (res) {
+        _this.studentData = res.data;
+        console.log(_this.studentData);
+      })["catch"](function (error) {
+        alert("データの取得に失敗しました");
+      });
     }
   }
 });
@@ -53090,289 +53127,328 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tc-student-search" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "tc-student-search-main" }, [
-      _c("div", { staticClass: "tc-student-search-content" }, [
-        _c("div", { staticClass: "tc-student-search-sub" }, [
-          _c("div", { staticClass: "tc-student-search-form" }, [
-            _c("p", [_vm._v("名前")]),
+  return _c("div", { staticClass: "tc-student-box" }, [
+    _c("div", { staticClass: "tc-student-search" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "tc-student-search-main" }, [
+        _c("div", { staticClass: "tc-student-search-content" }, [
+          _c("div", { staticClass: "tc-student-search-sub" }, [
+            _c("div", { staticClass: "tc-student-search-form" }, [
+              _c("p", [_vm._v("名前")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.name,
+                    expression: "name"
+                  }
+                ],
+                attrs: { type: "text" },
+                domProps: { value: _vm.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.name = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
-            _c("input", {
-              directives: [
+            _c("div", { staticClass: "tc-student-search-form" }, [
+              _c("p", [_vm._v("曜日")]),
+              _vm._v(" "),
+              _c(
+                "select",
                 {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.name,
-                  expression: "name"
-                }
-              ],
-              attrs: { type: "text" },
-              domProps: { value: _vm.name },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.dayOfWeekSelect,
+                      expression: "dayOfWeekSelect"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.dayOfWeekSelect = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
                   }
-                  _vm.name = $event.target.value
-                }
-              }
-            })
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      staticClass: "dummy",
+                      attrs: { disabled: "" },
+                      domProps: { value: null }
+                    },
+                    [
+                      _vm._v(
+                        "\n                曜日を選択してください\n              "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.formItem["dayOfWeekSelect"], function(item, id) {
+                    return _c("option", { domProps: { value: id } }, [
+                      _vm._v(
+                        "\n                " + _vm._s(item) + "\n              "
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "tc-student-search-form" }, [
-            _c("p", [_vm._v("曜日")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.dayOfWeekSelect,
-                    expression: "dayOfWeekSelect"
+          _c("div", { staticClass: "tc-student-search-sub" }, [
+            _c("div", { staticClass: "tc-student-search-form" }, [
+              _c("p", [_vm._v("クラス")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.gradeSelect,
+                      expression: "gradeSelect"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.gradeSelect = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
                   }
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      staticClass: "dummy",
+                      attrs: { disabled: "" },
+                      domProps: { value: null }
+                    },
+                    [
+                      _vm._v(
+                        "\n                クラスを選択してください\n              "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.formItem["gradeSelect"], function(item, id) {
+                    return _c("option", { domProps: { value: id } }, [
+                      _vm._v(
+                        "\n                " + _vm._s(item) + "\n              "
+                      )
+                    ])
+                  })
                 ],
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.dayOfWeekSelect = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              [
-                _c(
-                  "option",
-                  {
-                    staticClass: "dummy",
-                    attrs: { disabled: "" },
-                    domProps: { value: null }
-                  },
-                  [
-                    _vm._v(
-                      "\n              曜日を選択してください\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.formItem["dayOfWeekSelect"], function(item, id) {
-                  return _c("option", { domProps: { value: id } }, [
-                    _vm._v("\n              " + _vm._s(item) + "\n            ")
-                  ])
-                })
-              ],
-              2
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "tc-student-search-sub" }, [
-          _c("div", { staticClass: "tc-student-search-form" }, [
-            _c("p", [_vm._v("クラス")]),
+                2
+              )
+            ]),
             _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.gradeSelect,
-                    expression: "gradeSelect"
+            _c("div", { staticClass: "tc-student-search-form" }, [
+              _c("p", [_vm._v("性別")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.gender,
+                      expression: "gender"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.gender = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
                   }
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      staticClass: "dummy",
+                      attrs: { disabled: "" },
+                      domProps: { value: null }
+                    },
+                    [
+                      _vm._v(
+                        "\n                性別を選択してください\n              "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.formItem["gender"], function(item, id) {
+                    return _c("option", { domProps: { value: id } }, [
+                      _vm._v(
+                        "\n                " + _vm._s(item) + "\n              "
+                      )
+                    ])
+                  })
                 ],
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.gradeSelect = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              [
-                _c(
-                  "option",
-                  {
-                    staticClass: "dummy",
-                    attrs: { disabled: "" },
-                    domProps: { value: null }
-                  },
-                  [
-                    _vm._v(
-                      "\n              クラスを選択してください\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.formItem["gradeSelect"], function(item, id) {
-                  return _c("option", { domProps: { value: id } }, [
-                    _vm._v("\n              " + _vm._s(item) + "\n            ")
-                  ])
-                })
-              ],
-              2
-            )
+                2
+              )
+            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "tc-student-search-form" }, [
-            _c("p", [_vm._v("性別")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.gender,
-                    expression: "gender"
+          _c("div", { staticClass: "tc-student-search-sub" }, [
+            _c("div", { staticClass: "tc-student-search-form" }, [
+              _c("p", [_vm._v("振替")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.transfer,
+                      expression: "transfer"
+                    }
+                  ],
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.transfer = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
                   }
-                ],
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.gender = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              [
-                _c(
-                  "option",
-                  {
-                    staticClass: "dummy",
-                    attrs: { disabled: "" },
-                    domProps: { value: null }
-                  },
-                  [
-                    _vm._v(
-                      "\n              性別を選択してください\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.formItem["gender"], function(item, id) {
-                  return _c("option", { domProps: { value: id } }, [
-                    _vm._v("\n              " + _vm._s(item) + "\n            ")
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      staticClass: "dummy",
+                      attrs: { disabled: "" },
+                      domProps: { value: null }
+                    },
+                    [
+                      _vm._v(
+                        "\n                振替を選択してください\n              "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("option", { domProps: { value: 0 } }, [
+                    _vm._v("振替していない")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { domProps: { value: 1 } }, [
+                    _vm._v("振替している")
                   ])
-                })
-              ],
-              2
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "tc-student-search-sub" }, [
-          _c("div", { staticClass: "tc-student-search-form" }, [
-            _c("p", [_vm._v("振替")]),
-            _vm._v(" "),
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "tc-student-search-button" }, [
             _c(
-              "select",
+              "button",
               {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.transfer,
-                    expression: "transfer"
-                  }
-                ],
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.transfer = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
+                staticClass: "btn btn-outline-info search-btn js-st-search-btn",
+                on: { click: _vm.searchStudent }
               },
               [
-                _c(
-                  "option",
-                  {
-                    staticClass: "dummy",
-                    attrs: { disabled: "" },
-                    domProps: { value: null }
-                  },
-                  [
-                    _vm._v(
-                      "\n              振替を選択してください\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("option", { domProps: { value: 0 } }, [
-                  _vm._v("振替していない")
-                ]),
-                _vm._v(" "),
-                _c("option", { domProps: { value: 1 } }, [
-                  _vm._v("振替している")
-                ])
+                _c("i", { staticClass: "fas fa-search" }),
+                _vm._v(" 検索する\n          ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger cross-btn",
+                on: { click: _vm.formClear }
+              },
+              [
+                _c("i", { staticClass: "fas fa-times" }),
+                _vm._v(" 条件をクリア\n          ")
               ]
             )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "tc-student-search-button" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-info search-btn js-st-search-btn",
-              on: { click: _vm.searchStudent }
-            },
-            [
-              _c("i", { staticClass: "fas fa-search" }),
-              _vm._v(" 検索する\n        ")
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-danger cross-btn",
-              on: { click: _vm.formClear }
-            },
-            [
-              _c("i", { staticClass: "fas fa-times" }),
-              _vm._v(" 条件をクリア\n        ")
-            ]
-          )
         ])
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "tc-student-list" }, [
+      _c(
+        "table",
+        { staticClass: "table-box" },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._l(this.studentData, function(student) {
+            return _c("tr", [
+              _c("td", [
+                _c("a", { attrs: { href: "URL" } }, [
+                  _vm._v(
+                    _vm._s(student.lastName) + " " + _vm._s(student.firstName)
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v("月曜 11:00~11:50")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.email))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.birthday))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.phone))])
+            ])
+          })
+        ],
+        2
+      )
     ])
   ])
 }
@@ -53383,6 +53459,22 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "tc-student-search-title" }, [
       _c("p", [_vm._v("検索条件")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("名前")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("クラス")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("メールアドレス")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("年齢")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("電話番号")])
     ])
   }
 ]
