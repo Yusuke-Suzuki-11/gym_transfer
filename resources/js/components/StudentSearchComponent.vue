@@ -76,22 +76,23 @@
               <i class="fas fa-search"></i> 検索する
             </button>
             <button
+              class="btn btn-outline-success cross-btn"
+              v-on:click="showAll"
+            >
+              All
+            </button>
+            <button
               class="btn btn-outline-danger cross-btn"
               v-on:click="formClear"
             >
               <i class="fas fa-times"></i> 条件をクリア
-            </button>
-            <button
-              class="btn btn-outline-danger cross-btn"
-              v-on:click="showAll"
-            >
-              <i class="fas fa-times"></i> All
             </button>
           </div>
         </div>
       </div>
     </div>
     <div class="tc-student-list">
+      <p>表示件数：{{ this.studentData.length }}</p>
       <table class="table-box">
         <tr>
           <th>名前</th>

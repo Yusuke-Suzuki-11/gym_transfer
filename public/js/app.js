@@ -16757,6 +16757,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -53418,24 +53419,21 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "btn btn-outline-danger cross-btn",
-                on: { click: _vm.formClear }
+                staticClass: "btn btn-outline-success cross-btn",
+                on: { click: _vm.showAll }
               },
-              [
-                _c("i", { staticClass: "fas fa-times" }),
-                _vm._v(" 条件をクリア\n          ")
-              ]
+              [_vm._v("\n            All\n          ")]
             ),
             _vm._v(" "),
             _c(
               "button",
               {
                 staticClass: "btn btn-outline-danger cross-btn",
-                on: { click: _vm.showAll }
+                on: { click: _vm.formClear }
               },
               [
                 _c("i", { staticClass: "fas fa-times" }),
-                _vm._v(" All\n          ")
+                _vm._v(" 条件をクリア\n          ")
               ]
             )
           ])
@@ -53444,6 +53442,8 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "tc-student-list" }, [
+      _c("p", [_vm._v("表示件数：" + _vm._s(this.studentData.length))]),
+      _vm._v(" "),
       _c(
         "table",
         { staticClass: "table-box" },
