@@ -7,14 +7,24 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Mail;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class TeacherStudentController extends Controller
 {
 	public function index()
 	{
 		$StudentRowset = Student::all();
-		return view('teacher.student.index')->with(['StudentRowset' => $StudentRowset]);
+		$GradeInstans = new Grade();
+		$gender = config('const.STUDENTS.GENDER_TYPE');
+		$formItem = [
+			'dayOfWeekSelect' => config('const.DAY_OF_WEEK'),
+			'gradeSelect' => $GradeInstans->getGradeNameForSearchForm(),
+			'gender' => $gender,
+		];
+		$StudentInstans = new Student();
+		return view('teacher.student.index')->with(['Students' => json_encode($StudentInstans->getStudentAllForJson()), 'formItemJson' => json_encode($formItem)]);
 	}
 
 	public function show($id)
@@ -23,7 +33,6 @@ class TeacherStudentController extends Controller
 		if (empty($StudentRow)) {
 			return App::abort(404);
 		}
-
 		return view('teacher.student.show')->with(['StudentRow' => $StudentRow]);
 	}
 
@@ -31,7 +40,7 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRow = Student::find($id);
 		$CourseRowset = Course::all();
-		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
+		return view('teacher.student.edit') > with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
 	}
 
 	public function update($id, Request $request)
@@ -61,5 +70,12 @@ class TeacherStudentController extends Controller
 	public function add()
 	{
 		return view('teacher.student.add');
+	}
+
+	public function axios_search(Request $request)
+	{
+		$StudentInstans = new Student();
+		$data = $StudentInstans->getStudentRowsetForSearch($request->query('name'), $request->query('dayOfWeek'), $request->query('gender'), $request->query('grade'), $request->query('transfer'));
+		return $data;
 	}
 }

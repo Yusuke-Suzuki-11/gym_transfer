@@ -1,5 +1,5 @@
 
-.tc-box{
+.tc-student-box{
 	width: 96%;
 	margin: 0 auto;
 
@@ -8,22 +8,65 @@
 
 
 		.tc-student-search-title{
-			font-weight: bold;
-			font-size: 1.0rem;
-			display: inline-block;
-			padding: 20px 25px;
-			background-color: #004361;
-			color: white;
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
+			font-weight: bold;
+			background-color: #004361;
+			color: white;
+			margin-top: 50px;
+			padding: 12px 0;
+			text-align: center;
 		}
 
 		.tc-student-search-main{
 			background-color: white;
 			border: 1px solid #0042612f;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+
+			.tc-student-search-content{
+
+				.tc-student-search-sub{
+					display: flex;
+					justify-content: space-between;
+
+					.tc-student-search-form{
+						width: 48%;
+						font-size: 0.8rem;
+						input{
+							width: 100%;
+						}
+						select{
+							width: 100%;
+						}
+					}
+				}
+
+				.tc-student-search-button{
+					margin-top: 20px;
+					text-align: center;
+					.search-btn{
+						letter-spacing: 3px;
+						width: 25%;
+						font-size: 0.9rem;
+					}
+					.cross-btn{
+						letter-spacing: 1px;
+						width: 25%;
+						font-size: 0.9rem;
+					}
+				}
+
+				width: 90%;
+				margin: 0 auto;
+				padding-bottom: 20px;
+
+				p{
+					font-size: 0.8rem;
+					margin: 10px 0 3px;
+				}
+			}
 		}
-
-
 	}
 
 	.tc-student-list{

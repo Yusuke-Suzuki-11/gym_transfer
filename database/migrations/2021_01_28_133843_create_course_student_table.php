@@ -17,6 +17,7 @@ class CreateCourseStudentTable extends Migration
             $table->id();
             $table->integer('course_id');
             $table->integer('student_id');
+            $table->integer('transfer_enabled')->default(1);
             $table->timestamps();
         });
     }

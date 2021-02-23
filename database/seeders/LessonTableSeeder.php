@@ -25,12 +25,8 @@ class LessonTableSeeder extends Seeder
 
 		$StudentRowset = Student::all();
 		foreach ($StudentRowset as $StudentRow) {
-
-
 			foreach ($StudentRow->getCourseRowsetByRowset()->get() as $CourseRow) {
-
 				$targetWeekDate = date('Y-m-d', strtotime('next ' . $weeks[$CourseRow->week_id - 1]));
-
 				while (date('m', strtotime($targetWeekDate)) == date('m')) {
 					echo $targetWeekDate;
 					echo "\n";

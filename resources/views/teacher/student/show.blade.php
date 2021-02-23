@@ -2,8 +2,8 @@
 
 @section('content')
 
+@include('elements.tc_sidebar')
 <div class="tc-index">
-	@include('elements.tc_sidebar')
 
 	<div class="tc-main">
 		<div class="tc-title-top">

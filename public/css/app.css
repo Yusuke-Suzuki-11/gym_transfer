@@ -239,7 +239,7 @@ input, select {
   color: white;
   height: calc(100vh - 70px);
   position: fixed;
-  top: 71px;
+  top: 70px;
 }
 .tc-sidebar a {
   color: white;
@@ -403,35 +403,74 @@ input, select {
   font-size: 35px;
 }
 
-.tc-box {
+.tc-student-box {
   width: 96%;
   margin: 0 auto;
 }
-.tc-box .tc-student-search {
+.tc-student-box .tc-student-search {
   margin-top: 20px;
 }
-.tc-box .tc-student-search .tc-student-search-title {
-  font-weight: bold;
-  font-size: 1rem;
-  display: inline-block;
-  padding: 20px 25px;
-  background-color: #004361;
-  color: white;
+.tc-student-box .tc-student-search .tc-student-search-title {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-weight: bold;
+  background-color: #004361;
+  color: white;
+  margin-top: 50px;
+  padding: 12px 0;
+  text-align: center;
 }
-.tc-box .tc-student-search .tc-student-search-main {
+.tc-student-box .tc-student-search .tc-student-search-main {
   background-color: white;
   border: 1px solid #0042612f;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-.tc-box .tc-student-list {
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub {
+  display: flex;
+  justify-content: space-between;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form {
+  width: 48%;
+  font-size: 0.8rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form input {
+  width: 100%;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form select {
+  width: 100%;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button {
+  margin-top: 20px;
+  text-align: center;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button .search-btn {
+  letter-spacing: 3px;
+  width: 25%;
+  font-size: 0.9rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button .cross-btn {
+  letter-spacing: 1px;
+  width: 25%;
+  font-size: 0.9rem;
+}
+.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content p {
+  font-size: 0.8rem;
+  margin: 10px 0 3px;
+}
+.tc-student-box .tc-student-list {
   margin-top: 50px;
 }
-.tc-box .tc-student-list .table-box {
+.tc-student-box .tc-student-list .table-box {
   width: 100%;
   box-shadow: 0 0 15px -6px #00000073;
 }
-.tc-box .tc-student-list .table-box tr {
+.tc-student-box .tc-student-list .table-box tr {
   background-color: #fff;
   text-align: center;
   width: 20%;
@@ -439,11 +478,11 @@ input, select {
   background-color: #fff;
   color: #3a3a3a;
 }
-.tc-box .tc-student-list .table-box th, .tc-box .tc-student-list .table-box td {
+.tc-student-box .tc-student-list .table-box th, .tc-student-box .tc-student-list .table-box td {
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-.tc-box .tc-student-list .table-box th {
+.tc-student-box .tc-student-list .table-box th {
   width: 20%;
   padding: 10px 0;
   padding: 15px;
@@ -548,4 +587,11 @@ input, select {
 }
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-membox p {
   width: 16.2%;
+}
+.tc-top-lesson-container .tc-top-lesson-mem-emp {
+  text-align: center;
+}
+.tc-top-lesson-container .tc-top-lesson-mem-emp p {
+  margin-top: 30px;
+  font-size: 1.2rem;
 }

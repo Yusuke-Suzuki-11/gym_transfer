@@ -18,7 +18,7 @@ class DummyTodayLessonDateSeeder extends Seeder
 	{
 		$StudentRowset = Student::all();
 		$CourseInstanse = new Course;
-		$TodayCourseRowset = $CourseInstanse->getRowsetByWeek(date('w'));
+		$TodayCourseRowset = $CourseInstanse->getRowsetByWeekId(date('w'));
 
 		foreach ($TodayCourseRowset as $TodayCourseRow) {
 			foreach ($StudentRowset as $StudentRow) {
