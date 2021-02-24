@@ -75,9 +75,10 @@ class Course extends Model
 	{
 		$weekId += 1;
 		$CourseRowset = $this->where('week_id', $weekId)->get();
-		if (!isset($CourseRow)) {
+		if (!isset($CourseRowset)) {
 			$CourseRowset = '';
 		}
+
 		return  $CourseRowset;
 	}
 }
