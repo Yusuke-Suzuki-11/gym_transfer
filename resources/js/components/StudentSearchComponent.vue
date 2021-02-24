@@ -63,8 +63,8 @@
                 <option class="dummy" :value="null" disabled>
                   振替を選択してください
                 </option>
-                <option :value="0">振替していない</option>
-                <option :value="1">振替している</option>
+                <option :value="0">振替している</option>
+                <option :value="1">振替していない</option>
               </select>
             </div>
           </div>
@@ -182,6 +182,7 @@ export default {
         })
         .catch((error) => {
           alert("データの取得に失敗しました");
+          console.log(error);
         });
     },
   },

@@ -15,7 +15,6 @@ class TeacherStudentController extends Controller
 {
 	public function index()
 	{
-		$StudentRowset = Student::all();
 		$GradeInstans = new Grade();
 		$gender = config('const.STUDENTS.GENDER_TYPE');
 		$formItem = [

@@ -16817,6 +16817,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(_this.studentData);
       })["catch"](function (error) {
         alert("データの取得に失敗しました");
+        console.log(error);
       });
     }
   }
@@ -53394,11 +53395,11 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("option", { domProps: { value: 0 } }, [
-                    _vm._v("振替していない")
+                    _vm._v("振替している")
                   ]),
                   _vm._v(" "),
                   _c("option", { domProps: { value: 1 } }, [
-                    _vm._v("振替している")
+                    _vm._v("振替していない")
                   ])
                 ]
               )
