@@ -177,6 +177,10 @@ export default {
           },
         })
         .then((res) => {
+          if (!res.data) {
+            alert("検索結果はありませんでした。");
+            return;
+          }
           this.studentData = res.data;
           console.log(this.studentData);
         })

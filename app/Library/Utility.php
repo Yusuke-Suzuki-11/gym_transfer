@@ -20,4 +20,14 @@ class Utility
 		$birthDay = str_replace("-", "", $birthDay);
 		return floor(($now - $birthDay) / 10000);
 	}
+
+	public static function makePass($length = 8)
+	{
+		return substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, $length);
+	}
+
+	public static function makeFullName($lastName, $firstName)
+	{
+		return $lastName . ' ' . $firstName;
+	}
 }

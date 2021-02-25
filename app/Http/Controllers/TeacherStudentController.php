@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
 use App\Models\Grade;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -77,5 +79,34 @@ class TeacherStudentController extends Controller
 		$StudentInstans = new Student();
 		$data = $StudentInstans->getStudentRowsetForSearch($request->query('name'), $request->query('dayOfWeek'), $request->query('gender'), $request->query('grade'), $request->query('transfer'));
 		return $data;
+	}
+
+	public function register_student(Request $request)
+	{
+		$StudentRow = new Student();
+		$lastName = $request->lastName;
+		$firstName = $request->firstName;
+
+		$StudentRow->fill(
+			[
+				'first_name' => $firstName,
+				'last_name' => $lastName,
+				'full_name' => $fullName = Utility::makeFullName($lastName, $firstName),
+				'email' => $email = $request->email,
+				'password' => $password = Utility::makePass(),
+			]
+		);
+
+		dd('test');
+		$StudentRow->save();
+
+		// ここの処理をメールファイルに
+		// return $this->view('email.lesson_transfer')
+		// 	->subject('【会員サイトのご登録】ウィズ体操クラブ')
+		// 	->with([
+		// 		'fullName' => $fullName,
+		// 		'email' => $email,
+		// 		'password' => $password,
+		// 	]);
 	}
 }

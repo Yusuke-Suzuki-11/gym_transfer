@@ -33,6 +33,7 @@ Route::prefix('teachers')->middleware('auth:teachers')->group(function () {
 	Route::get('/student/{id}', [TeacherStudentController::class, 'show'])->name('tc.student.show');
 	Route::get('/student/{id}/edit', [TeacherStudentController::class, 'edit'])->name('tc.student.edit');
 	Route::post('/student/{id}/update', [TeacherStudentController::class, 'update'])->name('tc.student.update');
+	Route::post('/student/register', [TeacherStudentController::class, 'register_student'])->name('tc.student.register');
 
 	// コース
 	Route::get('/courses', [CourseController::class, 'index'])->name('tc.course');

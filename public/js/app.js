@@ -16813,6 +16813,11 @@ __webpack_require__.r(__webpack_exports__);
           transfer: this.transfer
         }
       }).then(function (res) {
+        if (!res.data) {
+          alert("検索結果はありませんでした。");
+          return;
+        }
+
         _this.studentData = res.data;
         console.log(_this.studentData);
       })["catch"](function (error) {
