@@ -89,6 +89,7 @@ class Student extends Authenticatable
 					'birthday' => $StudentRow->birthday,
 					'gender' => $StudentRow->birthday,
 					'phone' => $StudentRow->phone,
+					'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
 				];
 			}
 		} else {
@@ -112,6 +113,7 @@ class Student extends Authenticatable
 					'birthday' => $StudentRow->birthday,
 					'gender' => $StudentRow->gender,
 					'phone' => $StudentRow->phone,
+					'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
 				];
 			}
 		} else {

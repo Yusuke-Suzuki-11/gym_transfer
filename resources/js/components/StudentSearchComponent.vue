@@ -103,7 +103,9 @@
         </tr>
         <tr v-for="student in this.studentData">
           <td>
-            <a href="URL">{{ student.lastName }} {{ student.firstName }}</a>
+            <a :href="student.showUrl"
+              >{{ student.lastName }} {{ student.firstName }}</a
+            >
           </td>
           <td v-for="lessonData in student.courseAndLessonTime">
             {{ lessonData.week }} {{ lessonData.lessonTime }}
