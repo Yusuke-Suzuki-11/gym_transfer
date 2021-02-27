@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
+use App\Mail\StudentRegister;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -87,15 +88,16 @@ class TeacherStudentController extends Controller
 		$lastName = $request->lastName;
 		$firstName = $request->firstName;
 
+
 		$StudentRow->fill(
 			[
 				'first_name' => $firstName,
 				'last_name' => $lastName,
-				'full_name' => Utility::makeFullName($lastName, $firstName),
-				'email' => $request->email,
+				'full_name' => $fullName = Utility::makeFullName($lastName, $firstName),
+				'email' => $email = $request->email,
 				// TODO::パスワードを可変的にする
 				// 'password' => $password = Utility::makePass(),
-				'password' => 'Yy46498083',
+				'password' => $password = 'Yy46498083',
 				// TODO::会員番号も変える
 				'member_num' => '11223344',
 				'birthday' => $request->birthday,
@@ -108,18 +110,16 @@ class TeacherStudentController extends Controller
 
 		$StudentRow->createCourseStudentRow($request->courseId);
 
+
+		Mail::to('mr.suzuki.11@gmail.com')
+			->send(new StudentRegister($fullName, $email, $password, route('login')));
+
+
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
 
 
 
 
 		// ここの処理をメールファイルに
-		// return $this->view('email.lesson_transfer')
-		// 	->subject('【会員サイトのご登録】ウィズ体操クラブ')
-		// 	->with([
-		// 		'fullName' => $fullName,
-		// 		'email' => $email,
-		// 		'password' => $password,
-		// 	]);
 	}
 }
