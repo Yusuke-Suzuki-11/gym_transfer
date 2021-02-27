@@ -24,8 +24,6 @@
 				{{$utility->getTodayDateString()}}
 			</p>
 		</div>
-		{{dd($TodayCourseRowset)}}
-
 		{{-- 練習情報 --}}
 		{{-- 外枠 --}}
 		@foreach ($TodayCourseRowset as $__TodayCourseRow)

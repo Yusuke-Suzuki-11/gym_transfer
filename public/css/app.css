@@ -525,7 +525,7 @@ input, select {
 
 .tc-top-lesson-container {
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
 }
 .tc-top-lesson-container .tc-top-lesson-title {
   background-color: #004361;
@@ -594,4 +594,39 @@ input, select {
 .tc-top-lesson-container .tc-top-lesson-mem-emp p {
   margin-top: 30px;
   font-size: 1.2rem;
+}
+
+.tc-stadd-container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.tc-stadd-container .tc-stadd-form-box {
+  display: flex;
+  justify-content: space-between;
+}
+.tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name {
+  width: 48%;
+}
+.tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name p {
+  margin-bottom: 3px;
+}
+.tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name input {
+  width: 100%;
+}
+.tc-stadd-container .tc-stadd-form-mainbox {
+  margin-top: 20px;
+}
+.tc-stadd-container .tc-stadd-form-mainbox p {
+  margin-bottom: 3px;
+}
+.tc-stadd-container .tc-stadd-form-mainbox input {
+  width: 100%;
+}
+.tc-stadd-container .tc-stadd-form-btn {
+  text-align: center;
+}
+.tc-stadd-container .tc-stadd-form-btn button {
+  margin-top: 20px;
+  width: 50%;
 }

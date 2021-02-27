@@ -15,5 +15,6 @@
 			:studens={{$Students}}
 		></student-search-component>
 </div>
+@endsection
 
 

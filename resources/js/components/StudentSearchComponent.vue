@@ -103,10 +103,14 @@
         </tr>
         <tr v-for="student in this.studentData">
           <td>
-            <a href="URL">{{ student.lastName }} {{ student.firstName }}</a>
+            <a :href="student.showUrl"
+              >{{ student.lastName }} {{ student.firstName }}</a
+            >
           </td>
-          <td v-for="lessonData in student.courseAndLessonTime">
-            {{ lessonData.week }} {{ lessonData.lessonTime }}
+          <td>
+            <p v-for="lessonData in student.courseAndLessonTime">
+              {{ lessonData.week }} {{ lessonData.lessonTime }}
+            </p>
           </td>
           <td>{{ student.email }}</td>
           <td>{{ student.birthday }}</td>
@@ -177,6 +181,10 @@ export default {
           },
         })
         .then((res) => {
+          if (!res.data) {
+            alert("検索結果はありませんでした。");
+            return;
+          }
           this.studentData = res.data;
           console.log(this.studentData);
         })

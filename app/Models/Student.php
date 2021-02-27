@@ -15,7 +15,16 @@ class Student extends Authenticatable
 	private $__name = 'students';
 
 	protected $fillable = [
+		'first_name',
 		'last_name',
+		'full_name',
+		'email',
+		'password',
+		'member_num',
+		'birthday',
+		'gender',
+		'stress_point',
+		'phone'
 	];
 
 	public function getCourseRowsetByRowset()
@@ -77,19 +86,26 @@ class Student extends Authenticatable
 		}
 		$StudentRowset->select('students.id', 'students.last_name', 'students.first_name', 'students.email', 'students.gender', 'students.birthday', 'students.phone');
 
+		$cashList = [];
+
 		$data = [];
 		if (!$StudentRowset->get()->isEmpty()) {
 			foreach ($StudentRowset->get() as $StudentRow) {
-				$data[] = [
-					'id' => $StudentRow->id,
-					'lastName' => $StudentRow->last_name,
-					'firstName' => $StudentRow->first_name,
-					'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
-					'email' => $StudentRow->email,
-					'birthday' => $StudentRow->birthday,
-					'gender' => $StudentRow->birthday,
-					'phone' => $StudentRow->phone,
-				];
+				//TODO::処理時間を考えてin_arrayより良い方法を考える
+				if (!in_array($StudentRow->id, $cashList)) {
+					$data[] = [
+						'id' => $StudentRow->id,
+						'lastName' => $StudentRow->last_name,
+						'firstName' => $StudentRow->first_name,
+						'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
+						'email' => $StudentRow->email,
+						'birthday' => $StudentRow->birthday,
+						'gender' => $StudentRow->birthday,
+						'phone' => $StudentRow->phone,
+						'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
+					];
+					$cashList[] = $StudentRow->id;
+				}
 			}
 		} else {
 			return '';
@@ -112,11 +128,21 @@ class Student extends Authenticatable
 					'birthday' => $StudentRow->birthday,
 					'gender' => $StudentRow->gender,
 					'phone' => $StudentRow->phone,
+					'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
 				];
 			}
 		} else {
 			return '';
 		}
 		return $data;
+	}
+
+	public function createCourseStudentRow($courseId)
+	{
+		DB::table('course_student')
+			->insert([
+				'student_id' => $this->id,
+				'course_id' => $courseId,
+			]);
 	}
 }

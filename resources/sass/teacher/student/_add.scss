@@ -1,0 +1,46 @@
+
+
+.tc-stadd-container{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 50px;
+
+	.tc-stadd-form-box{
+		display: flex;
+		justify-content: space-between;
+
+		.tc-stadd-form-name{
+			width: 48%;
+
+			p{
+				margin-bottom: 3px;
+			}
+
+			input{
+				width: 100%;
+			}
+		}
+	}
+
+	.tc-stadd-form-mainbox{
+		margin-top: 20px;
+
+		p{
+			margin-bottom: 3px;
+		}
+
+		input{
+			width: 100%;
+		}
+	}
+
+	.tc-stadd-form-btn{
+		text-align: center;
+
+		button{
+			margin-top: 20px;
+			width: 50%;
+		}
+	}
+
+}

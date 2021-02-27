@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
 use App\Models\Grade;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -39,7 +41,7 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRow = Student::find($id);
 		$CourseRowset = Course::all();
-		return view('teacher.student.edit') > with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
+		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
 	}
 
 	public function update($id, Request $request)
@@ -68,7 +70,8 @@ class TeacherStudentController extends Controller
 
 	public function add()
 	{
-		return view('teacher.student.add');
+
+		return view('teacher.student.add')->with(['CourseRowset' => Course::all()]);
 	}
 
 	public function axios_search(Request $request)
@@ -76,5 +79,47 @@ class TeacherStudentController extends Controller
 		$StudentInstans = new Student();
 		$data = $StudentInstans->getStudentRowsetForSearch($request->query('name'), $request->query('dayOfWeek'), $request->query('gender'), $request->query('grade'), $request->query('transfer'));
 		return $data;
+	}
+
+	public function register_student(Request $request)
+	{
+		$StudentRow = new Student();
+		$lastName = $request->lastName;
+		$firstName = $request->firstName;
+
+		$StudentRow->fill(
+			[
+				'first_name' => $firstName,
+				'last_name' => $lastName,
+				'full_name' => Utility::makeFullName($lastName, $firstName),
+				'email' => $request->email,
+				// TODO::パスワードを可変的にする
+				// 'password' => $password = Utility::makePass(),
+				'password' => 'Yy46498083',
+				// TODO::会員番号も変える
+				'member_num' => '11223344',
+				'birthday' => $request->birthday,
+				'gender' => $request->gender,
+				'stress_point' => 3,
+				'phone' => $request->phone
+			]
+		);
+		$StudentRow->save();
+
+		$StudentRow->createCourseStudentRow($request->courseId);
+
+		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
+
+
+
+
+		// ここの処理をメールファイルに
+		// return $this->view('email.lesson_transfer')
+		// 	->subject('【会員サイトのご登録】ウィズ体操クラブ')
+		// 	->with([
+		// 		'fullName' => $fullName,
+		// 		'email' => $email,
+		// 		'password' => $password,
+		// 	]);
 	}
 }

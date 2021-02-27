@@ -1,6 +1,20 @@
 @extends('layout')
 
 @section('content')
+
+@include('elements.tc_sidebar')
+{{-- タイトル --}}
+<div class="tc-title-top">
+	<p class="tc-title-txt">
+		本日の練習
+	</p>
+	<p class="tc-title-date">
+		{{$utility->getTodayDateString()}}
+	</p>
+
+
+
+
 	<form action="{{route('teachers.course.create')}}">
 
 
@@ -12,4 +26,6 @@
 
 		</div>
 	</form>
+</div>
 @endsection
+
