@@ -71,7 +71,8 @@ class TeacherStudentController extends Controller
 
 	public function add()
 	{
-		return view('teacher.student.add');
+
+		return view('teacher.student.add')->with(['CourseRowset' => Course::all()]);
 	}
 
 	public function axios_search(Request $request)
@@ -91,14 +92,27 @@ class TeacherStudentController extends Controller
 			[
 				'first_name' => $firstName,
 				'last_name' => $lastName,
-				'full_name' => $fullName = Utility::makeFullName($lastName, $firstName),
-				'email' => $email = $request->email,
-				'password' => $password = Utility::makePass(),
+				'full_name' => Utility::makeFullName($lastName, $firstName),
+				'email' => $request->email,
+				// TODO::パスワードを可変的にする
+				// 'password' => $password = Utility::makePass(),
+				'password' => 'Yy46498083',
+				// TODO::会員番号も変える
+				'member_num' => '11223344',
+				'birthday' => $request->birthday,
+				'gender' => $request->gender,
+				'stress_point' => 3,
+				'phone' => $request->phone
 			]
 		);
-
-		dd('test');
 		$StudentRow->save();
+
+		$StudentRow->createCourseStudentRow($request->courseId);
+
+		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
+
+
+
 
 		// ここの処理をメールファイルに
 		// return $this->view('email.lesson_transfer')

@@ -35,13 +35,13 @@
 			</a>
 		</div>
 		<div class="tc-side-sub-menu">
-			<a href="">
+			<a href="{{route('tc.student.add')}}">
 				<div class="tc-side-menu-item">
 					<div class="tc-side-menu-icon">
 						<i class="fab fa-apple"></i>
 					</div>
 					<div class="tc-side-menu-title">
-						コメントテスト
+						新規会員登録
 					</div>
 				</div>
 			</a>

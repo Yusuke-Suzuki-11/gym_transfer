@@ -30,6 +30,55 @@
 				<p>メールアドレス</p>
 				<input type="email" name="email">
 			</div>
+
+			{{-- <div class="tc-stadd-form-mainbox">
+				<p>パスワード</p>
+				<input type="password" name="password">
+			</div>
+			<div class="tc-stadd-form-mainbox">
+				<p>パスワード確認</p>
+				<input type="password" name="passwordConfirm">
+			</div> --}}
+
+			<div class="tc-stadd-form-mainbox">
+				<p>生年月日</p>
+				<input type="date" name="birthday">
+			</div>
+
+			<div class="tc-stadd-form-mainbox">
+				<p>性別</p>
+				<select name="gender">
+					<option class="dummy" disabled selected>
+						性別を選択してください
+					</option>
+					@foreach (config('const.STUDENTS.GENDER_TYPE') as $key => $val)
+					<option value="{{$key}}">
+						{{$val}}
+					</option>
+					@endforeach
+				</select>
+			</div>
+
+			<div class="tc-stadd-form-mainbox">
+				<p>電話番号</p>
+				<input type="text" name="phone">
+			</div>
+
+			<div class="tc-stadd-form-mainbox">
+				<p>コース</p>
+				<select name="courseId">
+					<option class="dummy" disabled selected>
+						コースを選択してください
+					</option>
+					@foreach ( $CourseRowset as $CourseRow)
+					<option value="{{$CourseRow->id}}">
+						{{$CourseRow->getWeekAndLessonTimes()}}
+					</option>
+					@endforeach
+				</select>
+			</div>
+
+
 			<div class="tc-stadd-form-btn">
 				<button type="submit" class="btn btn-success">登録</button>
 			</div>

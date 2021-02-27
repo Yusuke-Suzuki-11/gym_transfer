@@ -15,7 +15,16 @@ class Student extends Authenticatable
 	private $__name = 'students';
 
 	protected $fillable = [
+		'first_name',
 		'last_name',
+		'full_name',
+		'email',
+		'password',
+		'member_num',
+		'birthday',
+		'gender',
+		'stress_point',
+		'phone'
 	];
 
 	public function getCourseRowsetByRowset()
@@ -126,5 +135,14 @@ class Student extends Authenticatable
 			return '';
 		}
 		return $data;
+	}
+
+	public function createCourseStudentRow($courseId)
+	{
+		DB::table('course_student')
+			->insert([
+				'student_id' => $this->id,
+				'course_id' => $courseId,
+			]);
 	}
 }
