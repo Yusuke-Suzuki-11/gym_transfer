@@ -77,20 +77,26 @@ class Student extends Authenticatable
 		}
 		$StudentRowset->select('students.id', 'students.last_name', 'students.first_name', 'students.email', 'students.gender', 'students.birthday', 'students.phone');
 
+		$cashList = [];
+
 		$data = [];
 		if (!$StudentRowset->get()->isEmpty()) {
 			foreach ($StudentRowset->get() as $StudentRow) {
-				$data[] = [
-					'id' => $StudentRow->id,
-					'lastName' => $StudentRow->last_name,
-					'firstName' => $StudentRow->first_name,
-					'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
-					'email' => $StudentRow->email,
-					'birthday' => $StudentRow->birthday,
-					'gender' => $StudentRow->birthday,
-					'phone' => $StudentRow->phone,
-					'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
-				];
+				//TODO::処理時間を考えてin_arrayより良い方法を考える
+				if (!in_array($StudentRow->id, $cashList)) {
+					$data[] = [
+						'id' => $StudentRow->id,
+						'lastName' => $StudentRow->last_name,
+						'firstName' => $StudentRow->first_name,
+						'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
+						'email' => $StudentRow->email,
+						'birthday' => $StudentRow->birthday,
+						'gender' => $StudentRow->birthday,
+						'phone' => $StudentRow->phone,
+						'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])
+					];
+					$cashList[] = $StudentRow->id;
+				}
 			}
 		} else {
 			return '';

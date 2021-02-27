@@ -107,8 +107,10 @@
               >{{ student.lastName }} {{ student.firstName }}</a
             >
           </td>
-          <td v-for="lessonData in student.courseAndLessonTime">
-            {{ lessonData.week }} {{ lessonData.lessonTime }}
+          <td>
+            <p v-for="lessonData in student.courseAndLessonTime">
+              {{ lessonData.week }} {{ lessonData.lessonTime }}
+            </p>
           </td>
           <td>{{ student.email }}</td>
           <td>{{ student.birthday }}</td>

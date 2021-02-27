@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@include('elements.tc_sidebar')a
+@include('elements.tc_sidebar')
 <div class="tc-index">
 
 	<div class="tc-main">

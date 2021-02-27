@@ -42,7 +42,7 @@ class TeacherStudentController extends Controller
 	{
 		$StudentRow = Student::find($id);
 		$CourseRowset = Course::all();
-		return view('teacher.student.edit') > with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
+		return view('teacher.student.edit')->with(['StudentRow' => $StudentRow, 'CourseRowset' => $CourseRowset]);
 	}
 
 	public function update($id, Request $request)

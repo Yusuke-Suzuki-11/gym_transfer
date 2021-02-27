@@ -16762,6 +16762,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -53460,37 +53462,37 @@ var render = function() {
           _vm._m(1),
           _vm._v(" "),
           _vm._l(this.studentData, function(student) {
-            return _c(
-              "tr",
-              [
-                _c("td", [
-                  _c("a", { attrs: { href: student.showUrl } }, [
-                    _vm._v(
-                      _vm._s(student.lastName) + " " + _vm._s(student.firstName)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
+            return _c("tr", [
+              _c("td", [
+                _c("a", { attrs: { href: student.showUrl } }, [
+                  _vm._v(
+                    _vm._s(student.lastName) + " " + _vm._s(student.firstName)
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
                 _vm._l(student.courseAndLessonTime, function(lessonData) {
-                  return _c("td", [
+                  return _c("p", [
                     _vm._v(
-                      "\n          " +
+                      "\n            " +
                         _vm._s(lessonData.week) +
                         " " +
                         _vm._s(lessonData.lessonTime) +
-                        "\n        "
+                        "\n          "
                     )
                   ])
                 }),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.email))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.birthday))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.phone))])
-              ],
-              2
-            )
+                0
+              ),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.email))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.birthday))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(student.phone))])
+            ])
           })
         ],
         2
