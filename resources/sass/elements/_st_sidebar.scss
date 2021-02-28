@@ -1,9 +1,13 @@
 
 .st-sidebar{
-	width: 25%;
+	width: 350px;
 	height: 100%;
 	border-right: 1px solid rgba(90, 90, 90, 0.152);
 	background-color: white;
+	height: calc(100vh - 70px);
+	position: fixed;
+	top: 70px;
+	color: #42302a;
 
 	// 種目別の情報
 	.st-events{

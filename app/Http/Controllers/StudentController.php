@@ -10,6 +10,12 @@ class StudentController extends Controller
 	public function index()
 	{
 		$AuthStudentRow = Auth::user();
+		return view('student.index')->with(['AuthStudentRow' => $AuthStudentRow]);
+	}
+
+	public function my_calendar()
+	{
+		$AuthStudentRow = Auth::user();
 		return view('student.index')->with(['JsonLessonDate' => $AuthStudentRow->getJsonLessonDateAndTitle()]);
 	}
 }

@@ -1,8 +1,24 @@
 .st-index{
-	display: flex;
-	height: 100%;
+	margin-top: 70px;
+	margin-left: 350px;
+	width: 75%;
+	width: calc(100vw - 350px);
 }
 
+.st-title-top{
+	text-align: center;
+	margin-top: 110px;
+
+	.st-title-txt{
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+	.st-title-date{
+		margin-top: 7px;
+		font-size: 35px;
+	}
+}
 
 
 .st-calendar{

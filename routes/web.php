@@ -17,6 +17,8 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 // 生徒ページ
 Route::prefix('students')->middleware('auth:students')->group(function () {
 	Route::get('', [StudentController::class, 'index'])->name('students');
+	Route::get('/my_calendar', [StudentController::class, 'my_calendar'])->name('st.calendar');
+
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');
 	Route::get('/lesson/detail/{id}', [LessonController::class, 'detail'])->name('st.lesson.detail');
 	Route::post('/lesson/transfer', [LessonController::class, 'transfer'])->name('st.lesson.transfer');

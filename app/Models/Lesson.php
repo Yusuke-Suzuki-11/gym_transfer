@@ -46,4 +46,9 @@ class Lesson extends Model
 	{
 		return $this->belongsTo(Student::class, 'student_id');
 	}
+
+	public function getGrade()
+	{
+		return $this->getCourseRowByRow()->first()->getGradeRow()->first()->grade;
+	}
 }
