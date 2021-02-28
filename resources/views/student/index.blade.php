@@ -54,7 +54,7 @@
 
 						<div class="st-top-lesson-mem-category">
 							<div class="st-top-sub-title-box">
-								<i class="fas fa-star"></i>
+								<i class="fas fa-check-circle"></i>
 								<p class="st-top-sub-title">練習項目１</p>
 							</div>
 							<p class="st-top-sub-contents">ここに練習項目の説明や名前が入ります。</span> </p>
@@ -62,7 +62,7 @@
 
 						<div class="st-top-lesson-mem-category">
 							<div class="st-top-sub-title-box">
-								<i class="fas fa-star"></i>
+								<i class="fas fa-check-circle"></i>
 								<p class="st-top-sub-title">練習項目２</p>
 							</div>
 							<p class="st-top-sub-contents">ここに練習項目の説明や名前が入ります。</span> </p>
