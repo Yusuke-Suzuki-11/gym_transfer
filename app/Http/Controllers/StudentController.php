@@ -16,6 +16,6 @@ class StudentController extends Controller
 	public function my_calendar()
 	{
 		$AuthStudentRow = Auth::user();
-		return view('student.index')->with(['JsonLessonDate' => $AuthStudentRow->getJsonLessonDateAndTitle()]);
+		return view('student.my_calendar')->with(['JsonLessonDate' => $AuthStudentRow->getJsonLessonDateAndTitle()]);
 	}
 }

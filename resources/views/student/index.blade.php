@@ -21,7 +21,7 @@
 					<div class="st-top-lesson-title-sub">
 						<p class="st-top-lesson-date">{{$utility->formatDate($LessonRow->lesson_date)}}</p>
 						<div class="st-top-lesson-category">
-							<i class="fas fa-user"></i>
+							<i class="fas fa-clock"></i>
 							<span class="st-top-lesson-time">{{$LessonRow->getLessonTime()}}</span>
 						</div>
 
