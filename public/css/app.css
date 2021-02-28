@@ -198,6 +198,7 @@ input, select {
   height: calc(100vh - 70px);
   position: fixed;
   top: 70px;
+  color: #42302a;
 }
 .st-sidebar .st-events {
   padding: 42px 0;
@@ -397,6 +398,7 @@ input, select {
 .st-top-lesson-container {
   margin: 0 auto;
   width: 85%;
+  color: #493832;
 }
 .st-top-lesson-container .st-top-lesson-title {
   background-color: #23ACE4;
@@ -406,64 +408,81 @@ input, select {
   padding: 12px 0;
   color: white;
   display: flex;
+  justify-content: space-between;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-lesson-date {
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub {
+  display: flex;
+  margin-top: 7px;
+}
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-date {
   margin-left: 25px;
   font-size: 1.4rem;
   font-weight: bold;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-lesson-category {
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-category {
   margin-left: 15px;
   display: flex;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-lesson-category i {
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-category i {
   line-height: 1.2rem;
   font-size: 0.9rem;
   margin-top: 5px;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-lesson-category .st-top-lesson-time {
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-category span {
+  font-weight: bold;
+}
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-category .st-top-lesson-time {
   margin-left: 3px;
   font-size: 0.9rem;
   line-height: 1.2rem;
   margin-top: 6px;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-lesson-category .st-top-lesson-tc {
+.st-top-lesson-container .st-top-lesson-title .st-top-lesson-title-sub .st-top-lesson-category .st-top-lesson-tc {
   margin-left: 6px;
   font-size: 0.9rem;
   line-height: 1.2rem;
   margin-top: 6px;
 }
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button {
+  margin-right: 30px;
+}
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button a {
+  font-size: 0.7rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.405);
+}
 .st-top-lesson-container .st-top-lesson-main {
   background-color: white;
-  border: 1px solid #004361;
+  border: 1px solid #23ACE4;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-bottom: 30px;
 }
 .st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box {
-  width: 97%;
+  width: 90%;
   margin: 0 auto;
   padding: 20px 0 5px;
-  border-bottom: 1px solid #00426154;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category {
+  margin-bottom: 30px;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-title-box {
   display: flex;
+  color: #23ACE4;
 }
-.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-num {
-  margin-left: 3px;
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-title-box i {
+  margin-right: 4px;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
 }
-.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-membox {
-  margin-left: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-title-box .st-top-sub-title {
+  font-size: 0.8rem;
 }
-.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-membox p {
-  width: 16.2%;
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category span {
+  font-size: 0.7rem;
+  font-weight: bold;
 }
-.st-top-lesson-container .st-top-lesson-mem-emp {
-  text-align: center;
-}
-.st-top-lesson-container .st-top-lesson-mem-emp p {
-  margin-top: 30px;
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-contents {
   font-size: 1.2rem;
 }
 
