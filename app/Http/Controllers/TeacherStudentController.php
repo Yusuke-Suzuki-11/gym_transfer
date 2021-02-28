@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
 use App\Models\Grade;
+use App\Models\Lesson;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -110,9 +111,33 @@ class TeacherStudentController extends Controller
 
 		$StudentRow->createCourseStudentRow($request->courseId);
 
-
 		Mail::to('mr.suzuki.11@gmail.com')
 			->send(new StudentRegister($fullName, $email, $password, route('login')));
+
+
+		$weeks = [
+			'Sunday',
+			'Monday',
+			'Tuesday',
+			'Wednesday',
+			'Thursday',
+			'Friday',
+			'Saturday',
+		];
+
+		foreach ($StudentRow->getCourseRowsetByRowset()->get() as $CourseRow) {
+			$targetWeekDate = date('Y-m-d', strtotime('next ' . $weeks[$CourseRow->week_id]));
+			$threeLaterMonth = date('m', strtotime($targetWeekDate)) + 3;
+			while (date('m', strtotime($targetWeekDate)) <= $threeLaterMonth) {
+				$LessonRow = new Lesson();
+				$LessonRow->course_id = $CourseRow->id;
+				$LessonRow->student_id = $StudentRow->id;
+				$LessonRow->lesson_date = $targetWeekDate;
+				$LessonRow->save();
+				$targetWeekDate = date('Y-m-d', strtotime('+1 week', strtotime($targetWeekDate)));
+			}
+		}
+
 
 
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));

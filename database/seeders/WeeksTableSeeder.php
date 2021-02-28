@@ -26,6 +26,7 @@ class WeeksTableSeeder extends Seeder
 
         foreach ($dayOfWeeks as $key => $dayofweek) {
             $WeekRow = new Week();
+            $WeekRow->id = $key;
             $WeekRow->day_of_week = $dayofweek;
             $WeekRow->save();
         }
