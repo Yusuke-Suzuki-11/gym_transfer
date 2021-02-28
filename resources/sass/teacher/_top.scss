@@ -60,6 +60,12 @@
 
 			.tc-top-lesson-mem-num{
 				margin-left: 3px;
+				display: flex;
+
+				span{
+					display: inline;
+					width: 5%;
+				}
 			}
 
 			.tc-top-lesson-membox{

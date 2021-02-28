@@ -46,6 +46,11 @@ class Course extends Model
 		return $this->hasMany('App\Models\Lesson');
 	}
 
+	public function getTodayLessonRowset($date)
+	{
+		return $this->getLessonRowset()->where('lesson_date', $date);
+	}
+
 	public function getLessonTime()
 	{
 		return $this->getLessonTimeRowByRow()->first()->lesson_time;

@@ -44,7 +44,7 @@
 				<div class="tc-top-lesson-main">
 					@php
 						$count = 0;
-						$__LessonRowset = $__TodayCourseRow->getLessonRowset()->get()
+						$__LessonRowset = $__TodayCourseRow->getTodayLessonRowset(date('Y-m-d'))->get()
 					@endphp
 					@if (count($__LessonRowset) > 0)
 
