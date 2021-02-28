@@ -578,11 +578,6 @@ input, select {
 }
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-mem-num {
   margin-left: 3px;
-  display: flex;
-}
-.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-mem-num span {
-  display: inline;
-  width: 5%;
 }
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-membox {
   margin-left: 10px;

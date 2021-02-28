@@ -44,17 +44,16 @@
 				<div class="tc-top-lesson-main">
 					@php
 						$count = 0;
-						$__LessonRowset = $__TodayCourseRow->getTodayLessonRowset(date('Y-m-d'))->get()
+						$__LessonRowset = $__TodayCourseRow->getTodayLessonRowset()->get()
 					@endphp
 					@if (count($__LessonRowset) > 0)
-
 						@foreach ($__LessonRowset as $__LessonRow)
 							@php
 								$StudentRow = $__LessonRow->getStudentRow()->first();
 							@endphp
 							<div class="tc-top-lesson-mem-box">
 								<div class="tc-top-lesson-mem-num">
-									<span>{{$count+=1}}</span>：
+									<span>{{$count += 1}}</span>：
 								</div>
 								<div class="tc-top-lesson-membox">
 									<p>{{$StudentRow->full_name}}</p>
