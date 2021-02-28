@@ -73,7 +73,7 @@ class Course extends Model
 
 	public function getRowsetByWeekId($weekId)
 	{
-		$weekId += 1;
+		$weekId;
 		$CourseRowset = $this->where('week_id', $weekId)->get();
 		if (!isset($CourseRowset)) {
 			$CourseRowset = '';

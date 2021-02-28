@@ -89,7 +89,6 @@ class TeacherStudentController extends Controller
 		$firstName = $request->firstName;
 		$password = 'Yy46498083';
 
-
 		$StudentRow->fill(
 			[
 				'first_name' => $firstName,
@@ -107,19 +106,11 @@ class TeacherStudentController extends Controller
 			]
 		);
 		$StudentRow->save();
-
 		$StudentRow->createCourseStudentRow($request->courseId);
-
 
 		Mail::to('mr.suzuki.11@gmail.com')
 			->send(new StudentRegister($fullName, $email, $password, route('login')));
 
-
 		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
-
-
-
-
-		// ここの処理をメールファイルに
 	}
 }
