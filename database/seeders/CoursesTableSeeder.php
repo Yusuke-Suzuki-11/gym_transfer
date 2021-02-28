@@ -18,6 +18,7 @@ class CoursesTableSeeder extends Seeder
 
 		$WeekRowset = Week::all();
 
+
 		foreach ($WeekRowset as $WeekRow) {
 			$LessonTimeRowset = $WeekRow->lessonTimes()->get();
 			foreach ($LessonTimeRowset as $LessonTimeRow) {

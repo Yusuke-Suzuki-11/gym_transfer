@@ -58,7 +58,7 @@ class Course extends Model
 
 	public function getRowByLessonTimeAndWeek($weekId, $lessonTimeId)
 	{
-		$weekId += 1;
+		$weekId;
 		$CourseRow = DB::table($this->__name)
 			->select('*')
 			->where('week_id', $weekId)
@@ -73,7 +73,7 @@ class Course extends Model
 
 	public function getRowsetByWeekId($weekId)
 	{
-		$weekId += 1;
+		$weekId;
 		$CourseRowset = $this->where('week_id', $weekId)->get();
 		if (!isset($CourseRowset)) {
 			$CourseRowset = '';
