@@ -27,7 +27,7 @@
 
 					</div>
 					<div class="st-top-transfer-button">
-						<a href="#" class="btn btn-success">
+						<a href="{{route('st.lesson.detail', ['id' => $LessonRow->id])}}" class="btn btn-success">
 							振替可能
 						</a>
 					</div>
