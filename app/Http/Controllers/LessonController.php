@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\LessonTime;
 use App\Models\Lesson;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,12 @@ class LessonController extends Controller
 {
 	public function detail($id)
 	{
-		$LessonRow = Lesson::find($id);
+		$AuthStudentInstanse = Auth::user();
+		if (is_null($AuthStudentInstanse->getLessonRowset()->find($id))) {
+			abort(500);
+		}
 
+		$LessonRow = Lesson::find($id);
 		return view('student.lesson.detail')->with(['LessonRow' => $LessonRow, 'LessonTimeRowset' => LessonTime::all()]);
 	}
 

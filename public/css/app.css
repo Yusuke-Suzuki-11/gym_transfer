@@ -219,22 +219,32 @@ input, select {
   font-size: 0.8rem;
   font-weight: bold;
 }
-.st-sidebar .st-side-menu-box .st-side-menu {
-  margin: 0 auto;
+.st-sidebar .st-side-menu-box .st-side-sub-menu {
+  height: 50px;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li {
-  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+.st-sidebar .st-side-menu-box .st-side-sub-menu a {
+  display: block;
+}
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item .st-side-menu-icon {
   line-height: 50px;
-  cursor: pointer;
+  width: 15%;
+  display: inline;
+  font-size: 20px;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li:hover {
-  background-color: aquamarine;
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item .st-side-menu-title {
+  font-size: 1rem;
+  line-height: 50px;
+  width: 85%;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li .st-side-menu-item {
-  width: 88%;
-  float: right;
-  margin: 0 auto;
-  font-size: 0.85rem;
+.st-sidebar .st-side-menu-box .st-side-sub-menu a:hover {
+  font-size: 1.1rem;
+  background-color: #ffffff2a;
 }
 
 .tc-sidebar {

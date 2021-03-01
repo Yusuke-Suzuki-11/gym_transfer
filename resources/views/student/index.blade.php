@@ -24,7 +24,6 @@
 							<i class="fas fa-clock"></i>
 							<span class="st-top-lesson-time">{{$LessonRow->getLessonTime()}}</span>
 						</div>
-
 					</div>
 					<div class="st-top-transfer-button">
 						<a href="{{route('st.lesson.detail', ['id' => $LessonRow->id])}}" class="btn btn-success">

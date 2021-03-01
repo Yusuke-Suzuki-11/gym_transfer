@@ -15,35 +15,32 @@
 	</div>
 	<div class="st-side-menu-box">
 		<div class="st-side-menu">
-			<ul>
-				<li class="st-side-menu-li">
+
+			<div class="st-side-sub-menu">
+				<a href="{{route('st.calendar')}}">
 					<div class="st-side-menu-item">
-						新着のお知らせ
-					</div>
-				</li>
-				<li class="st-side-menu-li">
-					<div class="st-side-menu-item">
-						先生からの新規メッセージ
-					</div>
-				</li>
-				<li class="st-side-menu-li">
-					<div class="st-side-menu-item">
-						振替を申請
-					</div>
-				</li>
-				<li class="st-side-menu-li">
-					<div class="st-side-menu-item">
-						今月の練習
-					</div>
-				</li>
-				<a href="{{route('st.course.index')}}">
-					<li class="st-side-menu-li">
-						<div class="st-side-menu-item">
-							登録クラスの詳細
+						<div class="st-side-menu-icon">
+							<i class="fas fa-calendar-alt"></i>
 						</div>
-					</li>
+						<div class="st-side-menu-title">
+							カレンダー
+						</div>
+					</div>
 				</a>
-			</ul>
+			</div>
+
+			<div class="st-side-sub-menu">
+				<a href="{{route('students')}}">
+					<div class="st-side-menu-item">
+						<div class="st-side-menu-icon">
+							<i class="fas fa-star"></i>
+						</div>
+						<div class="st-side-menu-title">
+							今月の練習
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
