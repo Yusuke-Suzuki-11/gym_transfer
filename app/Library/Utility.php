@@ -34,7 +34,7 @@ class Utility
 	public function formatDate($date)
 	{
 		$formatDate = date('Y年m月d日', strtotime($date));
-		$formatWeek = '（' . config('const.SHORT_DAY_OF_WEEK')[date('w', strtotime($date))] . ')';
+		$formatWeek = '(' . config('const.SHORT_DAY_OF_WEEK')[date('w', strtotime($date))] . ')';
 		return $formatDate . $formatWeek;
 	}
 }

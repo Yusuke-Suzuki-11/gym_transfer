@@ -399,11 +399,19 @@ input, select {
   margin-top: 7px;
   font-size: 35px;
 }
+.st-title-top .st-sub-title-text {
+  margin-top: 40px;
+  font-size: 2rem;
+}
+.st-title-top .st-sub-title-text span {
+  font-size: 1.1rem;
+}
 
 .st-calendar {
   height: 200px;
   outline: 1px solid rgba(0, 0, 0, 0.508);
   width: 80%;
+  font-weight: bold;
 }
 
 .st-top-lesson-container {
@@ -750,4 +758,16 @@ input, select {
 .tc-stadd-container .tc-stadd-form-btn button {
   margin-top: 20px;
   width: 50%;
+}
+
+.st-transfer {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.st-transfer .st-top-lesson-container {
+  width: 100%;
+}
+.st-transfer .st-top-lesson-container .st-top-lesson-title {
+  margin-top: 5px;
 }

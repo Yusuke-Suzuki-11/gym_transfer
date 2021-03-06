@@ -29,6 +29,7 @@
 			margin-bottom: 3px;
 		}
 
+
 		input{
 			width: 100%;
 		}
@@ -43,4 +44,19 @@
 		}
 	}
 
+}
+
+
+.st-transfer{
+	width: 85%;
+	margin: 0 auto;
+	margin-top: 50px;
+
+	.st-top-lesson-container{
+		width: 100%;
+
+		.st-top-lesson-title{
+			margin-top: 5px;
+		}
+	}
 }
