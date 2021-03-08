@@ -26,10 +26,6 @@ time, mark, audio, video {
   background: transparent;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   line-height: 1;
   background-color: #E9FBFC;
@@ -382,7 +378,6 @@ input, select {
 .st-index {
   margin-top: 70px;
   margin-left: 350px;
-  width: 75%;
   width: calc(100vw - 350px);
 }
 
@@ -400,7 +395,7 @@ input, select {
   font-size: 35px;
 }
 .st-title-top .st-sub-title-text {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 2rem;
 }
 .st-title-top .st-sub-title-text span {
@@ -763,11 +758,21 @@ input, select {
 .st-transfer {
   width: 85%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .st-transfer .st-top-lesson-container {
   width: 100%;
 }
 .st-transfer .st-top-lesson-container .st-top-lesson-title {
   margin-top: 5px;
+}
+.st-transfer .st-top-lesson-container button {
+  display: block;
+  margin: 10px auto 0px;
+  width: 30%;
+  letter-spacing: 1.5px;
+}
+
+.st-top-lesson {
+  margin-bottom: 100px;
 }

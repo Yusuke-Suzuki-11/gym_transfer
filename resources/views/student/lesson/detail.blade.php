@@ -23,51 +23,13 @@
 			</p>
 			<form action="{{route('st.lesson.transfer')}}" method="POST">
 				@csrf
-				<input type="hidden" name="nowLessonTimeId" value="{{$LessonRow->getCourseRowByRow()->first()->lesson_time_id}}">
-				<input type="hidden" name="nowLessonId" value="{{$LessonRow->id}}">
-				<input type="date" name='targetDate'>
-				<br>
-
-				<div class="st-top-lesson-container">
-					{{-- レッスンタイトル枠 --}}
-					<div class="st-top-lesson-title">
-						<div class="st-top-lesson-title-sub">
-							<p class="st-top-lesson-date">振替対象の練習</p>
-						</div>
-					</div>
-					{{-- メイン情報 --}}
-					<div class="st-top-lesson-main">
-						<div class="st-top-lesson-mem-box">
-							<div class="st-top-lesson-mem-category">
-								<div class="st-top-sub-title-box">
-									<i class="fas fa-user"></i>
-									<p class="st-top-sub-title">日時</p>
-								</div>
-								<p class="st-top-sub-contents">{{$utility->formatDate($LessonRow->lesson_date)}}</p>
-							</div>
-							<div class="st-top-lesson-mem-category">
-								<div class="st-top-sub-title-box">
-									<i class="fas fa-user"></i>
-									<p class="st-top-sub-title">担当コーチ</p>
-								</div>
-								<p class="st-top-sub-contents">岸本 鷹斗<span> コーチ</span></p>
-							</div>
-							<div class="st-top-lesson-mem-category">
-								<div class="st-top-sub-title-box">
-									<i class="fas fa-star"></i>
-									<p class="st-top-sub-title">クラス</p>
-								</div>
-								<p class="st-top-sub-contents">{{$LessonRow->getGrade()}}<span> クラス</span> </p>
-							</div>
-						</div>
-					</div>
-				</div>
+				{{-- ここからコンポーネント --}}
+				<student-transfer-select-component
+					:lesson-data-for-select={{$LessonSelectItemForJson}}
+					>
+				</student-transfer-select-component>
 			</form>
 		</div>
-
-
-
-
 	</div>
 
 

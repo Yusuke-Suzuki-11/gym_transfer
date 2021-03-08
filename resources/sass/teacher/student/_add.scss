@@ -50,7 +50,7 @@
 .st-transfer{
 	width: 85%;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 10px;
 
 	.st-top-lesson-container{
 		width: 100%;
@@ -58,5 +58,16 @@
 		.st-top-lesson-title{
 			margin-top: 5px;
 		}
+
+		button{
+			display: block;
+			margin: 10px auto 0px;
+			width: 30%;
+			letter-spacing: 1.5px;
+		}
 	}
+}
+
+.st-top-lesson{
+	margin-bottom: 100px;
 }

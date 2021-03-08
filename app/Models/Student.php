@@ -145,4 +145,18 @@ class Student extends Authenticatable
 				'course_id' => $courseId,
 			]);
 	}
+
+	public function getCourseRowForTransfer($course_id)
+	{
+		return $this->getCourseRowsetByRowset()->find($course_id);
+	}
+
+	public function getLessonDate()
+	{
+		$LessonDates = [];
+		foreach ($this->getLessonRowset()->get() as $LessonRow) {
+			$LessonDates[] = $LessonRow->lesson_date;
+		}
+		return $LessonDates;
+	}
 }

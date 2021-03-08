@@ -41,6 +41,11 @@ class Course extends Model
 		return $this->belongsTo('App\Models\Grade', 'grade_id');
 	}
 
+	public function getGradeName()
+	{
+		return $this->getGradeRow()->first()->grade;
+	}
+
 	public function getLessonRowset()
 	{
 		return $this->hasMany('App\Models\Lesson');
@@ -85,5 +90,10 @@ class Course extends Model
 		}
 
 		return  $CourseRowset;
+	}
+
+	public function getRowsetByGradeId($gradeId)
+	{
+		return $this->where('grade_id', $gradeId)->get();
 	}
 }
