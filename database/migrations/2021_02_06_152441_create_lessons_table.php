@@ -18,6 +18,9 @@ class CreateLessonsTable extends Migration
             $table->date('lesson_date');
             $table->text('memo')->nullable();
             $table->integer('attendance')->default('1');
+            //レッスンが振り返られた時or期間を過ぎた時
+            $table->integer('valid')->default('1');
+            $table->integer('change_lesson_id')->nullable();
             $table->integer('course_id');
             $table->integer('student_id');
             $table->timestamps();

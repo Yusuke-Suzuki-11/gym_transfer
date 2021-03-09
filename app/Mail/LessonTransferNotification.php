@@ -11,21 +11,26 @@ class LessonTransferNotification extends Mailable
 {
 	use Queueable, SerializesModels;
 
-	protected $name;
-
-
-	public function __construct($name)
+	public function __construct($fullName, $email, $oldLessonDate, $newLessonDate)
 	{
-		$this->name = $name;
+		$this->fullName      = $fullName;
+		$this->email         = $email;
+		$this->oldLessonDate = $oldLessonDate;
+		$this->newLessonDate = $newLessonDate;
 	}
+
 
 
 	public function build()
 	{
 		return $this->view('email.lesson_transfer')
-			->subject('これは振替メールの送信テストです')
+			->from('mr.suzuki.11@gmail.com')
+			->subject('【ウィズ体操クラブ】振替のお知らせ')
 			->with([
-				'name' => $this->name,
+				'fullName' => $this->fullName,
+				'email' => $this->email,
+				'oldLessonDate' => $this->oldLessonDate,
+				'newLessonDate' => $this->newLessonDate,
 			]);
 	}
 }

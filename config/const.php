@@ -38,7 +38,23 @@ return [
 		4 => '木',
 		5 => '金',
 		6 => '土',
-	]
+	],
+
+	'DAY_OF_WEEK_EN' => [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+	],
+
+	'ATTENDANCE' => [
+		0 => '欠席',
+		1 => '出席',
+		2 => '振替',
+	],
 
 	// 'STUDENT_GRADE' => [
 	// 	1  => '小学1年生',

@@ -57,10 +57,16 @@
 		.st-top-transfer-button{
 			margin-right: 30px;
 
-			a{
+			.transfer-ok{
 				font-size: 0.7rem;
 				color: white;
 				border: 1px solid rgba(255, 255, 255, 0.405);
+			}
+
+			.transfered{
+				color: #212529;
+				font-size: 0.7rem;
+				border: 1px solid #212529;
 			}
 		}
 	}

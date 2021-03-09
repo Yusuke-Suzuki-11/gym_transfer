@@ -35,23 +35,37 @@
 
 	// サイドメニュー
 	.st-side-menu-box{
-		.st-side-menu{
-			margin: 0 auto;
 
-			.st-side-menu-li{
-				border-bottom: 1px solid rgba(90, 90, 90, 0.152);
-				line-height: 50px;
-				cursor: pointer;
-
-				&:hover{
-					background-color: aquamarine;
-				}
+		.st-side-sub-menu{
+			height: 50px;
+			a{
+				display: block;
 
 				.st-side-menu-item{
-					width: 88%;
-					float: right;
+
+					width: 60%;
 					margin: 0 auto;
-					font-size: 0.85rem;
+					display: flex;
+					justify-content: space-between;
+
+					.st-side-menu-icon{
+						line-height: 50px;
+						width: 15%;
+						display: inline;
+						font-size: 20px;
+
+					}
+
+					.st-side-menu-title{
+						font-size: 1.0rem;
+						line-height: 50px;
+						width: 85%;
+					}
+				}
+
+				&:hover{
+					font-size: 1.1rem;
+					background-color: #ffffff2a;
 				}
 			}
 		}

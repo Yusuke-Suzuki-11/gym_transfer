@@ -9,11 +9,23 @@ use Illuminate\Support\Facades\DB;
 class Lesson extends Model
 {
 	use HasFactory;
+
 	private $__name = 'lessons';
+
+	protected $fillable = [
+		'course_id',
+		'student_id',
+		'lesson_date',
+	];
 
 	public function getCourseRowByRow()
 	{
 		return $this->belongsTo(Course::class, 'course_id');
+	}
+
+	public function getCourseId()
+	{
+		return $this->getCourseRowByRow()->first()->id;
 	}
 
 	public function getLessonTime()
@@ -50,5 +62,10 @@ class Lesson extends Model
 	public function getGrade()
 	{
 		return $this->getCourseRowByRow()->first()->getGradeRow()->first()->grade;
+	}
+
+	public function getGradeId()
+	{
+		return $this->getCourseRowByRow()->first()->grade_id;
 	}
 }
