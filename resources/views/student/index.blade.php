@@ -14,7 +14,7 @@
 			</p>
 		</div>
 		<div class="st-top-lesson">
-			@foreach ($AuthStudentRow->getLessonRowset()->orderBy('lesson_date', 'asc')->get() as $LessonRow)
+			@foreach ($AuthStudentRow->getLessonRowset()->orderBy('lesson_date', 'asc')->where('valid', 1)->get() as $LessonRow)
 				<div class="st-top-lesson-container">
 					{{-- レッスンタイトル枠 --}}
 					<div class="st-top-lesson-title">
@@ -27,13 +27,13 @@
 						</div>
 						@if ($CourseStudentInstance->hasTransferEnabled($AuthStudentRow->id, $LessonRow->getCourseRowByRow()->first()->id))
 							<div class="st-top-transfer-button">
-								<a href="{{route('st.lesson.detail', ['id' => $LessonRow->id])}}" class="btn btn-success">
+								<a href="{{route('st.lesson.detail', ['id' => $LessonRow->id])}}" class="btn btn-success transfer-ok">
 									振替可能
 								</a>
 							</div>
 						@elseif($LessonRow->attendance == 2)
 							<div class="st-top-transfer-button">
-								<a href="{{route('st.lesson.detail', ['id' => $LessonRow->id])}}" class="btn btn-warning">
+								<a href="{{route('st.lesson.comparison_lesson', ['id' => $LessonRow->id])}}" class="btn btn-warning transfered">
 									振替済
 								</a>
 							</div>

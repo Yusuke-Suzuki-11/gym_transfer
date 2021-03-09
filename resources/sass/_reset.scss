@@ -105,6 +105,10 @@ input, select {
 		vertical-align:middle;
 }
 
+select:invalid{
+	color: blanchedalmond;
+}
+
 .font-error{
 	color: crimson;
 

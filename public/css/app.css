@@ -104,6 +104,10 @@ input, select {
   vertical-align: middle;
 }
 
+select:invalid {
+  color: blanchedalmond;
+}
+
 .font-error {
   color: crimson;
 }
@@ -390,6 +394,9 @@ input, select {
   font-size: 25px;
   font-weight: bold;
 }
+.st-title-top .st-title-txt span {
+  font-size: 1rem;
+}
 .st-title-top .st-title-date {
   margin-top: 7px;
   font-size: 35px;
@@ -460,10 +467,15 @@ input, select {
 .st-top-lesson-container .st-top-lesson-title .st-top-transfer-button {
   margin-right: 30px;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button a {
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button .transfer-ok {
   font-size: 0.7rem;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.405);
+}
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button .transfered {
+  color: #212529;
+  font-size: 0.7rem;
+  border: 1px solid #212529;
 }
 .st-top-lesson-container .st-top-lesson-main {
   background-color: white;
@@ -504,6 +516,19 @@ input, select {
   height: auto;
   width: 90%;
   max-width: 960px;
+}
+
+.compare-box .compare-title {
+  text-align: center;
+  margin-top: 60px;
+}
+.compare-box .compare-title p {
+  color: crimson;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.compare-box .st-top-lesson-title {
+  margin-top: 10px;
 }
 
 .tc-index {
