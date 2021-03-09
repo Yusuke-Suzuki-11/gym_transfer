@@ -27,10 +27,6 @@ time, mark, audio, video {
 		background:transparent;
 }
 
-html{
-	height: 100%;
-}
-
 body {
 		line-height:1;
 		background-color: #E9FBFC;
@@ -107,6 +103,10 @@ hr {
 
 input, select {
 		vertical-align:middle;
+}
+
+select:invalid{
+	color: blanchedalmond;
 }
 
 .font-error{

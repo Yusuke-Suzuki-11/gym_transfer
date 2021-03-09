@@ -21,6 +21,7 @@ Route::prefix('students')->middleware('auth:students')->group(function () {
 
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');
 	Route::get('/lesson/detail/{id}', [LessonController::class, 'detail'])->name('st.lesson.detail');
+	Route::get('/lesson/comparison_lesson/{id}', [LessonController::class, 'comparison_lesson'])->name('st.lesson.comparison_lesson');
 	Route::post('/lesson/transfer', [LessonController::class, 'transfer'])->name('st.lesson.transfer');
 });
 

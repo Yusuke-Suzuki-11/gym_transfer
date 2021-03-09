@@ -26,10 +26,6 @@ time, mark, audio, video {
   background: transparent;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   line-height: 1;
   background-color: #E9FBFC;
@@ -106,6 +102,10 @@ hr {
 
 input, select {
   vertical-align: middle;
+}
+
+select:invalid {
+  color: blanchedalmond;
 }
 
 .font-error {
@@ -219,22 +219,32 @@ input, select {
   font-size: 0.8rem;
   font-weight: bold;
 }
-.st-sidebar .st-side-menu-box .st-side-menu {
-  margin: 0 auto;
+.st-sidebar .st-side-menu-box .st-side-sub-menu {
+  height: 50px;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li {
-  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
+.st-sidebar .st-side-menu-box .st-side-sub-menu a {
+  display: block;
+}
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item .st-side-menu-icon {
   line-height: 50px;
-  cursor: pointer;
+  width: 15%;
+  display: inline;
+  font-size: 20px;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li:hover {
-  background-color: aquamarine;
+.st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item .st-side-menu-title {
+  font-size: 1rem;
+  line-height: 50px;
+  width: 85%;
 }
-.st-sidebar .st-side-menu-box .st-side-menu .st-side-menu-li .st-side-menu-item {
-  width: 88%;
-  float: right;
-  margin: 0 auto;
-  font-size: 0.85rem;
+.st-sidebar .st-side-menu-box .st-side-sub-menu a:hover {
+  font-size: 1.1rem;
+  background-color: #ffffff2a;
 }
 
 .tc-sidebar {
@@ -372,11 +382,11 @@ input, select {
 .st-index {
   margin-top: 70px;
   margin-left: 350px;
-  width: 75%;
   width: calc(100vw - 350px);
 }
 
 .st-title-top {
+  color: #493832;
   text-align: center;
   margin-top: 110px;
 }
@@ -384,15 +394,26 @@ input, select {
   font-size: 25px;
   font-weight: bold;
 }
+.st-title-top .st-title-txt span {
+  font-size: 1rem;
+}
 .st-title-top .st-title-date {
   margin-top: 7px;
   font-size: 35px;
+}
+.st-title-top .st-sub-title-text {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+.st-title-top .st-sub-title-text span {
+  font-size: 1.1rem;
 }
 
 .st-calendar {
   height: 200px;
   outline: 1px solid rgba(0, 0, 0, 0.508);
   width: 80%;
+  font-weight: bold;
 }
 
 .st-top-lesson-container {
@@ -446,10 +467,15 @@ input, select {
 .st-top-lesson-container .st-top-lesson-title .st-top-transfer-button {
   margin-right: 30px;
 }
-.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button a {
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button .transfer-ok {
   font-size: 0.7rem;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.405);
+}
+.st-top-lesson-container .st-top-lesson-title .st-top-transfer-button .transfered {
+  color: #212529;
+  font-size: 0.7rem;
+  border: 1px solid #212529;
 }
 .st-top-lesson-container .st-top-lesson-main {
   background-color: white;
@@ -490,6 +516,19 @@ input, select {
   height: auto;
   width: 90%;
   max-width: 960px;
+}
+
+.compare-box .compare-title {
+  text-align: center;
+  margin-top: 60px;
+}
+.compare-box .compare-title p {
+  color: crimson;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.compare-box .st-top-lesson-title {
+  margin-top: 10px;
 }
 
 .tc-index {
@@ -739,4 +778,26 @@ input, select {
 .tc-stadd-container .tc-stadd-form-btn button {
   margin-top: 20px;
   width: 50%;
+}
+
+.st-transfer {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.st-transfer .st-top-lesson-container {
+  width: 100%;
+}
+.st-transfer .st-top-lesson-container .st-top-lesson-title {
+  margin-top: 5px;
+}
+.st-transfer .st-top-lesson-container button {
+  display: block;
+  margin: 10px auto 0px;
+  width: 30%;
+  letter-spacing: 1.5px;
+}
+
+.st-top-lesson {
+  margin-bottom: 100px;
 }
