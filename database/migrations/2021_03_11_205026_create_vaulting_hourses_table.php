@@ -16,7 +16,9 @@ class CreateVaultingHoursesTable extends Migration
         Schema::create('vaulting_hourses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->text('first_description')->nullable();
+            $table->text('second_description')->nullable();
+            $table->text('third_description')->nullable();
             $table->timestamps();
         });
     }
