@@ -67,7 +67,11 @@ class LessonController extends Controller
 			}
 		}
 
-		return view('student.lesson.detail')->with(['LessonRow' => $LessonRow, 'LessonSelectItemForJson' => json_encode($LessonDataForSelect)]);
+		return view('student.lesson.detail')->with([
+			'LessonRow' => $LessonRow,
+			'LessonSelectItemForJson' => json_encode($LessonDataForSelect),
+			'AuthStudentRow' => $AuthStudentRow,
+		]);
 	}
 
 
@@ -111,10 +115,15 @@ class LessonController extends Controller
 
 	public function comparison_lesson($id)
 	{
+		$AuthStudentRow = Auth::user();
 		$LessonRow = Lesson::find($id);
 		$OldLessonRow = Lesson::find($LessonRow->change_lesson_id);
 
 
-		return view('student.lesson.compare')->with(['LessonRow' => $LessonRow, 'OldLessonRow' => $OldLessonRow]);
+		return view('student.lesson.compare')->with([
+			'LessonRow' => $LessonRow,
+			'OldLessonRow' => $OldLessonRow,
+			'AuthStudentRow' => $AuthStudentRow,
+		]);
 	}
 }
