@@ -77,6 +77,9 @@ class MultiAuthTableSeeder extends Seeder
 			$StudentRow->gender = $student['gender'];
 			$StudentRow->stress_point = $student['stress_point'];
 			$StudentRow->phone = $student['phone'];
+			$StudentRow->bar_id = 1;
+			$StudentRow->floor_id = 1;
+			$StudentRow->vaulting_hourse_id = 1;
 			$StudentRow->save();
 		}
 

@@ -27,6 +27,9 @@ class CreateStudentsTable extends Migration
 			$table->string('gender');
 			$table->integer('stress_point');
 			$table->text('phone');
+			$table->integer('bar_id');
+			$table->integer('floor_id');
+			$table->integer('vaulting_hourse_id');
 			$table->timestamps();
 		});
 	}
