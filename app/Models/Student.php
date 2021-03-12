@@ -24,7 +24,10 @@ class Student extends Authenticatable
 		'birthday',
 		'gender',
 		'stress_point',
-		'phone'
+		'phone',
+		'bar_id',
+		'floor_id',
+		'vaulting_hourse_id',
 	];
 
 	public function getCourseRowsetByRowset()
@@ -158,5 +161,20 @@ class Student extends Authenticatable
 			$LessonDates[] = $LessonRow->lesson_date;
 		}
 		return $LessonDates;
+	}
+
+	public function getBarRow()
+	{
+		return $this->belongsTo("App\Models\Bar", 'bar_id');
+	}
+
+	public function getFloorRow()
+	{
+		return $this->belongsTo("App\Models\Floor", 'floor_id');
+	}
+
+	public function getVaultingHourseRow()
+	{
+		return $this->belongsTo("App\Models\VaultingHourse", 'vaulting_hourse_id');
 	}
 }

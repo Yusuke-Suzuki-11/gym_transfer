@@ -103,7 +103,11 @@ class TeacherStudentController extends Controller
 				'birthday' => $request->birthday,
 				'gender' => $request->gender,
 				'stress_point' => 3,
-				'phone' => $request->phone
+				'phone' => $request->phone,
+				// TODO::レベルを選べるように
+				'bar_id' => 1,
+				'floor_id' => 1,
+				'vaulting_hourse_id' => 1,
 			]
 		);
 		$StudentRow->save();

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class VaultingHourse extends Model
 {
     use HasFactory;
+
+    private function getLevelRow()
+    {
+        return $this->hasOne('App\Models\ClassLevel', 'id')->first();
+    }
+
+    public function getLevel()
+    {
+        return $this->getLevelRow()->name;
+    }
 }
