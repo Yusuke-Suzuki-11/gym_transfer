@@ -2,15 +2,15 @@
 	<div class="st-events">
 		<div class="st-event-item">
 			<img class="st-event-item-img" src="/image/test2.jpg">
-			<span class="st-event-name">床:17級</span>
+			<span class="st-event-name">床:{{$AuthStudentRow->getFloorRow()->first()->getLevel()}}</span>
 		</div>
 		<div class="st-event-item">
 			<img class="st-event-item-img" src="/image/test2.jpg">
-			<span class="st-event-name">鉄棒:17級</span>
+			<span class="st-event-name">鉄棒:{{$AuthStudentRow->getBarRow()->first()->getLevel()}}</span>
 		</div>
 		<div class="st-event-item">
 			<img class="st-event-item-img" src="/image/test2.jpg">
-			<span class="st-event-name">とび箱:17級</span>
+			<span class="st-event-name">とび箱:{{$AuthStudentRow->getVaultingHourseRow()->first()->getLevel()}}</span>
 		</div>
 	</div>
 	<div class="st-side-menu-box">
