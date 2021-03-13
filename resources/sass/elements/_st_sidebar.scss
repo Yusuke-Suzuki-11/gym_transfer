@@ -13,7 +13,6 @@
 	.st-events{
 		padding: 42px 0;
 		display: inline-flex;
-		border-bottom: 1px solid rgba(90, 90, 90, 0.152);
 
 		.st-event-item{
 			width: 30%;
@@ -40,6 +39,9 @@
 			height: 50px;
 			a{
 				display: block;
+				color: #23ACE4;
+				text-shadow: 1px 1px 1px rgba(102, 102, 102, 0.391);
+				text-decoration: none;
 
 				.st-side-menu-item{
 
@@ -65,7 +67,9 @@
 
 				&:hover{
 					font-size: 1.1rem;
-					background-color: #ffffff2a;
+					background-color: #23ACE4;
+					color: white;
+					box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.405);
 				}
 			}
 		}

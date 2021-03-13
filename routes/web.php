@@ -16,10 +16,16 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 
 // 生徒ページ
 Route::prefix('students')->middleware('auth:students')->group(function () {
+	// 練習一覧
 	Route::get('', [StudentController::class, 'index'])->name('students');
+
+	// カレンダー
 	Route::get('/my_calendar', [StudentController::class, 'my_calendar'])->name('st.calendar');
 
+	// コースの登録
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');
+
+	// 振替処理
 	Route::get('/lesson/detail/{id}', [LessonController::class, 'detail'])->name('st.lesson.detail');
 	Route::get('/lesson/comparison_lesson/{id}', [LessonController::class, 'comparison_lesson'])->name('st.lesson.comparison_lesson');
 	Route::post('/lesson/transfer', [LessonController::class, 'transfer'])->name('st.lesson.transfer');
