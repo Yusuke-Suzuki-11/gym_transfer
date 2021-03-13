@@ -19,11 +19,12 @@ Route::prefix('students')->middleware('auth:students')->group(function () {
 
 	// カレンダー
 	Route::get('/my_calendar', [StudentController::class, 'my_calendar'])->name('st.calendar');
-	// 練習一覧
-	Route::get('/{month}', [StudentController::class, 'index'])->name('students');
 
 	// コースの登録
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');
+
+	// 練習一覧
+	Route::get('/{month}', [StudentController::class, 'index'])->name('students');
 
 	// 振替処理
 	Route::get('/lesson/detail/{id}', [LessonController::class, 'detail'])->name('st.lesson.detail');
