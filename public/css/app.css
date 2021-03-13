@@ -301,6 +301,7 @@ select:invalid {
 }
 .tc-sidebar .tc-side-menu-box .tc-side-sub-menu a .tc-side-menu-item .tc-side-menu-title {
   font-size: 1rem;
+  margin-left: 10px;
   line-height: 50px;
   width: 85%;
 }

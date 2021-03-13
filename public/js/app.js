@@ -16799,7 +16799,6 @@ __webpack_require__.r(__webpack_exports__);
     showAll: function showAll() {
       this.formClear();
       this.studentData = this.allStudent;
-      console.log(this.allStudent);
     },
     searchStudent: function searchStudent() {
       var _this = this;
@@ -16824,7 +16823,6 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         _this.studentData = res.data;
-        console.log(_this.studentData);
       })["catch"](function (error) {
         alert("データの取得に失敗しました");
         console.log(error);

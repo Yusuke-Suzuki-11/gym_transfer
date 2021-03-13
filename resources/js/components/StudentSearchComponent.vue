@@ -157,7 +157,6 @@ export default {
     showAll: function () {
       this.formClear();
       this.studentData = this.allStudent;
-      console.log(this.allStudent);
     },
     searchStudent: function () {
       if (
@@ -186,7 +185,6 @@ export default {
             return;
           }
           this.studentData = res.data;
-          console.log(this.studentData);
         })
         .catch((error) => {
           alert("データの取得に失敗しました");
