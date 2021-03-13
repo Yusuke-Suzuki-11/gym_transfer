@@ -16,9 +16,7 @@ class StudentController extends Controller
 
 		$AuthStudentRow = Auth::user();
 		$CourseStudentInstance = new CourseStudent();
-
 		$LessonRowset = $AuthStudentRow->getAliveLessonRowset($month);
-
 
 		return view('student.index')->with([
 			'AuthStudentRow' => $AuthStudentRow,
