@@ -9,12 +9,23 @@
 	@include('elements.st_sidebar')
 	<div class="st-index">
 		<div class="st-title-top">
+			@if (intval(intval(date('m')) == $selectMonth))
+				<p class="st-title-txt">
+					今月の練習
+				</p>
+			@else
 			<p class="st-title-txt">
-				今月の練習
+				{{$selectMonth}}月の練習
 			</p>
+			@endif
 		</div>
 		<div class="st-top-lesson">
-			@foreach ($AuthStudentRow->getLessonRowset()->orderBy('lesson_date', 'asc')->where('valid', 1)->get() as $LessonRow)
+			<div class="st-top-month-btn-box">
+				@for ($i = intval(date('m')); $i <= intval(date('m') + 3); $i++)
+					<a href="{{route('students', ['month' => $i])}}" class="btn-circle {{$i == $selectMonth ? 'month-btn-active' : ''}}" >{{$i}}月</a>
+				@endfor
+			</div>
+			@foreach ($LessonRowset as $LessonRow)
 				<div class="st-top-lesson-container">
 					{{-- レッスンタイトル枠 --}}
 					<div class="st-top-shadow">

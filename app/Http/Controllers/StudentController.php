@@ -8,13 +8,21 @@ use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
-	public function index()
+	public function index($month)
 	{
+		if ($month > intval(date('m')) + 3 || $month < intval(date('m'))) {
+			abort(500);
+		}
+
 		$AuthStudentRow = Auth::user();
 		$CourseStudentInstance = new CourseStudent();
+		$LessonRowset = $AuthStudentRow->getAliveLessonRowset($month);
+
 		return view('student.index')->with([
 			'AuthStudentRow' => $AuthStudentRow,
-			'CourseStudentInstance' => $CourseStudentInstance
+			'CourseStudentInstance' => $CourseStudentInstance,
+			'LessonRowset' => $LessonRowset,
+			'selectMonth' => $month,
 		]);
 	}
 
