@@ -203,7 +203,6 @@ select:invalid {
 .st-sidebar .st-events {
   padding: 42px 0;
   display: inline-flex;
-  border-bottom: 1px solid rgba(90, 90, 90, 0.152);
 }
 .st-sidebar .st-events .st-event-item {
   width: 30%;
@@ -224,6 +223,8 @@ select:invalid {
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a {
   display: block;
+  color: #23ACE4;
+  text-shadow: 1px 1px 1px rgba(102, 102, 102, 0.391);
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item {
   width: 60%;
@@ -244,7 +245,9 @@ select:invalid {
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a:hover {
   font-size: 1.1rem;
-  background-color: #ffffff2a;
+  background-color: #23ACE4;
+  color: white;
+  box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.405);
 }
 
 .tc-sidebar {

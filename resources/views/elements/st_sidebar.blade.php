@@ -17,6 +17,19 @@
 		<div class="st-side-menu">
 
 			<div class="st-side-sub-menu">
+				<a href="{{route('students')}}">
+					<div class="st-side-menu-item">
+						<div class="st-side-menu-icon">
+							<i class="fas fa-star"></i>
+						</div>
+						<div class="st-side-menu-title">
+							今月の練習
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="st-side-sub-menu">
 				<a href="{{route('st.calendar')}}">
 					<div class="st-side-menu-item">
 						<div class="st-side-menu-icon">
@@ -30,17 +43,18 @@
 			</div>
 
 			<div class="st-side-sub-menu">
-				<a href="{{route('students')}}">
+				<a href="https://with-gym.com/contact.html" target="_blank" rel="noopener noreferrer">
 					<div class="st-side-menu-item">
 						<div class="st-side-menu-icon">
-							<i class="fas fa-star"></i>
+							<i class="fas fa-question-circle"></i>
 						</div>
 						<div class="st-side-menu-title">
-							今月の練習
+							お問いあわせ
 						</div>
 					</div>
 				</a>
 			</div>
+
 		</div>
 	</div>
 </div>
