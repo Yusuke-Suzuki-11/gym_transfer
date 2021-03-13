@@ -223,7 +223,7 @@ select:invalid {
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a {
   display: block;
-  color: #23ACE4;
+  color: #42302a;
   text-shadow: 1px 1px 1px rgba(102, 102, 102, 0.391);
   text-decoration: none;
 }
@@ -246,7 +246,7 @@ select:invalid {
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a:hover {
   font-size: 1.1rem;
-  background-color: #23ACE4;
+  background-color: #42302a;
   color: white;
   box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.405);
 }
@@ -425,6 +425,10 @@ select:invalid {
   margin: 0 auto;
   width: 85%;
   color: #493832;
+}
+.st-top-lesson-container .st-top-shadow {
+  box-shadow: 0 0 8px gray;
+  border-radius: 10px;
 }
 .st-top-lesson-container .st-top-lesson-title {
   background-color: #23ACE4;
