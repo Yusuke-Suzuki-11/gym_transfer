@@ -1,4 +1,5 @@
 <div class="st-sidebar">
+	<div class=""></div>
 	<div class="st-events">
 		<div class="st-event-item">
 			<img class="st-event-item-img" src="/image/test2.jpg">
@@ -15,6 +16,19 @@
 	</div>
 	<div class="st-side-menu-box">
 		<div class="st-side-menu">
+
+			<div class="st-side-sub-menu">
+				<a href="#">
+					<div class="st-side-menu-item">
+						<div class="st-side-menu-icon">
+							<i class="fas fa-user-alt"></i>
+						</div>
+						<div class="st-side-menu-title">
+							プロフィール
+						</div>
+					</div>
+				</a>
+			</div>
 
 			<div class="st-side-sub-menu">
 				<a href="{{route('students')}}">

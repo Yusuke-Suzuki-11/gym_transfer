@@ -225,6 +225,7 @@ select:invalid {
   display: block;
   color: #23ACE4;
   text-shadow: 1px 1px 1px rgba(102, 102, 102, 0.391);
+  text-decoration: none;
 }
 .st-sidebar .st-side-menu-box .st-side-sub-menu a .st-side-menu-item {
   width: 60%;
@@ -261,6 +262,7 @@ select:invalid {
 }
 .tc-sidebar a {
   color: white;
+  text-decoration: none;
 }
 .tc-sidebar .tc-events {
   padding: 42px 0;
