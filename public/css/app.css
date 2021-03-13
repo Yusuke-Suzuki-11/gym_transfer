@@ -520,6 +520,31 @@ select:invalid {
   font-size: 1.2rem;
 }
 
+.st-top-month-btn-box {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.st-top-month-btn-box .btn-circle {
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #23ACE4;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  border: solid 2px #23ACE4;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  text-decoration: none;
+}
+.st-top-month-btn-box .month-btn-active {
+  background: #23ACE4;
+  color: white;
+}
+
 .st-calendar {
   background-color: white;
   height: auto;

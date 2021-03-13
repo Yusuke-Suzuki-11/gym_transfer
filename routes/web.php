@@ -16,11 +16,11 @@ Route::post('/login', [MultiAuthController::class, 'login'])->name('login');
 
 // 生徒ページ
 Route::prefix('students')->middleware('auth:students')->group(function () {
-	// 練習一覧
-	Route::get('', [StudentController::class, 'index'])->name('students');
 
 	// カレンダー
 	Route::get('/my_calendar', [StudentController::class, 'my_calendar'])->name('st.calendar');
+	// 練習一覧
+	Route::get('/{month}', [StudentController::class, 'index'])->name('students');
 
 	// コースの登録
 	Route::get('/course', [CourseController::class, 'index'])->name('st.course.index');

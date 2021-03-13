@@ -54,6 +54,15 @@ class Student extends Authenticatable
 		return $courseArray;
 	}
 
+	public function getAliveLessonRowset($month)
+	{
+		return $this->getLessonRowset()
+			->orderBy('lesson_date', 'asc')
+			->whereMonth('lesson_date', $month)
+			->where('valid', 1)
+			->get();
+	}
+
 	public function getJsonLessonDateAndTitle()
 	{
 		$LessonRowset = $this->getLessonRowset()->get();

@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="st-side-sub-menu">
-				<a href="{{route('students')}}">
+				<a href="{{route('students', ['month' => intval(date('m'))])}}">
 					<div class="st-side-menu-item">
 						<div class="st-side-menu-icon">
 							<i class="fas fa-star"></i>
@@ -68,7 +68,6 @@
 					</div>
 				</a>
 			</div>
-
 		</div>
 	</div>
 </div>
