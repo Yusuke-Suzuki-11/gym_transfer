@@ -16604,24 +16604,34 @@ __webpack_require__.r(__webpack_exports__);
       type: Array
     }
   },
+  created: function created() {
+    this.formatDate();
+  },
   data: function data() {
     return {
       calendarOptions: {
-        plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__.default, _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_3__.default, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__.default],
+        locale: "ja",
+        plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__.default, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__.default],
         headerToolbar: {
-          left: "prev,next today",
+          left: null,
           center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay"
+          right: "prev,next"
         },
-        initialView: "dayGridMonth",
         events: this.dateData,
-        eventClick: this.test
+        eventClick: this.test,
+        timeZone: "Asia/Tokyo"
       }
     };
   },
   methods: {
     test: function test() {
       alert("test");
+    },
+    formatDate: function formatDate() {
+      var elements = info.querySlelectAll(".fc-daygrid-day-number");
+      Array.prototype.forEach.call(elements, function (el) {
+        el.textContent = el.textContent.replace("日", "");
+      });
     }
   }
 });

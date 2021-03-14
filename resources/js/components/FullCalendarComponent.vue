@@ -13,24 +13,34 @@ export default {
       type: Array,
     },
   },
+  created: function () {
+    this.formatDate();
+  },
   data() {
     return {
       calendarOptions: {
-        plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+        locale: "ja",
+        plugins: [dayGridPlugin, interactionPlugin],
         headerToolbar: {
-          left: "prev,next today",
+          left: null,
           center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay",
+          right: "prev,next",
         },
-        initialView: "dayGridMonth",
         events: this.dateData,
         eventClick: this.test,
+        timeZone: "Asia/Tokyo",
       },
     };
   },
   methods: {
     test: function () {
       alert("test");
+    },
+    formatDate: function () {
+      var elements = info.querySlelectAll(".fc-daygrid-day-number");
+      Array.prototype.forEach.call(elements, function (el) {
+        el.textContent = el.textContent.replace("日", "");
+      });
     },
   },
 };
