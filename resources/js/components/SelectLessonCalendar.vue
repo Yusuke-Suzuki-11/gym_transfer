@@ -7,15 +7,8 @@ export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
   },
-  props: {
-    dateData: {
-      type: Array,
-    },
-  },
+  props: {},
 
-  created: function () {
-    this.formatDate();
-  },
   mounted: function () {},
   data() {
     return {
@@ -27,20 +20,15 @@ export default {
           center: "title",
           right: "prev,next",
         },
-        events: this.dateData,
         timeZone: "Asia/Tokyo",
+        dayCellContent: function (e) {
+          e.dayNumberText = e.dayNumberText.replace("日", "");
+        },
+        showNonCurrentDates: false,
       },
     };
   },
-  methods: {
-    formatDate: function () {
-      var elements = document.querySelectorAll(".fc-daygrid-day-number");
-      Array.prototype.forEach.call(elements, function (el) {
-        alert(el.textContent);
-        el.textContent = el.textContent.replace("日", "");
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 <template>

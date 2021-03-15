@@ -29,7 +29,6 @@ time, mark, audio, video {
 body {
   line-height: 1;
   background-color: #E9FBFC;
-  font-family: "M PLUS 1p";
   margin-top: 70px;
 }
 
@@ -314,8 +313,9 @@ select:invalid {
   margin: 0 auto;
 }
 
-.st-calendar {
-  margin: 100px auto 0;
+.calender-btn-box {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .auth-logo {
@@ -425,9 +425,11 @@ select:invalid {
 
 .st-calendar {
   height: 200px;
-  outline: 1px solid rgba(0, 0, 0, 0.508);
-  width: 80%;
+  padding-top: 20px;
+  box-shadow: 0 0 8px gray;
+  width: 60%;
   font-weight: bold;
+  margin-bottom: 40px;
 }
 
 .st-top-lesson-container {
@@ -557,8 +559,8 @@ select:invalid {
 .st-calendar {
   background-color: white;
   height: auto;
-  width: 90%;
   max-width: 960px;
+  margin: 10px auto 10px;
 }
 
 .compare-box .compare-title {

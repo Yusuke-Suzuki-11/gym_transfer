@@ -18,4 +18,16 @@ class TeacherController extends Controller
 		$TodayCourseRowset = $CourseInstans->getRowsetByWeekId(date('w'));
 		return view('teacher.index')->with('TodayCourseRowset', $TodayCourseRowset);
 	}
+
+	public function calendar()
+	{
+
+		return view('teacher.calendar.index');
+	}
+
+	public function calendar_edit()
+	{
+
+		return view('teacher.calendar.edit');
+	}
 }
