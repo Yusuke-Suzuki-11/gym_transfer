@@ -42,6 +42,17 @@ class TeacherController extends Controller
 
 	public function calendar_update(Request $request)
 	{
+
+		$dateArray = json_decode($request->dateArray);
+
+		foreach ($dateArray as $date) {
+			// 日付に入力がなければスキップ
+			if (!isset($request[$date])) {
+				continue;
+			}
+		}
+
+
 		dd($request->all());
 	}
 }

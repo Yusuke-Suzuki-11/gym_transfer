@@ -26,6 +26,7 @@
 		</div>
 
 		<form action="{{route('tc.lesson.calendar.update', ['yearMonth' => date('Y-m', strtotime($start))])}}" method="POST">
+			<input type="hidden" name="dateArray" value="{{json_encode($dateArray)}}">
 			<div class="tc-calendar-edit-list">
 				<div class="tc-calendar-edit-header">
 					{{intval(date('m', strtotime($start))) . '月'}}
