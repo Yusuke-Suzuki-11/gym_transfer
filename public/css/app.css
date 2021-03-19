@@ -534,7 +534,7 @@ select:invalid {
 .st-top-month-btn-box {
   text-align: center;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .st-top-month-btn-box .btn-circle {
   display: inline-block;
@@ -561,6 +561,58 @@ select:invalid {
   height: auto;
   max-width: 960px;
   margin: 10px auto 10px;
+}
+
+.tc-calendar-edit-list {
+  width: 80%;
+  margin: 40px auto 10px;
+  border: 1px solid #767676;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-calendar-edit-list .tc-calendar-edit-header {
+  background-color: #004361;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-calendar-edit-list .tc-date-item-box {
+  display: flex;
+  background-color: white;
+  border-top: 1px solid rgba(80, 80, 80, 0.5);
+  height: 50px;
+  line-height: 50px;
+}
+.tc-calendar-edit-list .tc-date-item-box .tc-date-title {
+  width: 15%;
+  text-align: center;
+  border-right: 1px solid #bdbdbd;
+  font-weight: bold;
+}
+.tc-calendar-edit-list .tc-date-item-box .tc-date-form {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+}
+.tc-calendar-edit-list .yattaze {
+  background-color: #1d678a;
+  color: white;
+  border-top: 1px solid rgba(143, 143, 143, 0.645);
+}
+
+.tc-date-submit {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.tc-date-submit .tc-date-btn {
+  width: 20%;
+  letter-spacing: 4px;
 }
 
 .compare-box .compare-title {

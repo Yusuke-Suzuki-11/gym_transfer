@@ -52,5 +52,6 @@ Route::prefix('teachers')->middleware('auth:teachers')->group(function () {
 
 	// 練習作成
 	Route::get('/lesson/calendar', [TeacherController::class, 'calendar'])->name('tc.lesson.calendar');
-	Route::get('/lesson/calendar/edit', [TeacherController::class, 'calendar_edit'])->name('tc.lesson.calendar.edit');
+	Route::get('/lesson/calendar/edit/{yearMonth}', [TeacherController::class, 'calendar_edit'])->name('tc.lesson.calendar.edit');
+	Route::post('/lesson/calendar/update/{yearMonth}', [TeacherController::class, 'calendar_update'])->name('tc.lesson.calendar.update');
 });

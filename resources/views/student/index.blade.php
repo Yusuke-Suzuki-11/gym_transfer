@@ -21,8 +21,14 @@
 		</div>
 		<div class="st-top-lesson">
 			<div class="st-top-month-btn-box">
-				@for ($i = intval(date('m')); $i <= intval(date('m') + 3); $i++)
-					<a href="{{route('students', ['month' => $i])}}" class="btn-circle {{$i == $selectMonth ? 'month-btn-active' : ''}}" >{{$i}}月</a>
+				@php
+					$count = intval(date('m'));
+				@endphp
+				@for ($i = $count; $i <= intval(date('m')) + 3; $i++)
+					<a href="{{route('students', ['month' => $count])}}" class="btn-circle {{$count == $selectMonth ? 'month-btn-active' : ''}}" >{{$count}}月</a>
+					@php
+					$count = $count < 12 ? $count + 1 : 1;
+					@endphp
 				@endfor
 			</div>
 			@foreach ($LessonRowset as $LessonRow)

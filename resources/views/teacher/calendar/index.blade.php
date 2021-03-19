@@ -13,7 +13,7 @@
 			</select-lesson-calendar>
 		</div>
         <div class="calender-btn-box">
-            <a href="{{route('tc.lesson.calendar.edit')}}" class="btn btn-info">練習計画を修正する</a>
+            <a href="{{route('tc.lesson.calendar.edit', ['yearMonth' => date('Y-m')])}}" class="btn btn-info">練習計画を修正する</a>
         </div>
 	</div>
 @endsection

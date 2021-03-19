@@ -25,9 +25,23 @@ class TeacherController extends Controller
 		return view('teacher.calendar.index');
 	}
 
-	public function calendar_edit()
+	public function calendar_edit($yearMonth)
 	{
+		$start = date('Y-m-d', strtotime($yearMonth));
+		$lastDate = date('Y-m-d', strtotime('last day of ' . date('Y-m', strtotime($start))));
+		$targetDate = $start;
+		$dateArray = [];
 
-		return view('teacher.calendar.edit');
+		while ($targetDate <= $lastDate) {
+			$dateArray[] = $targetDate;
+			$targetDate = date('Y-m-d', strtotime($targetDate . "+1 day"));
+		}
+
+		return view('teacher.calendar.edit')->with(['start' => $start, 'dateArray' => $dateArray]);
+	}
+
+	public function calendar_update(Request $request)
+	{
+		dd($request->all());
 	}
 }
