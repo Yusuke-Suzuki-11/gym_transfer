@@ -103,9 +103,14 @@ class LessonController extends Controller
 		$NewLessonRow->attendance = 2;
 		$NewLessonRow->save();
 
-
-		Mail::to('mr.suzuki.11@gmail.com')
-			->send(new LessonTransferNotification($AuthStudentRow->full_name, $AuthStudentRow->email, $this->utility->formatDate($LessonRow->lesson_date), $this->utility->formatDate($NewLessonRow->lesson_date)));
+		Mail::to('mr.suzuki.11@gmail.com')->send(
+			new LessonTransferNotification(
+				$AuthStudentRow->full_name,
+				$AuthStudentRow->email,
+				$this->utility->formatDate($LessonRow->lesson_date),
+				$this->utility->formatDate($NewLessonRow->lesson_date)
+			)
+		);
 
 		return redirect(route('st.lesson.comparison_lesson', ['id' => $NewLessonRow->id]))->with([
 			'LessonRow' => $NewLessonRow,
@@ -119,7 +124,6 @@ class LessonController extends Controller
 		$AuthStudentRow = Auth::user();
 		$LessonRow = Lesson::find($id);
 		$OldLessonRow = Lesson::find($LessonRow->change_lesson_id);
-
 
 		return view('student.lesson.compare')->with([
 			'LessonRow' => $LessonRow,
