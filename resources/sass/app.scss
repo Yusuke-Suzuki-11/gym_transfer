@@ -6,6 +6,7 @@
 @import "elements/session_message";
 @import "elements/st_sidebar";
 @import "elements/tc_sidebar";
+@import "elements/full_calendar";
 
 // 認証画面
 @import "multi_auth/login";
@@ -23,4 +24,5 @@
 @import "teacher/student/index";
 @import "teacher/student/show";
 @import "teacher/top";
-@import "teacher/student/add"
+@import "teacher/student/add";
+

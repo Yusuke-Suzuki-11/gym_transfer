@@ -49,4 +49,9 @@ Route::prefix('teachers')->middleware('auth:teachers')->group(function () {
 	Route::get('/courses', [CourseController::class, 'index'])->name('tc.course');
 	Route::get('/courses/add', [CourseController::class, 'add'])->name('tc.course.add');
 	Route::post('/courses/create', [CourseController::class, 'create'])->name('tc.course.create');
+
+	// 練習作成
+	Route::get('/lesson/calendar', [TeacherController::class, 'calendar'])->name('tc.lesson.calendar');
+	Route::get('/lesson/calendar/edit/{yearMonth}', [TeacherController::class, 'calendar_edit'])->name('tc.lesson.calendar.edit');
+	Route::post('/lesson/calendar/update/{yearMonth}', [TeacherController::class, 'calendar_update'])->name('tc.lesson.calendar.update');
 });

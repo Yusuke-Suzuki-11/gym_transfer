@@ -37,4 +37,10 @@ class Utility
 		$formatWeek = '(' . config('const.SHORT_DAY_OF_WEEK')[date('w', strtotime($date))] . ')';
 		return $formatDate . $formatWeek;
 	}
+
+	public function getShortWeek($date)
+	{
+		$weekNum = date('w', strtotime($date));
+		return '(' . config('const.SHORT_DAY_OF_WEEK')[$weekNum] . ')';
+	}
 }

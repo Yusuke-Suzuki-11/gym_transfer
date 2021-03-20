@@ -2,6 +2,7 @@
 import FullCalendar from "@fullcalendar/vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import bootstrapPlugin from "@fullcalendar/bootstrap";
 
 export default {
   components: {
@@ -13,15 +14,13 @@ export default {
     },
   },
 
-  created: function () {
-    this.formatDate();
-  },
   mounted: function () {},
   data() {
     return {
       calendarOptions: {
         locale: "ja",
-        plugins: [dayGridPlugin, interactionPlugin],
+        plugins: [dayGridPlugin, interactionPlugin, bootstrapPlugin],
+        themeSystem: "bootstrap",
         headerToolbar: {
           left: null,
           center: "title",
@@ -29,18 +28,14 @@ export default {
         },
         events: this.dateData,
         timeZone: "Asia/Tokyo",
+        dayCellContent: function (e) {
+          e.dayNumberText = e.dayNumberText.replace("日", "");
+        },
+        showNonCurrentDates: false,
       },
     };
   },
-  methods: {
-    formatDate: function () {
-      var elements = document.querySelectorAll(".fc-daygrid-day-number");
-      Array.prototype.forEach.call(elements, function (el) {
-        alert(el.textContent);
-        el.textContent = el.textContent.replace("日", "");
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 <template>
