@@ -19,6 +19,9 @@
 		<div class="tc-title-top">
 			<p class="tc-title-txt">
 				本日の練習
+				<span>
+					（{{$todayLessons}}）
+				</span>
 			</p>
 			<p class="tc-title-date">
 				{{$utility->getTodayDateString()}}

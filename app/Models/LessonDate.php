@@ -24,4 +24,20 @@ class LessonDate extends Model
     {
         return !is_null($this->where('date', $date)->first()->floor_flag);
     }
+
+    public function getTodayLessonType($date)
+    {
+        $LessonDateRow = LessonDate::where('date', $date)->first();
+        $todayLessons = [];
+
+        $todayLessons[] = isset($LessonDateRow->floor_flag) ? config('const.LESSON_TYPE')['floor'] : '';
+        $todayLessons[] = isset($LessonDateRow->bar_flag) ? config('const.LESSON_TYPE')['bar'] : '';
+        $todayLessons[] = isset($LessonDateRow->vaulting_flag) ? config('const.LESSON_TYPE')['vaulting'] : '';
+        $todayLessons[] = isset($LessonDateRow->trampoline_flag) ? config('const.LESSON_TYPE')['trampoline'] : '';
+        $todayLessons[] = isset($LessonDateRow->other_flag) ? config('const.LESSON_TYPE')['other'] : '';
+
+        $todayLessons = array_filter($todayLessons, 'strlen');
+
+        return implode('/', $todayLessons);
+    }
 }

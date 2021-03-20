@@ -644,6 +644,9 @@ select:invalid {
   font-size: 25px;
   font-weight: bold;
 }
+.tc-title-top .tc-title-txt span {
+  font-size: 1.2rem;
+}
 .tc-title-top .tc-title-date {
   margin-top: 7px;
   font-size: 35px;

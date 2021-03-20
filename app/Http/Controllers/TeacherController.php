@@ -13,7 +13,12 @@ class TeacherController extends Controller
 	{
 		$CourseInstans = new Course;
 		$TodayCourseRowset = $CourseInstans->getRowsetByWeekId(date('w'));
-		return view('teacher.index')->with('TodayCourseRowset', $TodayCourseRowset);
+		$LessonDateInstance = new LessonDate;
+
+		return view('teacher.index')->with([
+			'TodayCourseRowset' => $TodayCourseRowset,
+			'todayLessons' => $LessonDateInstance->getTodayLessonType(date('Y-m-d')),
+		]);
 	}
 
 	public function calendar()
