@@ -29,7 +29,6 @@ time, mark, audio, video {
 body {
   line-height: 1;
   background-color: #E9FBFC;
-  font-family: "M PLUS 1p";
   margin-top: 70px;
 }
 
@@ -310,6 +309,15 @@ select:invalid {
   background-color: #ffffff2a;
 }
 
+.fc-daygrid-day-number {
+  margin: 0 auto;
+}
+
+.calender-btn-box {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
 .auth-logo {
   margin: 110px 0 15px;
   text-align: center;
@@ -417,9 +425,11 @@ select:invalid {
 
 .st-calendar {
   height: 200px;
-  outline: 1px solid rgba(0, 0, 0, 0.508);
-  width: 80%;
+  padding-top: 20px;
+  box-shadow: 0 0 8px gray;
+  width: 60%;
   font-weight: bold;
+  margin-bottom: 40px;
 }
 
 .st-top-lesson-container {
@@ -524,7 +534,7 @@ select:invalid {
 .st-top-month-btn-box {
   text-align: center;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .st-top-month-btn-box .btn-circle {
   display: inline-block;
@@ -549,8 +559,60 @@ select:invalid {
 .st-calendar {
   background-color: white;
   height: auto;
-  width: 90%;
   max-width: 960px;
+  margin: 10px auto 10px;
+}
+
+.tc-calendar-edit-list {
+  width: 80%;
+  margin: 40px auto 10px;
+  border: 1px solid #767676;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-calendar-edit-list .tc-calendar-edit-header {
+  background-color: #004361;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-calendar-edit-list .tc-date-item-box {
+  display: flex;
+  background-color: white;
+  border-top: 1px solid rgba(80, 80, 80, 0.5);
+  height: 50px;
+  line-height: 50px;
+}
+.tc-calendar-edit-list .tc-date-item-box .tc-date-title {
+  width: 15%;
+  text-align: center;
+  border-right: 1px solid #bdbdbd;
+  font-weight: bold;
+}
+.tc-calendar-edit-list .tc-date-item-box .tc-date-form {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+}
+.tc-calendar-edit-list .yattaze {
+  background-color: #1d678a;
+  color: white;
+  border-top: 1px solid rgba(143, 143, 143, 0.645);
+}
+
+.tc-date-submit {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.tc-date-submit .tc-date-btn {
+  width: 20%;
+  letter-spacing: 4px;
 }
 
 .compare-box .compare-title {

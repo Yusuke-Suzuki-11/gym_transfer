@@ -13,7 +13,6 @@ use App\Models\Grade;
 use App\Models\Lesson;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Symfony\Contracts\Service\Attribute\Required;
 
 class TeacherStudentController extends Controller
 {
@@ -67,7 +66,7 @@ class TeacherStudentController extends Controller
 
 		Mail::to('mr.suzuki.11@gmail.com')->send(new LessonTransferNotification($StudentRow->full_name));
 
-		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
+		return redirect(route('tc.student.show', ['id' => $StudentRow->id]))->with();
 	}
 
 	public function add()

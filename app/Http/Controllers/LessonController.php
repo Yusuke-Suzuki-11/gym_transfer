@@ -6,11 +6,8 @@ use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
 use App\Models\Course;
 use App\Models\CourseStudent;
-use App\Models\LessonTime;
 use App\Models\Lesson;
-use App\Models\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -106,11 +103,20 @@ class LessonController extends Controller
 		$NewLessonRow->attendance = 2;
 		$NewLessonRow->save();
 
+		Mail::to('mr.suzuki.11@gmail.com')->send(
+			new LessonTransferNotification(
+				$AuthStudentRow->full_name,
+				$AuthStudentRow->email,
+				$this->utility->formatDate($LessonRow->lesson_date),
+				$this->utility->formatDate($NewLessonRow->lesson_date)
+			)
+		);
 
-		Mail::to('mr.suzuki.11@gmail.com')
-			->send(new LessonTransferNotification($AuthStudentRow->full_name, $AuthStudentRow->email, $this->utility->formatDate($LessonRow->lesson_date), $this->utility->formatDate($NewLessonRow->lesson_date)));
-
-		return view('student.index')->with(['AuthStudentRow' => $AuthStudentRow, 'CourseStudentInstance' => $CourseStudentInstance]);
+		return redirect(route('st.lesson.comparison_lesson', ['id' => $NewLessonRow->id]))->with([
+			'LessonRow' => $NewLessonRow,
+			'OldLessonRow' => $LessonRow,
+			'AuthStudentRow' => $AuthStudentRow,
+		]);
 	}
 
 	public function comparison_lesson($id)
@@ -118,7 +124,6 @@ class LessonController extends Controller
 		$AuthStudentRow = Auth::user();
 		$LessonRow = Lesson::find($id);
 		$OldLessonRow = Lesson::find($LessonRow->change_lesson_id);
-
 
 		return view('student.lesson.compare')->with([
 			'LessonRow' => $LessonRow,

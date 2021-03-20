@@ -13,5 +13,4 @@
 			</full-calendar-component>
 		</div>
 	</div>
-
 @endsection

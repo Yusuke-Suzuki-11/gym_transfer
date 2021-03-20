@@ -48,7 +48,7 @@
 		</div>
 
 		<div class="tc-side-sub-menu">
-			<a href="{{route('tc.student.add')}}">
+			<a href="{{route('tc.lesson.calendar')}}">
 				<div class="tc-side-menu-item">
 					<div class="tc-side-menu-icon">
 						<i class="fas fa-calendar-alt"></i>
