@@ -29,11 +29,10 @@ class TeacherController extends Controller
 	public function calendar_edit($yearMonth)
 	{
 		$start = date('Y-m-d', strtotime($yearMonth));
-		$lastDate = date('Y-m-d', strtotime('last day of ' . date('Y-m', strtotime($start))));
+		$last = date('Y-m-d', strtotime('last day of ' . date('Y-m', strtotime($start))));
 		$targetDate = $start;
 		$dateArray = [];
-
-		while ($targetDate <= $lastDate) {
+		while ($targetDate <= $last) {
 			$dateArray[] = $targetDate;
 			$targetDate = date('Y-m-d', strtotime($targetDate . "+1 day"));
 		}
