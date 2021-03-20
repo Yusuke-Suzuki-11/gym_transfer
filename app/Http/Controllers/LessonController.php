@@ -107,7 +107,11 @@ class LessonController extends Controller
 		Mail::to('mr.suzuki.11@gmail.com')
 			->send(new LessonTransferNotification($AuthStudentRow->full_name, $AuthStudentRow->email, $this->utility->formatDate($LessonRow->lesson_date), $this->utility->formatDate($NewLessonRow->lesson_date)));
 
-		return view('student.index')->with(['AuthStudentRow' => $AuthStudentRow, 'CourseStudentInstance' => $CourseStudentInstance]);
+		return redirect(route('st.lesson.comparison_lesson', ['id' => $NewLessonRow->id]))->with([
+			'LessonRow' => $NewLessonRow,
+			'OldLessonRow' => $LessonRow,
+			'AuthStudentRow' => $AuthStudentRow,
+		]);
 	}
 
 	public function comparison_lesson($id)

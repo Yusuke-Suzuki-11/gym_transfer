@@ -66,7 +66,7 @@ class TeacherStudentController extends Controller
 
 		Mail::to('mr.suzuki.11@gmail.com')->send(new LessonTransferNotification($StudentRow->full_name));
 
-		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
+		return redirect(route('tc.student.show', ['id' => $StudentRow->id]))->with();
 	}
 
 	public function add()

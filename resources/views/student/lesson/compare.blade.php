@@ -13,7 +13,7 @@
 		<div class="compare-box">
 			<div class="compare-title">
 				<p>
-					※こちらは振り替えた練習になります。
+					※こちらは振り替え済の練習になります。
 				</p>
 			</div>
 
