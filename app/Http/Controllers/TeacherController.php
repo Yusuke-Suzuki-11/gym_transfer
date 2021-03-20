@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\Lesson;
 use App\Models\LessonDate;
-use App\Models\LessonTime;
 use Illuminate\Http\Request;
-use App\Models\Student;
-use App\Models\Week;
 
 
 class TeacherController extends Controller

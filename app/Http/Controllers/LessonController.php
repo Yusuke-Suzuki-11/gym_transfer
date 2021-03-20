@@ -6,11 +6,8 @@ use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
 use App\Models\Course;
 use App\Models\CourseStudent;
-use App\Models\LessonTime;
 use App\Models\Lesson;
-use App\Models\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
