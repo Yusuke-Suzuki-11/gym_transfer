@@ -9,7 +9,7 @@
             </p>
         </div>
 		<div class="st-calendar" id="app">
-			<select-lesson-calendar>
+			<select-lesson-calendar v-bind:date-data="{{ json_encode($dateDataForJson) }}">
 			</select-lesson-calendar>
 		</div>
         <div class="calender-btn-box">

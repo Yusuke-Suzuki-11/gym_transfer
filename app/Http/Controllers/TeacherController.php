@@ -18,8 +18,55 @@ class TeacherController extends Controller
 
 	public function calendar()
 	{
+		$LessonDateInstance = new LessonDate;
 
-		return view('teacher.calendar.index');
+		$dateDataForJson = [];
+		foreach ($LessonDateInstance->all() as $LessonDateRow) {
+
+			if (isset($LessonDateRow->floor_flag)) {
+				$floorData = [];
+				$floorData['date'] = $LessonDateRow->date;
+				$floorData['title'] = config('const.LESSON_TYPE')['floor'];
+				$floorData['color'] = 'teal';
+				$dateDataForJson[] = $floorData;
+			}
+
+			if (isset($LessonDateRow->bar_flag)) {
+				$barData = [];
+				$barData['date'] = $LessonDateRow->date;
+				$barData['title'] = config('const.LESSON_TYPE')['bar'];
+				$barData['color'] = 'darkorchid';
+				$dateDataForJson[] = $barData;
+			}
+
+			if (isset($LessonDateRow->vaulting_flag)) {
+				$vaultingData = [];
+				$vaultingData['date'] = $LessonDateRow->date;
+				$vaultingData['title'] = config('const.LESSON_TYPE')['vaulting'];
+				$vaultingData['color'] = 'midnightblue';
+				$dateDataForJson[] = $vaultingData;
+			}
+
+			if (isset($LessonDateRow->trampoline_flag)) {
+				$trampolineData = [];
+				$trampolineData['date'] = $LessonDateRow->date;
+				$trampolineData['title'] = config('const.LESSON_TYPE')['trampoline'];
+				$trampolineData['color'] = 'crimson';
+				$dateDataForJson[] = $trampolineData;
+			}
+
+			if (isset($LessonDateRow->other_flag)) {
+				$otherData = [];
+				$otherData['date'] = $LessonDateRow->date;
+				$otherData['title'] = config('const.LESSON_TYPE')['other'];
+				$otherData['color'] = 'dimgray';
+				$dateDataForJson[] = $otherData;
+			}
+		}
+
+		return view('teacher.calendar.index')->with([
+			'dateDataForJson' => $dateDataForJson
+		]);
 	}
 
 	public function calendar_edit($yearMonth)
