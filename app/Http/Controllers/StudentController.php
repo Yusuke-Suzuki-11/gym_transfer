@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CourseStudent;
+use App\Models\LessonDate;
 use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
@@ -17,11 +18,14 @@ class StudentController extends Controller
 		$CourseStudentInstance = new CourseStudent();
 		$LessonRowset = $AuthStudentRow->getAliveLessonRowset($month);
 
+		$LessonDateInstance = new LessonDate();
+
 		return view('student.index')->with([
 			'AuthStudentRow' => $AuthStudentRow,
 			'CourseStudentInstance' => $CourseStudentInstance,
 			'LessonRowset' => $LessonRowset,
 			'selectMonth' => $month,
+			'LessonDateInstance' => $LessonDateInstance,
 		]);
 	}
 

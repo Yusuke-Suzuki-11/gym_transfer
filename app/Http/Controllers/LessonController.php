@@ -7,6 +7,7 @@ use App\Mail\LessonTransferNotification;
 use App\Models\Course;
 use App\Models\CourseStudent;
 use App\Models\Lesson;
+use App\Models\LessonDate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -129,6 +130,7 @@ class LessonController extends Controller
 			'LessonRow' => $LessonRow,
 			'OldLessonRow' => $OldLessonRow,
 			'AuthStudentRow' => $AuthStudentRow,
+			'LessonDateInstance' => new LessonDate(),
 		]);
 	}
 }

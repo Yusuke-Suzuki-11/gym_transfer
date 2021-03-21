@@ -514,6 +514,7 @@ select:invalid {
 .st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-title-box {
   display: flex;
   color: #23ACE4;
+  font-weight: bold;
 }
 .st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-title-box i {
   margin-right: 4px;
@@ -529,6 +530,20 @@ select:invalid {
 }
 .st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-top-sub-contents {
   font-size: 1.2rem;
+  font-weight: bold;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-target-lesson-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .first {
+  margin-top: 3px;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-target-lesson-sub-title {
+  font-weight: bold;
+}
+.st-top-lesson-container .st-top-lesson-main .st-top-lesson-mem-box .st-top-lesson-mem-category .st-target-lesson-sub-content {
+  margin-top: 5px;
 }
 
 .st-top-month-btn-box {
@@ -625,6 +640,9 @@ select:invalid {
   font-size: 1.2rem;
 }
 .compare-box .st-top-lesson-title {
+  margin-top: 10px;
+}
+.compare-box .st-compare-back-btn {
   margin-top: 10px;
 }
 
