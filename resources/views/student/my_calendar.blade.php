@@ -8,6 +8,11 @@
 	@endif
 	@include('elements.st_sidebar')
 	<div class="st-index">
+		<div class="st-title-top">
+			<p class="st-title-txt">
+				練習日カレンダー
+			</p>
+		</div>
 		<div class="st-calendar" id="app">
 			<full-calendar-component v-bind:date-data="{{ $JsonLessonDate }}">
 			</full-calendar-component>

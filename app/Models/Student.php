@@ -177,13 +177,28 @@ class Student extends Authenticatable
 		return $this->belongsTo("App\Models\Bar", 'bar_id');
 	}
 
+	public function getBarNowPractice()
+	{
+		return $this->getBarRow()->first()->name;
+	}
+
 	public function getFloorRow()
 	{
 		return $this->belongsTo("App\Models\Floor", 'floor_id');
 	}
 
+	public function getFloorNowPractice()
+	{
+		return $this->getFloorRow()->first()->name;
+	}
+
 	public function getVaultingHourseRow()
 	{
 		return $this->belongsTo("App\Models\VaultingHourse", 'vaulting_hourse_id');
+	}
+
+	public function getVaultingNowPractice()
+	{
+		return $this->getVaultingHourseRow()->first()->name;
 	}
 }

@@ -93,6 +93,7 @@
 				.st-top-sub-title-box{
 					display: flex;
 					color: #23ACE4;
+					font-weight: bold;
 					// color: rgba(107, 107, 107, 0.85);
 					i{
 						margin-right: 4px;
@@ -113,8 +114,27 @@
 
 				.st-top-sub-contents{
 					font-size: 1.2rem;
-
+					font-weight: bold;
 				}
+
+				.st-target-lesson-title{
+					font-size: 1.2rem;
+					font-weight: bold;
+				}
+
+				.first{
+					margin-top: 3px;
+				}
+
+				.st-target-lesson-sub-title{
+					font-weight: bold;
+				}
+
+				.st-target-lesson-sub-content{
+					margin-top: 5px;
+				}
+
+
 			}
 		}
 	}
