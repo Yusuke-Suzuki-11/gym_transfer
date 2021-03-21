@@ -27,6 +27,11 @@
 							<span class="st-top-lesson-time">{{$OldLessonRow->getLessonTime()}}</span>
 						</div>
 					</div>
+					<div class="st-top-transfer-button">
+						<a href="{{route('st.lesson.comparison_lesson', ['id' => $OldLessonRow->id])}}" class="btn btn-danger transfered" style="color:white;ß">
+							振替したため参加できません
+						</a>
+					</div>
 				</div>
 				{{-- メイン情報 --}}
 				<div class="st-top-lesson-main">

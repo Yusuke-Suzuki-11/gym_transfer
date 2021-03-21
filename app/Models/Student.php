@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Library\Utility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\foundation\Auth\User as Authenticatable;
@@ -127,6 +128,7 @@ class Student extends Authenticatable
 
 	public function getStudentAllForJson()
 	{
+		$utility = new Utility;
 		$StudentRowset = DB::table($this->__name)->select('id', 'last_name', 'first_name', 'email', 'birthday', 'gender', 'phone');
 		$data = [];
 		if (!$StudentRowset->get()->isEmpty()) {
@@ -137,7 +139,7 @@ class Student extends Authenticatable
 					'firstName' => $StudentRow->first_name,
 					'courseAndLessonTime' => $this->find($StudentRow->id)->getCourseAndLessonTimes(),
 					'email' => $StudentRow->email,
-					'birthday' => $StudentRow->birthday,
+					'birthday' => $utility->getAgeByBirthDay($StudentRow->birthday),
 					'gender' => $StudentRow->gender,
 					'phone' => $StudentRow->phone,
 					'showUrl' => route('tc.student.show', ['id' => $StudentRow->id])

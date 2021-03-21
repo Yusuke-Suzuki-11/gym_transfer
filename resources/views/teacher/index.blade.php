@@ -20,7 +20,9 @@
 			<p class="tc-title-txt">
 				本日の練習
 				<span>
-					（{{$todayLessons}}）
+					@if (!empty($todayLessons))
+						（{{$todayLessons}}）
+					@endif
 				</span>
 			</p>
 			<p class="tc-title-date">

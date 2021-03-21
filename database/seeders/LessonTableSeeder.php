@@ -28,8 +28,6 @@ class LessonTableSeeder extends Seeder
 			foreach ($StudentRow->getCourseRowsetByRowset()->get() as $CourseRow) {
 				$targetWeekDate = date('Y-m-d', strtotime('next ' . $weeks[$CourseRow->week_id]));
 				while (date('m', strtotime($targetWeekDate)) == date('m')) {
-					echo $targetWeekDate;
-					echo "\n";
 					$LessonRow = new Lesson();
 					$LessonRow->course_id = $CourseRow->id;
 					$LessonRow->student_id = $StudentRow->id;
@@ -37,7 +35,6 @@ class LessonTableSeeder extends Seeder
 					$LessonRow->save();
 					$targetWeekDate = date('Y-m-d', strtotime('+1 week', strtotime($targetWeekDate)));
 				}
-				echo "\n";
 			}
 		}
 	}

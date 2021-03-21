@@ -32,7 +32,7 @@ class TeacherController extends Controller
 				$floorData = [];
 				$floorData['date'] = $LessonDateRow->date;
 				$floorData['title'] = config('const.LESSON_TYPE')['floor'];
-				$floorData['color'] = 'teal';
+				$floorData['color'] = 'crimson';
 				$dateDataForJson[] = $floorData;
 			}
 
@@ -40,7 +40,7 @@ class TeacherController extends Controller
 				$barData = [];
 				$barData['date'] = $LessonDateRow->date;
 				$barData['title'] = config('const.LESSON_TYPE')['bar'];
-				$barData['color'] = 'darkorchid';
+				$barData['color'] = 'royalblue';
 				$dateDataForJson[] = $barData;
 			}
 
@@ -48,7 +48,9 @@ class TeacherController extends Controller
 				$vaultingData = [];
 				$vaultingData['date'] = $LessonDateRow->date;
 				$vaultingData['title'] = config('const.LESSON_TYPE')['vaulting'];
-				$vaultingData['color'] = 'midnightblue';
+				$vaultingData['color'] = 'springgreen';
+				$vaultingData['textColor'] = 'dimgray';
+
 				$dateDataForJson[] = $vaultingData;
 			}
 
@@ -56,7 +58,7 @@ class TeacherController extends Controller
 				$trampolineData = [];
 				$trampolineData['date'] = $LessonDateRow->date;
 				$trampolineData['title'] = config('const.LESSON_TYPE')['trampoline'];
-				$trampolineData['color'] = 'crimson';
+				$trampolineData['color'] = 'darkviolet';
 				$dateDataForJson[] = $trampolineData;
 			}
 
