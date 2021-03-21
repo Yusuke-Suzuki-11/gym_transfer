@@ -177,6 +177,11 @@ class Student extends Authenticatable
 		return $this->belongsTo("App\Models\Bar", 'bar_id');
 	}
 
+	public function getBarLevel()
+	{
+		return $this->getBarRow()->first()->getLevel();
+	}
+
 	public function getBarNowPractice()
 	{
 		return $this->getBarRow()->first()->name;
@@ -187,6 +192,11 @@ class Student extends Authenticatable
 		return $this->belongsTo("App\Models\Floor", 'floor_id');
 	}
 
+	public function getFloorLevel()
+	{
+		return $this->getFloorRow()->first()->getLevel();
+	}
+
 	public function getFloorNowPractice()
 	{
 		return $this->getFloorRow()->first()->name;
@@ -195,6 +205,11 @@ class Student extends Authenticatable
 	public function getVaultingHourseRow()
 	{
 		return $this->belongsTo("App\Models\VaultingHourse", 'vaulting_hourse_id');
+	}
+
+	public function getVaultingHourseLevel()
+	{
+		return $this->getVaultingHourseRow()->first()->getLevel();
 	}
 
 	public function getVaultingNowPractice()

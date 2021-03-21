@@ -61,9 +61,9 @@
 								<div class="tc-top-lesson-membox">
 									<p>{{$StudentRow->full_name}}</p>
 									<p>{{$utility->getAgeByBirthDay($StudentRow->birthday). '歳'}}</p>
-									<p>鉄棒14級</p>
-									<p>マット14級</p>
-									<p>引き継ぎなし</p>
+									<p>鉄棒{{$StudentRow->getBarLevel()}}</p>
+									<p>マット{{$StudentRow->getFloorLevel()}}</p>
+									<p>とび箱{{$StudentRow->getVaultingHourseLevel()}}</p>
 									<p>振替ではない</p>
 								</div>
 							</div>
