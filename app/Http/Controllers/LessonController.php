@@ -11,6 +11,7 @@ use App\Models\LessonDate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class LessonController extends Controller
 {
@@ -75,8 +76,24 @@ class LessonController extends Controller
 
 	public function transfer(Request $request)
 	{
+		$rules = [
+			'courseId' => [
+				'required',
+				'integer',
+				Rule::exists('courses', 'id'),
+			],
+			'nowLessonId' => [
+				'required',
+				'integer',
+			],
+			'targetLessonDate' => [
+				'required',
+				'date',
+			],
+		];
 
-		// TODO::valid作成する
+		$this->validate($request, $rules);
+
 		//既存のレッスンを削除
 		$LessonRow = Lesson::find($request->nowLessonId);
 		$LessonRow->valid = 0;
