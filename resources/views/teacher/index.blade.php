@@ -49,7 +49,7 @@
 				<div class="tc-top-lesson-main">
 					@php
 						$count = 0;
-						$__LessonRowset = $__TodayCourseRow->getTodayLessonRowset()->get()
+						$__LessonRowset = $__TodayCourseRow->getTodayLessonRowset()->get();
 					@endphp
 					@if (count($__LessonRowset) > 0)
 						@foreach ($__LessonRowset as $__LessonRow)

@@ -184,10 +184,10 @@
 											<p class="st-top-sub-title">練習項目{{$i}}：{{config('const.LESSON_TYPE')['other']}}</p>
 										</div>
 										<p class="st-target-lesson-sub-title first">練習中の技</p>
-										<p class="st-target-lesson-sub-content">　{{$AuthStudentRow->getVaultingNowPractice()}}</p>
+										<p class="st-target-lesson-sub-content">　・コーチの指示に従って、当日練習をしよう！</p>
 										<br>
 										<p class="st-target-lesson-sub-title">練習のポイント</p>
-										<p class="st-target-lesson-sub-content">　・その他の練習は何が起きるのか</p>
+										<p class="st-target-lesson-sub-content">　・コーチの指示に従って、当日練習をしよう！</p>
 									</div>
 								@endif
 							</div>

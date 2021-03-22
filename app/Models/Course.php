@@ -53,7 +53,7 @@ class Course extends Model
 
 	public function getTodayLessonRowset()
 	{
-		return $this->getLessonRowset()->where('lesson_date', date('Y-m-d'));
+		return $this->getLessonRowset()->where('lesson_date', date('Y-m-d', strtotime('2021-03-23')));
 	}
 
 	public function getLessonTime()
