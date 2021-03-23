@@ -109,6 +109,7 @@ select:invalid {
 
 .font-error {
   color: crimson;
+  font-weight: bold;
 }
 
 .header-top {

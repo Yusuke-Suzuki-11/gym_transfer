@@ -23,6 +23,10 @@
 					$targetDate = date('Y-m', strtotime($targetDate . '+1 month'))
 				@endphp
 			@endwhile
+			@if ($errors->any())
+				<p class="font-error">送信に失敗しました。</p>
+
+			@endif
 		</div>
 
 		<form action="{{route('tc.lesson.calendar.update', ['yearMonth' => date('Y-m', strtotime($start))])}}" method="POST">
