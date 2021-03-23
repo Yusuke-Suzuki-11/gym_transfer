@@ -52,17 +52,39 @@ class TeacherStudentController extends Controller
 			'first_name' => [
 				'required',
 				'max:100',
-				'string'
+				// 'string'
 			],
 			'last_name' => [
 				'required',
 				'max:100',
 				'string',
 			],
+			'email' => [
+				'required',
+				'email',
+				'max:100',
+			],
+			'birthday' => [
+				'required',
+				'date',
+			],
+			'gender' => [
+				'required',
+				'integer',
+				'max:2',
+				'min:1',
+			],
 			'phone' => [
 				'required',
+				'phone',
+			],
+			'course_id' => [
+				'required',
+				'integer',
+				Rule::exists('courses', 'id'),
 			],
 		];
+		$this->validate($request, $rules);
 
 		$phone = $this->utility->formatNoHyphenPhoneNum($request->phone);
 
@@ -142,7 +164,6 @@ class TeacherStudentController extends Controller
 			],
 		];
 		$this->validate($request, $rules);
-		dd('test');
 
 		$utility = new Utility();
 		$phone = $utility->formatNoHyphenPhoneNum($request->phone);
