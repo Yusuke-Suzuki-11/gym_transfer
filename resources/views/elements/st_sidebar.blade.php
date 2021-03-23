@@ -68,19 +68,6 @@
 					</div>
 				</a>
 			</div>
-
-			<div class="st-side-sub-menu">
-				<a href="https://with-gym.com/contact.html" target="_blank" rel="noopener noreferrer">
-					<div class="st-side-menu-item">
-						<div class="st-side-menu-icon">
-							<i class="fas fa-question-circle"></i>
-						</div>
-						<div class="st-side-menu-title">
-							お問いあわせ
-						</div>
-					</div>
-				</a>
-			</div>
 		</div>
 	</div>
 </div>
