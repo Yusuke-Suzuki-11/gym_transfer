@@ -13,6 +13,7 @@ use App\Models\Grade;
 use App\Models\Lesson;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class TeacherStudentController extends Controller
 {
@@ -47,14 +48,34 @@ class TeacherStudentController extends Controller
 
 	public function update($id, Request $request)
 	{
+		$rules = [
+			'first_name' => [
+				'required',
+				'max:100',
+				'string'
+			],
+			'last_name' => [
+				'required',
+				'max:100',
+				'string',
+			],
+			'phone' => [
+				'required',
+			],
+		];
+
+		$phone = $this->utility->formatNoHyphenPhoneNum($request->phone);
+
+
+		$this->validate($request, $rules);
+
 		$StudentRow = Student::find($id);
 
 		$fullName = $request->last_name . ' ' . $request->first_name;
-
 		$StudentRow->last_name = $request->last_name;
 		$StudentRow->first_name = $request->first_name;
 		$StudentRow->full_name = $fullName;
-		$StudentRow->phone = $request->phone;
+		$StudentRow->phone = $phone;
 		$StudentRow->email = $request->email;
 		$StudentRow->birthday = $request->birthday;
 		$StudentRow->member_num = $request->member_num;
@@ -84,6 +105,49 @@ class TeacherStudentController extends Controller
 
 	public function register_student(Request $request)
 	{
+		$rules = [
+			'firstName' => [
+				'required',
+				'max:100',
+				// 'string'
+			],
+			'lastName' => [
+				'required',
+				'max:100',
+				'string',
+			],
+			'email' => [
+				'required',
+				'email',
+				'max:100',
+			],
+			'birthday' => [
+				'required',
+				'date',
+			],
+			'gender' => [
+				'required',
+				'integer',
+				'max:2',
+				'min:1',
+			],
+			'phone' => [
+				'required',
+				'phone',
+			],
+			'courseId' => [
+				'required',
+				'integer',
+				Rule::exists('courses', 'id'),
+			],
+		];
+		$this->validate($request, $rules);
+		dd('test');
+
+		$utility = new Utility();
+		$phone = $utility->formatNoHyphenPhoneNum($request->phone);
+
+
 		$StudentRow = new Student();
 		$lastName = $request->lastName;
 		$firstName = $request->firstName;
@@ -102,7 +166,7 @@ class TeacherStudentController extends Controller
 				'birthday' => $request->birthday,
 				'gender' => $request->gender,
 				'stress_point' => 3,
-				'phone' => $request->phone,
+				'phone' => $phone,
 				// TODO::レベルを選べるように
 				'bar_id' => 1,
 				'floor_id' => 1,
