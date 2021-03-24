@@ -44,10 +44,6 @@
 						select{
 							width: 100%;
 						}
-
-						.form-control{
-							height: 35px;
-						}
 					}
 				}
 
@@ -81,11 +77,25 @@
 	.tc-student-list{
 		margin-top: 50px;
 
+		p{
+			margin-bottom: 3px;
+		}
+
 		.table-box{
 			width: 100%;
 			box-shadow: 0 0 15px -6px #00000073;
 
+			.left{
+				border-top-left-radius: 10px;
+			}
+
+			.right{
+				border-top-right-radius: 10px;
+			}
+
 			tr{
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
 				background-color: #fff;
 				text-align: center;
 				width: 20%;

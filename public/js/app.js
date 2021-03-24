@@ -15689,6 +15689,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -52631,7 +52641,7 @@ var render = function() {
                     expression: "name"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass: "form-control form-control-sm",
                 attrs: { type: "text" },
                 domProps: { value: _vm.name },
                 on: {
@@ -52659,7 +52669,7 @@ var render = function() {
                       expression: "dayOfWeekSelect"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control form-control-sm",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52719,7 +52729,7 @@ var render = function() {
                       expression: "gradeSelect"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control form-control-sm",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52777,7 +52787,7 @@ var render = function() {
                       expression: "gender"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control form-control-sm",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52837,7 +52847,7 @@ var render = function() {
                       expression: "transfer"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control form-control-sm",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52981,7 +52991,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("tr", [
-      _c("th", [_vm._v("名前")]),
+      _c("th", { staticClass: "left" }, [_vm._v("名前")]),
       _vm._v(" "),
       _c("th", [_vm._v("クラス")]),
       _vm._v(" "),
@@ -52989,7 +52999,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("年齢")]),
       _vm._v(" "),
-      _c("th", [_vm._v("電話番号")])
+      _c("th", { staticClass: "right" }, [_vm._v("電話番号")])
     ])
   }
 ]

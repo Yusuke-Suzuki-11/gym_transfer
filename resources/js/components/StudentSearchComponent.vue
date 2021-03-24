@@ -9,11 +9,18 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>名前</p>
-              <input class="form-control" type="text" v-model="name" />
+              <input
+                class="form-control form-control-sm"
+                type="text"
+                v-model="name"
+              />
             </div>
             <div class="tc-student-search-form">
               <p>曜日</p>
-              <select class="form-control" v-model="dayOfWeekSelect">
+              <select
+                class="form-control form-control-sm"
+                v-model="dayOfWeekSelect"
+              >
                 <option class="dummy" :value="null" disabled>
                   曜日を選択してください
                 </option>
@@ -29,7 +36,10 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>クラス</p>
-              <select class="form-control" v-model="gradeSelect">
+              <select
+                class="form-control form-control-sm"
+                v-model="gradeSelect"
+              >
                 <option class="dummy" :value="null" disabled>
                   クラスを選択してください
                 </option>
@@ -43,7 +53,7 @@
             </div>
             <div class="tc-student-search-form">
               <p>性別</p>
-              <select class="form-control" v-model="gender">
+              <select class="form-control form-control-sm" v-model="gender">
                 <option class="dummy" :value="null" disabled>
                   性別を選択してください
                 </option>
@@ -59,7 +69,7 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>振替</p>
-              <select class="form-control" v-model="transfer">
+              <select class="form-control form-control-sm" v-model="transfer">
                 <option class="dummy" :value="null" disabled>
                   振替を選択してください
                 </option>
@@ -95,11 +105,11 @@
       <p>表示件数：{{ this.studentData.length }}</p>
       <table class="table-box">
         <tr>
-          <th>名前</th>
+          <th class="left">名前</th>
           <th>クラス</th>
           <th>メールアドレス</th>
           <th>年齢</th>
-          <th>電話番号</th>
+          <th class="right">電話番号</th>
         </tr>
         <tr v-for="student in this.studentData">
           <td>

@@ -46,6 +46,12 @@
 			display: flex;
 			justify-content: space-around;
 
+			.tc-date-form-check{
+				input{
+					transform: scale(1.3);
+				}
+			}
+
 		}
 	}
 

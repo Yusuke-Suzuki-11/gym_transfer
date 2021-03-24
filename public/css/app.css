@@ -30,6 +30,7 @@ body {
   line-height: 1;
   background-color: #E9FBFC;
   margin-top: 70px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 article, aside, details, figcaption, figure,
@@ -286,6 +287,9 @@ select:invalid {
 .tc-sidebar .tc-events .tc-event-name {
   font-size: 0.8rem;
   font-weight: bold;
+}
+.tc-sidebar .tc-side-menu-box {
+  font-family: "Sawarabi Gothic";
 }
 .tc-sidebar .tc-side-menu-box .tc-side-sub-menu {
   height: 50px;
@@ -622,6 +626,9 @@ select:invalid {
   display: flex;
   justify-content: space-around;
 }
+.tc-calendar-edit-list .tc-date-item-box .tc-date-form .tc-date-form-check input {
+  transform: scale(1.3);
+}
 .tc-calendar-edit-list .yattaze {
   background-color: #1d678a;
   color: white;
@@ -723,9 +730,6 @@ select:invalid {
 .tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form select {
   width: 100%;
 }
-.tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-sub .tc-student-search-form .form-control {
-  height: 35px;
-}
 .tc-student-box .tc-student-search .tc-student-search-main .tc-student-search-content .tc-student-search-button {
   margin-top: 20px;
   text-align: center;
@@ -747,11 +751,22 @@ select:invalid {
 .tc-student-box .tc-student-list {
   margin-top: 50px;
 }
+.tc-student-box .tc-student-list p {
+  margin-bottom: 3px;
+}
 .tc-student-box .tc-student-list .table-box {
   width: 100%;
   box-shadow: 0 0 15px -6px #00000073;
 }
+.tc-student-box .tc-student-list .table-box .left {
+  border-top-left-radius: 10px;
+}
+.tc-student-box .tc-student-list .table-box .right {
+  border-top-right-radius: 10px;
+}
 .tc-student-box .tc-student-list .table-box tr {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   background-color: #fff;
   text-align: center;
   width: 20%;

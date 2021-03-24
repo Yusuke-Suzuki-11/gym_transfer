@@ -25,16 +25,16 @@
 							<span class="font-error error-min">※{{ $message }}</span>
 						@enderror
 					</p>
-					<input type="text" name="lastName">
+					<input class="form-control form-control-sm" type="text" name="lastName">
 				</div>
 				<div class="tc-stadd-form-name">
 					<p>名</p>
-					<input type="text" name="firstName">
+					<input class="form-control form-control-sm" type="text" name="firstName">
 				</div>
 			</div>
 			<div class="tc-stadd-form-mainbox">
 				<p>メールアドレス</p>
-				<input type="email" name="email">
+				<input class="form-control form-control-sm" type="email" name="email">
 			</div>
 
 			{{-- <div class="tc-stadd-form-mainbox">
@@ -48,12 +48,12 @@
 
 			<div class="tc-stadd-form-mainbox">
 				<p>生年月日</p>
-				<input type="date" name="birthday">
+				<input class="form-control form-control-sm" type="date" name="birthday">
 			</div>
 
 			<div class="tc-stadd-form-mainbox">
 				<p>性別</p>
-				<select name="gender">
+				<select class="form-control form-control-sm" name="gender">
 					<option class="dummy" disabled selected>
 						性別を選択してください
 					</option>
@@ -67,12 +67,12 @@
 
 			<div class="tc-stadd-form-mainbox">
 				<p>電話番号</p>
-				<input type="text" name="phone">
+				<input class="form-control form-control-sm" type="text" name="phone">
 			</div>
 
 			<div class="tc-stadd-form-mainbox">
 				<p>コース</p>
-				<select name="courseId">
+				<select class="form-control form-control-sm" name="courseId">
 					<option class="dummy" disabled selected>
 						コースを選択してください
 					</option>
