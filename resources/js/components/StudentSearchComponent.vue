@@ -9,11 +9,11 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>名前</p>
-              <input type="text" v-model="name" />
+              <input class="form-control" type="text" v-model="name" />
             </div>
             <div class="tc-student-search-form">
               <p>曜日</p>
-              <select v-model="dayOfWeekSelect">
+              <select class="form-control" v-model="dayOfWeekSelect">
                 <option class="dummy" :value="null" disabled>
                   曜日を選択してください
                 </option>
@@ -29,7 +29,7 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>クラス</p>
-              <select v-model="gradeSelect">
+              <select class="form-control" v-model="gradeSelect">
                 <option class="dummy" :value="null" disabled>
                   クラスを選択してください
                 </option>
@@ -43,7 +43,7 @@
             </div>
             <div class="tc-student-search-form">
               <p>性別</p>
-              <select v-model="gender">
+              <select class="form-control" v-model="gender">
                 <option class="dummy" :value="null" disabled>
                   性別を選択してください
                 </option>
@@ -59,7 +59,7 @@
           <div class="tc-student-search-sub">
             <div class="tc-student-search-form">
               <p>振替</p>
-              <select v-model="transfer">
+              <select class="form-control" v-model="transfer">
                 <option class="dummy" :value="null" disabled>
                   振替を選択してください
                 </option>
