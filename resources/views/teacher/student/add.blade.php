@@ -17,8 +17,14 @@
 		<div class="tc-stadd-container">
 			{{-- 名前ふぉーむ --}}
 			<div class="tc-stadd-form-box">
+
 				<div class="tc-stadd-form-name">
-					<p>姓</p>
+					<p>
+						姓
+						@error('lastName')
+							<span class="font-error error-min">※{{ $message }}</span>
+						@enderror
+					</p>
 					<input type="text" name="lastName">
 				</div>
 				<div class="tc-stadd-form-name">

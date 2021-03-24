@@ -846,6 +846,12 @@ select:invalid {
 }
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-mem-num {
   margin-left: 3px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-mem-num span {
+  display: inline-block;
 }
 .tc-top-lesson-container .tc-top-lesson-main .tc-top-lesson-mem-box .tc-top-lesson-membox {
   margin-left: 10px;
@@ -881,6 +887,9 @@ select:invalid {
 }
 .tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name input {
   width: 100%;
+}
+.tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name span {
+  font-size: 0.7rem;
 }
 .tc-stadd-container .tc-stadd-form-mainbox {
   margin-top: 20px;

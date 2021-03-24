@@ -154,6 +154,8 @@ return [
       |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'lastName' => '姓'
+    ],
 
 ];

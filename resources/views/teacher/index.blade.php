@@ -58,7 +58,8 @@
 							@endphp
 							<div class="tc-top-lesson-mem-box">
 								<div class="tc-top-lesson-mem-num">
-									<span>{{$count += 1}}</span>：
+									<span>{{$count += 1}}</span>
+									<span>：</span>
 								</div>
 								<div class="tc-top-lesson-membox">
 									<p>{{$StudentRow->full_name}}</p>
