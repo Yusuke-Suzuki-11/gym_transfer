@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Database\Seeder;
 
@@ -15,9 +16,21 @@ class CourseStudentTableSeeder extends Seeder
 	public function run()
 	{
 		$StudentRowset = Student::all();
-
+		$count = 1;
+		$subCount = 0;
 		foreach ($StudentRowset as $StudentRow) {
-			$StudentRow->getCourseRowsetByRowset()->attach($StudentRow->id * 4);
+
+			if ($subCount < 15) {
+				$subCount += 1;
+			} else {
+				$subCount = 0;
+			}
+
+			if ($subCount == 0) {
+				$count += 1;
+			}
+
+			$StudentRow->getCourseRowsetByRowset()->attach($StudentRow->id * $count);
 		}
 	}
 }

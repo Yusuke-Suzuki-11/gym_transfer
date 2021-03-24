@@ -2,10 +2,13 @@
 @inject('utility', 'App\Library\Utility')
 
 @section('content')
+@if(Session::has("flash_message"))
+	<div id="session-success">
+		<p class="session-success-message" > {{ session('flash_message') }}</p>
+	</div>
+@endif
 @include('elements.tc_sidebar')
-
 <div class="tc-index">
-
 	@if (empty($TodayCourseRowset))
 		<div class="tc-title-top">
 			<p class="tc-title-txt font-error">
