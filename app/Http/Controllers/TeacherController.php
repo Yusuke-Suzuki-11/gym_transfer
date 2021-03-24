@@ -12,23 +12,19 @@ class TeacherController extends Controller
 	public function index()
 	{
 		$CourseInstans = new Course;
-		$TodayCourseRowset = $CourseInstans->getRowsetByWeekId(date('w', strtotime('2021-03-23')));
+		$TodayCourseRowset = $CourseInstans->getRowsetByWeekId(date('w'));
 		$LessonDateInstance = new LessonDate;
-
-
 		return view('teacher.index')->with([
 			'TodayCourseRowset' => $TodayCourseRowset,
-			'todayLessons' => $LessonDateInstance->getTodayLessonType(date('Y-m-d', strtotime('2021-03-23'))),
+			'todayLessons' => $LessonDateInstance->getTodayLessonType(date('Y-m-d')),
 		]);
 	}
 
 	public function calendar()
 	{
 		$LessonDateInstance = new LessonDate;
-
 		$dateDataForJson = [];
 		foreach ($LessonDateInstance->all() as $LessonDateRow) {
-
 			if (isset($LessonDateRow->floor_flag)) {
 				$floorData = [];
 				$floorData['date'] = $LessonDateRow->date;
@@ -98,9 +94,15 @@ class TeacherController extends Controller
 	public function calendar_update(Request $request)
 	{
 		$dateArray = json_decode($request->dateArray);
-
-
 		foreach ($dateArray as $date) {
+			$rules = [
+				$date . '.*' => [
+					'integer',
+					'max:1'
+				],
+			];
+			$this->validate($request, $rules);
+
 			$LessonDateRow = LessonDate::all()->where('date', $date)->isEmpty() ? new LessonDate() : LessonDate::where('date', $date)->first();
 			$dateItem = $request[$date];
 

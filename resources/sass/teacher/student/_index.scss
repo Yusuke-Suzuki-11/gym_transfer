@@ -32,12 +32,21 @@
 
 					.tc-student-search-form{
 						width: 48%;
-						font-size: 0.8rem;
+						font-weight: bold;
+
+						p{
+							font-size: 0.9rem;
+						}
+
 						input{
 							width: 100%;
 						}
 						select{
 							width: 100%;
+						}
+
+						.form-control{
+							height: 35px;
 						}
 					}
 				}

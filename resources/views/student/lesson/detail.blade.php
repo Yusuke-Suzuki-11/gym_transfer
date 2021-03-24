@@ -18,12 +18,12 @@
 		</div>
 
 		<div class="st-transfer">
-			<p>
-				※ご都合の良い日付を選択してください
-			</p>
 			<form action="{{route('st.lesson.transfer')}}" method="POST">
 				@csrf
 				{{-- ここからコンポーネント --}}
+				@if ($errors->any())
+				<p>※送信に失敗しました。</p>
+				@endif
 				<student-transfer-select-component
 					:lesson-data-for-select={{$LessonSelectItemForJson}}
 					>

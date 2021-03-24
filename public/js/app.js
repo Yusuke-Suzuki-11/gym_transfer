@@ -52631,6 +52631,7 @@ var render = function() {
                     expression: "name"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text" },
                 domProps: { value: _vm.name },
                 on: {
@@ -52658,6 +52659,7 @@ var render = function() {
                       expression: "dayOfWeekSelect"
                     }
                   ],
+                  staticClass: "form-control",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52717,6 +52719,7 @@ var render = function() {
                       expression: "gradeSelect"
                     }
                   ],
+                  staticClass: "form-control",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52774,6 +52777,7 @@ var render = function() {
                       expression: "gender"
                     }
                   ],
+                  staticClass: "form-control",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -52833,6 +52837,7 @@ var render = function() {
                       expression: "transfer"
                     }
                   ],
+                  staticClass: "form-control",
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter

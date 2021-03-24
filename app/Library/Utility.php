@@ -43,4 +43,10 @@ class Utility
 		$weekNum = date('w', strtotime($date));
 		return '（' . config('const.SHORT_DAY_OF_WEEK')[$weekNum] . '）';
 	}
+
+	public function formatNoHyphenPhoneNum($number)
+	{
+		$result = str_replace(['-', 'ー'], "", $number);
+		return $result;
+	}
 }

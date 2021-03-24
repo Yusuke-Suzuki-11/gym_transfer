@@ -5,28 +5,7 @@
 		</div>
 
 		<div class="header-menu">
-			<ul>
-				@auth('teachers')
-					<li class="header-menu-item">
-						<a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="#">
-							ログアウト
-						</a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-							@csrf
-						</form>
-                    </li>
-					<li class="header-menu-item">
-						<a href="#">
-                            本日の練習
-						</a>
-                    </li>
-					<li class="header-menu-item">
-						<a href="{{route('tc.student.index')}}">
-                            生徒一覧
-						</a>
-                    </li>
-				@endauth
-			</ul>
+			{{-- ヘッダーが必要な場合 --}}
 		</div>
 	</div>
 

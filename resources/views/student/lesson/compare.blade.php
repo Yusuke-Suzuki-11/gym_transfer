@@ -28,9 +28,9 @@
 						</div>
 					</div>
 					<div class="st-top-transfer-button">
-						<a href="{{route('st.lesson.comparison_lesson', ['id' => $OldLessonRow->id])}}" class="btn btn-danger transfered" style="color:white;ß">
+						<p class="btn btn-danger transfered" style="color:white;">
 							振替したため参加できません
-						</a>
+						</p>
 					</div>
 				</div>
 				{{-- メイン情報 --}}
