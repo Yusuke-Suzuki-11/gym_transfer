@@ -114,7 +114,6 @@ class TeacherStudentController extends Controller
 
 	public function add()
 	{
-
 		return view('teacher.student.add')->with(['CourseRowset' => Course::all()]);
 	}
 
@@ -167,12 +166,10 @@ class TeacherStudentController extends Controller
 
 		$utility = new Utility();
 		$phone = $utility->formatNoHyphenPhoneNum($request->phone);
-
-
 		$StudentRow = new Student();
 		$lastName = $request->lastName;
 		$firstName = $request->firstName;
-		$password = 'Yy46498083';
+		$password = $utility->makePass();
 
 		$StudentRow->fill(
 			[
@@ -180,9 +177,7 @@ class TeacherStudentController extends Controller
 				'last_name' => $lastName,
 				'full_name' => $fullName = Utility::makeFullName($lastName, $firstName),
 				'email' => $email = $request->email,
-				// TODO::パスワードを可変的にする
 				'password' => Hash::make($password),
-				// TODO::会員番号も変える
 				'member_num' => '11223344',
 				'birthday' => $request->birthday,
 				'gender' => $request->gender,
