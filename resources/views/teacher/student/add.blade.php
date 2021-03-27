@@ -15,9 +15,7 @@
 	<form action="{{route('tc.student.register')}}" method="POST" novalidate>
 		@csrf
 		<div class="tc-stadd-container">
-			{{-- 名前ふぉーむ --}}
 			<div class="tc-stadd-form-box">
-
 				<div class="tc-stadd-form-name">
 					<p>
 						姓
@@ -25,7 +23,7 @@
 							<span class="font-error error-min">※{{ $message }}</span>
 						@enderror
 					</p>
-					<input class="form-control form-control-sm" type="text" name="lastName">
+					<input class="form-control form-control-sm" value="{{ old('lastName') }}" type="text" name="lastName">
 				</div>
 				<div class="tc-stadd-form-name">
 					<p>
@@ -34,9 +32,10 @@
 							<span class="font-error error-min">※{{ $message }}</span>
 						@enderror
 					</p>
-					<input class="form-control form-control-sm" type="text" name="firstName">
+					<input class="form-control form-control-sm" type="text" value="{{ old('firstName') }}" name="firstName">
 				</div>
 			</div>
+
 			<div class="tc-stadd-form-mainbox">
 				<p>
 					メールアドレス
@@ -44,26 +43,43 @@
 						<span class="font-error error-min">※{{ $message }}</span>
 					@enderror
 				</p>
-				<input class="form-control form-control-sm" type="email" name="email">
+				<input class="form-control form-control-sm" value="{{ old('email') }}" type="email" name="email">
 			</div>
 
-			{{-- <div class="tc-stadd-form-mainbox">
-				<p>パスワード</p>
-				<input type="password" name="password">
-			</div>
-			<div class="tc-stadd-form-mainbox">
-				<p>パスワード確認</p>
-				<input type="password" name="passwordConfirm">
-			</div> --}}
-
-			<div class="tc-stadd-form-mainbox">
+			<div class="tc-stadd-form-threebox">
 				<p>
 					生年月日
-					@error('birthday')
-						<span class="font-error error-min">※{{ $message }}</span>
-					@enderror
+					{{$errors->has('birthYear')}}
+					@if ($errors->has('birthYear') || $errors->has('birthMonth') || $errors->has('birthDay'))
+						<span class="font-error error-min">※未入力の項目があります。</span>
+					@endif
 				</p>
-				<input class="form-control form-control-sm" type="date" name="birthday">
+				<div class="three-form">
+					<div>
+						<select name="birthYear" class="form-control form-control-sm">
+							<option value="">--</option>
+							@foreach (range(2000,2020) as $year)
+								<option value="{{$year}}">{{$year}}年</option>
+							@endforeach
+						</select>
+					</div>
+					<div>
+						<select name="birthMonth" class="form-control form-control-sm">
+							<option value="">--</option>
+							@foreach (range(1,12) as $year)
+								<option value="{{$year}}">{{$year}}月</option>
+							@endforeach
+						</select>
+					</div>
+					<div>
+						<select name="birthDay" class="form-control form-control-sm">
+							<option value="">--</option>
+							@foreach (range(1,31) as $year)
+								<option value="{{$year}}">{{$year}}日</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
 			</div>
 
 			<div class="tc-stadd-form-mainbox">
@@ -107,12 +123,52 @@
 						コースを選択してください
 					</option>
 					@foreach ( $CourseRowset as $CourseRow)
-					<option value="{{$CourseRow->id}}">
-						{{$CourseRow->getWeekAndLessonTimes()}}
-					</option>
+						<option value="{{$CourseRow->id}}">
+							{{$CourseRow->getWeekAndLessonTimes()}}
+						</option>
 					@endforeach
 				</select>
 			</div>
+
+
+
+
+			<div class="tc-stadd-form-threebox">
+				<p>
+					種目別スタートレベル
+					{{$errors->has('birthYear')}}
+					@if ($errors->has('bar') || $errors->has('floor') || $errors->has('vaulting'))
+						<span class="font-error error-min">※未入力の項目があります。</span>
+					@endif
+				</p>
+				<div class="three-form">
+					<div>
+						<select name="bar" class="form-control form-control-sm">
+							<option value="">鉄棒級</option>
+							@foreach ($barData as $data)
+								<option value="{{$data['id']}}">{{$data['level']. '（'.$data['name'].'）'}}</option>
+							@endforeach
+						</select>
+					</div>
+					<div>
+						<select name="floor" class="form-control form-control-sm">
+							<option value="">マット級</option>
+							@foreach ($floorData as $data)
+								<option value="{{$data['id']}}">{{$data['level']. '（'.$data['name'].'）'}}</option>
+							@endforeach
+						</select>
+					</div>
+					<div>
+						<select name="vaulting" class="form-control form-control-sm">
+							<option value="">とび箱級</option>
+							@foreach ($vaultingData as $data)
+								<option value="{{$data['id']}}">{{$data['level']. '（'.$data['name'].'）'}}</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+			</div>
+
 
 
 			<div class="tc-stadd-form-btn">

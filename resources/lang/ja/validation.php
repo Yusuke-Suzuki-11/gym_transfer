@@ -155,7 +155,15 @@ return [
     */
 
     'attributes' => [
-        'lastName' => '姓'
+        'lastName' => '姓',
+        'firstName' => '名前',
+        'email' => 'メールアドレス',
+        'gender' => '性別',
+        'phone' => '電話番号',
+        'birthYear' => '年',
+        'birthMonth' => '月',
+        'birthDay' => '日',
+        'courseId' => 'コースの選択',
     ],
 
 ];

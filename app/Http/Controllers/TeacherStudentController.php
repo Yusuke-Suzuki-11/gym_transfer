@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Library\Utility;
 use App\Mail\LessonTransferNotification;
 use App\Mail\StudentRegister;
+use App\Models\Bar;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\Course;
+use App\Models\Floor;
 use App\Models\Grade;
 use App\Models\Lesson;
+use App\Models\VaultingHourse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
@@ -114,7 +117,15 @@ class TeacherStudentController extends Controller
 
 	public function add()
 	{
-		return view('teacher.student.add')->with(['CourseRowset' => Course::all()]);
+		$bar = new Bar();
+		$floor = new Floor();
+		$vaulting = new VaultingHourse();
+		return view('teacher.student.add')->with([
+			'CourseRowset' => Course::all(),
+			'barData' => $bar->getRowsetForStudentAdd(),
+			'floorData' => $floor->getRowsetForStudentAdd(),
+			'vaultingData' => $vaulting->getRowsetForStudentAdd(),
+		]);
 	}
 
 	public function axios_search(Request $request)
@@ -142,9 +153,14 @@ class TeacherStudentController extends Controller
 				'email',
 				'max:100',
 			],
-			'birthday' => [
+			'birthYear' => [
 				'required',
-				'date',
+			],
+			'birthMonth' => [
+				'required',
+			],
+			'birthDay' => [
+				'required',
 			],
 			'gender' => [
 				'required',
@@ -161,6 +177,21 @@ class TeacherStudentController extends Controller
 				'integer',
 				Rule::exists('courses', 'id'),
 			],
+			'bar' => [
+				'required',
+				'integer',
+				Rule::exists('bars', 'id'),
+			],
+			'floor' => [
+				'required',
+				'integer',
+				Rule::exists('floors', 'id'),
+			],
+			'vaulting' => [
+				'required',
+				'integer',
+				Rule::exists('vaulting_hourses', 'id'),
+			],
 		];
 		$this->validate($request, $rules);
 
@@ -170,7 +201,7 @@ class TeacherStudentController extends Controller
 		$lastName = $request->lastName;
 		$firstName = $request->firstName;
 		$password = $utility->makePass();
-
+		$birthDay = implode('-', [$request->birthYear, $request->birthMonth, $request->birthDay]);
 		$StudentRow->fill(
 			[
 				'first_name' => $firstName,
@@ -179,14 +210,13 @@ class TeacherStudentController extends Controller
 				'email' => $email = $request->email,
 				'password' => Hash::make($password),
 				'member_num' => '11223344',
-				'birthday' => $request->birthday,
+				'birthday' => $birthDay,
 				'gender' => $request->gender,
 				'stress_point' => 3,
 				'phone' => $phone,
-				// TODO::レベルを選べるように
-				'bar_id' => 1,
-				'floor_id' => 1,
-				'vaulting_hourse_id' => 1,
+				'bar_id' => $request->bar,
+				'floor_id' => $request->floor,
+				'vaulting_hourse_id' => $request->vaulting,
 			]
 		);
 		$StudentRow->save();

@@ -113,6 +113,10 @@ select:invalid {
   font-weight: bold;
 }
 
+.error-min {
+  font-size: 0.8rem;
+}
+
 .header-top {
   height: 70px;
   background-color: #23ACE4;
@@ -902,6 +906,7 @@ select:invalid {
   width: 60%;
   margin: 0 auto;
   margin-top: 50px;
+  font-weight: bold;
 }
 .tc-stadd-container .tc-stadd-form-box {
   display: flex;
@@ -911,6 +916,7 @@ select:invalid {
   width: 48%;
 }
 .tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name p {
+  font-weight: bold;
   margin-bottom: 3px;
 }
 .tc-stadd-container .tc-stadd-form-box .tc-stadd-form-name input {
@@ -927,6 +933,19 @@ select:invalid {
 }
 .tc-stadd-container .tc-stadd-form-mainbox input {
   width: 100%;
+}
+.tc-stadd-container .tc-stadd-form-threebox {
+  margin-top: 20px;
+}
+.tc-stadd-container .tc-stadd-form-threebox p {
+  margin-bottom: 3px;
+}
+.tc-stadd-container .tc-stadd-form-threebox .three-form {
+  display: flex;
+  justify-content: space-between;
+}
+.tc-stadd-container .tc-stadd-form-threebox .three-form div {
+  width: 30%;
 }
 .tc-stadd-container .tc-stadd-form-btn {
   text-align: center;

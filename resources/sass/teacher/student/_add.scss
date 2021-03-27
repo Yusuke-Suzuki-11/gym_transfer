@@ -4,6 +4,7 @@
 	width: 60%;
 	margin: 0 auto;
 	margin-top: 50px;
+	font-weight: bold;
 
 	.tc-stadd-form-box{
 		display: flex;
@@ -13,6 +14,7 @@
 			width: 48%;
 
 			p{
+				font-weight: bold;
 				margin-bottom: 3px;
 			}
 
@@ -35,6 +37,22 @@
 
 		input{
 			width: 100%;
+		}
+	}
+
+	.tc-stadd-form-threebox{
+		margin-top: 20px;
+
+		p{
+			margin-bottom: 3px;
+		}
+
+		.three-form{
+			display: flex;
+			justify-content: space-between;
+			div{
+				width: 30%;
+			}
 		}
 	}
 
