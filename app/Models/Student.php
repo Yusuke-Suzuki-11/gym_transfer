@@ -218,4 +218,14 @@ class Student extends Authenticatable
 	{
 		return $this->getVaultingHourseRow()->first()->name;
 	}
+
+	public function getCourseStudentRow()
+	{
+		return $this->hasMany("App\Models\CourseStudent");
+	}
+
+	public function isTransferEnabled($courseId)
+	{
+		return $this->getCourseStudentRow()->where('course_id', $courseId)->first()->transfer_enabled;
+	}
 }

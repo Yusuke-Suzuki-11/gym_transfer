@@ -70,7 +70,11 @@
 									<p>鉄棒{{$StudentRow->getBarLevel()}}</p>
 									<p>マット{{$StudentRow->getFloorLevel()}}</p>
 									<p>とび箱{{$StudentRow->getVaultingHourseLevel()}}</p>
-									<p>振替ではない</p>
+									@if ($StudentRow->isTransferEnabled($__TodayCourseRow->id) == 0)
+										<p class="transfer">振替参加者</p>
+									@else
+										<p class='no-transfer'>通常参加</p>
+									@endif
 								</div>
 							</div>
 						@endforeach

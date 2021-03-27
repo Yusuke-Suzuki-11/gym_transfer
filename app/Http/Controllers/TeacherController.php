@@ -6,7 +6,6 @@ use App\Models\Course;
 use App\Models\LessonDate;
 use Illuminate\Http\Request;
 
-
 class TeacherController extends Controller
 {
 	public function index()

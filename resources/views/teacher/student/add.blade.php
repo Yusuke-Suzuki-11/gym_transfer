@@ -131,8 +131,6 @@
 			</div>
 
 
-
-
 			<div class="tc-stadd-form-threebox">
 				<p>
 					種目別スタートレベル

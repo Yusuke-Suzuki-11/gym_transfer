@@ -91,9 +91,6 @@ class TeacherStudentController extends Controller
 
 		$phone = $this->utility->formatNoHyphenPhoneNum($request->phone);
 
-
-		$this->validate($request, $rules);
-
 		$StudentRow = Student::find($id);
 
 		$fullName = $request->last_name . ' ' . $request->first_name;
@@ -209,6 +206,7 @@ class TeacherStudentController extends Controller
 				'full_name' => $fullName = Utility::makeFullName($lastName, $firstName),
 				'email' => $email = $request->email,
 				'password' => Hash::make($password),
+				// TODO::会員番号
 				'member_num' => '11223344',
 				'birthday' => $birthDay,
 				'gender' => $request->gender,

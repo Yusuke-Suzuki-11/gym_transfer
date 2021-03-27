@@ -117,6 +117,14 @@ select:invalid {
   font-size: 0.8rem;
 }
 
+.transfer {
+  color: crimson;
+}
+
+.no-transfer {
+  color: #009700;
+}
+
 .header-top {
   height: 70px;
   background-color: #23ACE4;
