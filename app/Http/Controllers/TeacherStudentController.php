@@ -109,7 +109,7 @@ class TeacherStudentController extends Controller
 
 		Mail::to('mr.suzuki.11@gmail.com')->send(new LessonTransferNotification($StudentRow->full_name));
 
-		return redirect(route('tc.student.show', ['id' => $StudentRow->id]))->with();
+		return redirect(route('tc.student.show', ['id' => $StudentRow->id]));
 	}
 
 	public function add()
@@ -138,7 +138,6 @@ class TeacherStudentController extends Controller
 			'firstName' => [
 				'required',
 				'max:100',
-				// 'string'
 			],
 			'lastName' => [
 				'required',
@@ -149,6 +148,7 @@ class TeacherStudentController extends Controller
 				'required',
 				'email',
 				'max:100',
+				Rule::unique('students')
 			],
 			'birthYear' => [
 				'required',
@@ -217,6 +217,7 @@ class TeacherStudentController extends Controller
 				'vaulting_hourse_id' => $request->vaulting,
 			]
 		);
+
 		$StudentRow->save();
 		$StudentRow->createCourseStudentRow($request->courseId);
 
