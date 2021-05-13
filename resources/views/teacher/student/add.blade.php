@@ -133,7 +133,6 @@
 			<div class="tc-stadd-form-threebox">
 				<p>
 					種目別スタートレベル
-					{{$errors->has('birthYear')}}
 					@if ($errors->has('bar') || $errors->has('floor') || $errors->has('vaulting'))
 						<span class="font-error error-min">※未入力の項目があります。</span>
 					@endif
